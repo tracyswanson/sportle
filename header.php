@@ -25,15 +25,15 @@
 	<div class="userTriangle glyphicon glyphicon-triangle-top"></div>
 	<ul id="searchResults" class="dropDownMenu">
 		<li class="resultsHeader"><h3>WHATS ON NOW</h3><div class="viewAll"><a href="search.php?type=city">View All</a></div></li>
-		<li class="unread"><span class="image"><div class="screenShot"><img src="/images/lakers-vs-bucks.jpg" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Lakers<br>vs Milwaukee Bucks</span><span class="gameTime">7:00 PST</span></a></li>
-		<li><span class="image"><div class="screenShot"><img src="/images/clippers-vs-warriors.jpg" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Clippers<br>vs Golden State Warriors</span><span class="gameTime">7:00 PST</span></a></li>
+		<li class="result"><span class="image"><div class="screenShot"><img src="/images/lakers-vs-bucks.jpg" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Lakers<br>vs Milwaukee Bucks</span><span class="gameTime">7:00 PST</span></a></li>
+		<li class="result"><span class="image"><div class="screenShot"><img src="/images/clippers-vs-warriors.jpg" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Clippers<br>vs Golden State Warriors</span><span class="gameTime">7:00 PST</span></a></li>
 		<li class="league">NBA</li>
-		<li><span class="image"><div class="logo"><img src="/images/lakers.png" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Lakers</span><span class="favorite"><i class="fa fa-star favorite"></i></span></a></li>
-		<li><span class="image"><div class="logo"><img src="/images/clippers-logo.png" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Clippers</span><span class="favorite"></span></a></li>
+		<li class="result"><span class="image"><div class="logo"><img src="/images/lakers.png" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Lakers</span><span class="favorite"><i class="fa fa-star favorite"></i></span></a></li>
+		<li class="result"><span class="image"><div class="logo"><img src="/images/clippers-logo.png" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Clippers</span><span class="favorite"></span></a></li>
 		<li class="league">MLB</li>
-		<li><span class="image"><div class="logo"><img src="/images/dodgers-logo.jpg" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Dodgers</span><span class="favorite"><i class="fa fa-star favorite"></i></span></a></li>
+		<li class="result"><span class="image"><div class="logo"><img src="/images/dodgers-logo.jpg" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Dodgers</span><span class="favorite"><i class="fa fa-star favorite"></i></span></a></li>
 		<li class="league">NHL</li>
-		<li><span class="image"><div class="logo"><img src="/images/kings-logo.png" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Kings</span><span class="favorite"></span></a></li>
+		<li class="result"><span class="image"><div class="logo"><img src="/images/kings-logo.png" /></div></span><span class="teams"><a href="search.php?type=team"><span class="typed">Los A</span>ngeles Kings</span><span class="favorite"></span></a></li>
 	</ul>
 	<ul id="notifications" class="dropDownMenu">
 		<li class="notificationsHeader"><h3>Notifications</h3><div class="markAllRead">Mark All as Read</div></li>

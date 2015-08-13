@@ -150,6 +150,13 @@ jQuery(document).ready(function() {
 	},function(){
 	    $( this ).find( ".playVideoOverlay" ).css("visibility", "hidden");
 	});
+	// Change Pull Down Button color state on rollover
+	$( "#sportleSelect" ).hover( function(){
+	    $( this ).find( ".sportsFilter .btn" ).css("background-image", "url(../images/select-sports-bkgd-hover.jpg)");
+	},function(){
+	    $( this ).find( ".sportsFilter .btn" ).css("background-image", "url(../images/select-sports-bkgd.jpg)");
+	});
+
 	// Scroll Up/Down
 	// What's On Drop Down
 	$( ".whatsOnNowLink" ).click( function() {

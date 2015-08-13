@@ -31,7 +31,7 @@
 			<div id="homepageFilters">
 				<h3>All Events</h3>
 				<label for="sportsFilter">Show only:</label>
-				<div class="sportleSelect">
+				<div class="sportleSelect" id="sportleSelect">
 					<select class="sportsFilter selectpicker">
 						<option selected="true">All Sports</option>
 						<option>MLB</option>

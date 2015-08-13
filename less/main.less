@@ -340,8 +340,14 @@ img {
 		top: 3.72rem;
 		padding: 0.293rem 0;
 
-		.unread {
+		.result:hover {
 			background-color: #ebebeb;
+			cursor: pointer;
+
+			a,
+			a .typed {
+        color: @sportleBlue;
+      }
 		}
 		.resultsHeader {
 			position: relative;
@@ -412,9 +418,6 @@ img {
 			}
 			.typed {
 				color: #000;
-			}
-			a:hover .typed {
-				color: @sportleBlue;
 			}
 			.gameTime,
 			.favorite {
@@ -593,7 +596,6 @@ img {
 			color: @white;
 			font-size: 0.656rem;
 			padding: 0.35rem 0.543rem;
-
 		}
 		.dropdown-menu {
 			border-radius: 0;
@@ -1974,7 +1976,6 @@ img {
   #leaguePackages {
     border-top: 1px solid #cdcdcd;
     margin-top: 1.125rem;
-    display: none;
   }
   .packageLogo {
     margin: 0.875rem 1rem 0.875rem 0;
