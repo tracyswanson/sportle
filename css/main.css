@@ -330,8 +330,13 @@ img {
   top: 3.72rem;
   padding: 0.293rem 0;
 }
-.header #searchResults .unread {
+.header #searchResults .result:hover {
   background-color: #ebebeb;
+  cursor: pointer;
+}
+.header #searchResults .result:hover a,
+.header #searchResults .result:hover a .typed {
+  color: #0280e2;
 }
 .header #searchResults .resultsHeader {
   position: relative;
@@ -399,9 +404,6 @@ img {
 }
 .header #searchResults li .typed {
   color: #000;
-}
-.header #searchResults li a:hover .typed {
-  color: #0280e2;
 }
 .header #searchResults li .gameTime,
 .header #searchResults li .favorite {
@@ -1887,7 +1889,6 @@ img {
 #onBoardingLinkAccounts #leaguePackages {
   border-top: 1px solid #cdcdcd;
   margin-top: 1.125rem;
-  display: none;
 }
 #onBoardingLinkAccounts .packageLogo {
   margin: 0.875rem 1rem 0.875rem 0;
