@@ -1,0 +1,2618 @@
+/*
+ * Description: Sportle.tv HTML/CSS markup to be adapted for Laravel Framework
+ *
+ * @author     	Tracy Swanson <tracy@freyadigital.com>
+ * @uri     		http://freyadigital.com/
+ *
+ */
+/*---------------------------------------------------
+    LESS Elements 0.8
+    Created by:  Dmitry Fadeyev -> http://lesselements.com/
+
+    A set of useful LESS mixins.
+    See CREDITS file for full author list.
+-----------------------------------------------------*/
+/* 6 is the current number of program listings in a row for What's On */
+/* 8 is the current number of program listings in a row for Featured */
+/* 6 is the current number of program listings in a row for Quick Picks */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  background-color: #e8e7e7;
+  font-size: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* Base Styles */
+body,
+select,
+input,
+textarea {
+  /* set base font family here, to apply evenly */
+  font-family: 'Proxima', sans-serif;
+}
+body {
+  /* base font size and color */
+  color: #222222;
+  background-color: #e8e7e7;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+h3 {
+  font-size: 0.8785rem;
+}
+p {
+  margin: 0;
+}
+form {
+  margin: 0;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover {
+  color: #0280e2;
+  text-decoration: none;
+}
+/* repsonsive images */
+img {
+  max-width: 100%;
+  /* when images are too wide for containing element, force them to fit. */
+  height: auto;
+  /* override height to match resized width for correct aspect ratio. */
+}
+/*
+ * 	text overflow
+ * 	requires inline-block or block for proper styling
+ */
+/* Header */
+.header {
+  background-color: #e8e7e7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: visible;
+  z-index: 100;
+}
+.header #headerLogo {
+  margin: 0.615rem 2.478rem 0.79rem 1.816rem;
+  width: 8.48rem;
+  height: 2.314rem;
+  float: left;
+}
+.header .headerLink {
+  font-size: 0.8785rem;
+  float: left;
+  margin-top: 1.55rem;
+  cursor: pointer;
+  color: #333333;
+  text-decoration: none;
+}
+.header .headerLink:hover {
+  color: #0280e2;
+}
+.header .whatsOnNowLink {
+  width: 6rem;
+}
+.header .quickPicksLink {
+  margin-left: 2.343rem;
+  width: 4.539rem;
+}
+.header #searchContent {
+  width: 20.61rem;
+  height: 2.1rem;
+  float: right;
+  margin: 0.937rem 1.406rem 0 0.4685rem;
+  position: relative;
+  overflow: visible;
+}
+.header #searchContentField {
+  width: 100%;
+  border: 1px solid #7c7b7b;
+  -webkit-border-top-right-radius: 1.124rem;
+  -webkit-border-bottom-right-radius: 1.124rem;
+  -webkit-border-bottom-left-radius: 1.124rem;
+  -webkit-border-top-left-radius: 1.124rem;
+  -moz-border-radius-topright: 1.124rem;
+  -moz-border-radius-bottomright: 1.124rem;
+  -moz-border-radius-bottomleft: 1.124rem;
+  -moz-border-radius-topleft: 1.124rem;
+  border-top-right-radius: 1.124rem;
+  border-bottom-right-radius: 1.124rem;
+  border-bottom-left-radius: 1.124rem;
+  border-top-left-radius: 1.124rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 0.7613rem;
+  line-height: 1.78rem;
+  padding: 0 2.81rem 0 0.937rem;
+}
+.header #searchContentField::-webkit-input-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField:-moz-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField::-moz-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField:-ms-input-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField:focus {
+  border: 1px solid #61aae4;
+  outline: none;
+}
+.header .searchIcon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  font-size: 0.8785rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.4rem;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.header .searchIcon:hover {
+  color: #0280e2;
+}
+.header .userNotifications {
+  font-size: 1.406rem;
+  float: right;
+  padding: 1.347rem 2rem 0 0;
+  color: #000000;
+  position: relative;
+  overflow: visible;
+  display: table;
+  cursor: pointer;
+}
+.header .userNotifications:hover {
+  color: #0280e2;
+}
+.header .userNotifications .notificationsNumber {
+  position: absolute;
+  left: 0.656rem;
+  top: 0.89rem;
+  width: 1.113rem;
+  height: 1.113rem;
+  border-radius: 1.874rem;
+  display: table-cell;
+  color: #ffffff;
+  background-color: #cf392c;
+  font-size: 0.75rem;
+  line-height: 1.113rem;
+  font-weight: 300;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.header #userProfile {
+  cursor: pointer;
+}
+.header #userProfile #userPic {
+  width: 2.108rem;
+  height: 2.108rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  border: 0.0585rem #333333 solid;
+  border-radius: 50%;
+  float: right;
+  margin: 0.8785rem 0.703rem 0 0;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.header #userProfile #userName {
+  float: right;
+  font-size: 0.843rem;
+  margin: 1.55rem 3.28rem 0 0;
+  color: #333333;
+  text-decoration: none;
+}
+.header #userProfile:hover #userPic {
+  border: 0.0585rem #0280e2 solid;
+}
+.header #userProfile:hover #userName {
+  color: #0280e2;
+}
+.header .settingsDownArrow {
+  font-size: 0.703rem;
+  margin: 0 0 0 0.562rem;
+  position: relative;
+  top: 0.117rem;
+}
+.header .whatsOnDropDownTriangle {
+  position: absolute;
+  left: 15rem;
+  top: 2.45rem;
+  font-size: 1.874rem;
+  line-height: 1;
+  color: #0282e5;
+  display: none;
+}
+.header .quickPicksTriangle {
+  position: absolute;
+  left: 22.34rem;
+  top: 2.45rem;
+  font-size: 1.874rem;
+  line-height: 1;
+  display: none;
+}
+.header .notificationsTriangle {
+  display: none;
+  position: absolute;
+  right: 15.133rem;
+  top: 2.74rem;
+  font-size: 1.64rem;
+  line-height: 1;
+  color: #f9f9f9;
+}
+.header .userTriangle {
+  display: none;
+  position: absolute;
+  right: 2.67rem;
+  top: 2.74rem;
+  font-size: 1.64rem;
+  line-height: 1;
+  color: #f9f9f9;
+}
+.header .dropDownMenu {
+  display: none;
+  position: absolute;
+  list-style: none;
+  background-color: #f9f9f9;
+  border: 1px #c3c3c3 solid;
+  border-top: none;
+  padding: 0.293rem 0;
+  margin: 0;
+}
+.header .dropDownMenu li {
+  font-size: 0.937rem;
+  border-bottom: 1px #b8b8b8 solid;
+}
+.header .dropDownMenu li:last-child {
+  border-bottom: none;
+}
+.header .dropDownMenu li.emptyMenu {
+  border-bottom: none;
+}
+.header .dropDownMenu li.emptyMenu .spacer {
+  height: 1.124rem;
+  width: 2.343rem;
+}
+.header #searchResults {
+  position: absolute;
+  right: 18.076rem;
+  top: 3.72rem;
+  padding: 0.293rem 0;
+}
+.header #searchResults .unread {
+  background-color: #ebebeb;
+}
+.header #searchResults .resultsHeader {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  font-size: 0.703rem;
+}
+.header #searchResults .resultsHeader h3 {
+  float: left;
+  font-size: 0.703rem;
+  color: #999999;
+}
+.header #searchResults .resultsHeader .viewAll {
+  float: right;
+  font-weight: 600;
+  color: #0280e2;
+  cursor: pointer;
+}
+.header #searchResults .resultsHeader .viewAll a {
+  color: #0280e2;
+}
+.header #searchResults .league {
+  border-bottom: none;
+  padding-bottom: 0;
+  padding-left: 1.406rem;
+  font-size: 0.703rem;
+  color: #999999;
+}
+.header #searchResults li {
+  display: table;
+  margin: 0;
+  padding: 0.7613rem 0.7613rem;
+  width: 100%;
+}
+.header #searchResults li span {
+  display: inline-block;
+}
+.header #searchResults li .image {
+  vertical-align: top;
+  width: 2.723rem;
+  display: table-cell;
+}
+.header #searchResults li .screenShot {
+  width: 2.723rem;
+  height: 0.8346rem;
+  margin-right: 1.406rem;
+}
+.header #searchResults li .logo {
+  width: 2.723rem;
+  height: 2.05rem;
+  margin-right: 1.406rem;
+  text-align: center;
+}
+.header #searchResults li .logo img {
+  width: auto;
+  height: 100%;
+}
+.header #searchResults li .teams {
+  width: 10.835rem;
+  height: 2.05rem;
+  padding: 0 0.234rem 0 0;
+  display: table-cell;
+  vertical-align: middle;
+  color: #666666;
+}
+.header #searchResults li .typed {
+  color: #000;
+}
+.header #searchResults li a:hover .typed {
+  color: #0280e2;
+}
+.header #searchResults li .gameTime,
+.header #searchResults li .favorite {
+  height: 100%;
+  vertical-align: top;
+  text-align: right;
+  float: right;
+}
+.header #searchResults li .gameTime {
+  color: #000;
+}
+.header #searchResults li .favorite {
+  color: #f3a41c;
+  margin-top: 0.3rem;
+}
+.header #searchResults li a {
+  color: #666666;
+  text-decoration: none;
+  font-weight: 600;
+}
+.header #searchResults li a:hover {
+  color: #0280e2;
+}
+.header #notifications {
+  position: absolute;
+  right: 13.177rem;
+  top: 3.72rem;
+  padding: 0.293rem 0;
+}
+.header #notifications .unread {
+  background-color: #ebebeb;
+}
+.header #notifications .notificationsHeader {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.header #notifications .notificationsHeader h3 {
+  float: left;
+  font-weight: 600;
+}
+.header #notifications .notificationsHeader .markAllRead {
+  float: right;
+  color: #0280e2;
+  cursor: pointer;
+}
+.header #notifications li {
+  display: table;
+  margin: 0;
+  padding: 0.903rem 0.7613rem;
+  width: 100%;
+}
+.header #notifications li span {
+  display: inline-block;
+}
+.header #notifications li .orange {
+  background-color: #ff6600;
+}
+.header #notifications li .notificationIcon {
+  width: 2.577rem;
+  height: 2.577rem;
+  border-radius: 2.928rem;
+  display: table-cell;
+  color: #ffffff;
+  font-size: 0.586rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.header #notifications li .croppedLogo {
+  width: 2.577rem;
+  height: 2.577rem;
+  overflow: hidden;
+  background-size: 366.67% 100%;
+}
+.header #notifications li .croppedLogo img {
+  top: 0;
+  left: 0;
+}
+.header #notifications li .notificationMessage {
+  width: 16.984rem;
+  margin: 0 0.7613rem;
+}
+.header #notifications li .notificationTime {
+  height: 100%;
+  vertical-align: top;
+  text-align: right;
+  float: right;
+  color: #999999;
+}
+.header #notifications li a {
+  color: #0280e2;
+  text-decoration: none;
+  font-weight: 600;
+}
+.header #notifications li a:hover {
+  color: #0280e2;
+}
+.header #userSettings {
+  position: absolute;
+  right: 1.55rem;
+  top: 3.72rem;
+}
+.header #userSettings li {
+  margin: 0 1.406rem;
+  padding: 0.703rem 7.32rem 0.703rem 1.083rem;
+}
+.header #userSettings li a {
+  color: #0a131f;
+  text-decoration: none;
+}
+.header #userSettings li a:hover {
+  color: #0280e2;
+}
+.home .main {
+  color: #ffffff;
+  background-color: #000000;
+}
+/* Main Body Content */
+.main {
+  font-size: 0.82rem;
+  margin-top: 3.748rem;
+  padding: 1.55rem 0 1.55rem 0;
+  min-height: 35rem;
+  /* Filters */
+  /* Program Listings */
+}
+.main .opaqueBackdrop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.main #homepageFilters {
+  margin: 0.4685rem 2.079rem 0rem 2.079rem;
+}
+.main #homepageFilters h3 {
+  float: left;
+  font-weight: 600;
+  margin-left: 0.14rem;
+}
+.main #homepageFilters label {
+  font-weight: 300;
+}
+.main #homepageFilters label[for="sportsFilter"] {
+  float: left;
+  margin-left: 2.67rem;
+}
+.main #homepageFilters .sportleSelect {
+  float: left;
+  margin: -0.187rem 0 0 1.171rem;
+}
+.main #homepageFilters .sportsFilter .btn {
+  border-radius: 0;
+  border: none;
+  background-color: #292929;
+  background: url("../images/select-sports-bkgd.jpg") no-repeat 0 0 #292929;
+  background-size: 100% 100%;
+  color: #ffffff;
+  font-size: 0.656rem;
+  padding: 0.35rem 0.543rem;
+}
+.main #homepageFilters .dropdown-menu {
+  border-radius: 0;
+  font-size: 0.656rem;
+}
+.main #homepageFilters .dropdown-menu > li > a:hover {
+  color: #white;
+  background-color: #0280e2;
+}
+.main #homepageFilters label[for="streamBtns"] {
+  float: left;
+  margin: 0 0.937rem 0 2.108rem;
+}
+.main #homepageFilters .streamBtn.active {
+  background-color: #0280e2;
+  color: #ffffff;
+  float: left;
+  font-size: 0.703rem;
+  font-weight: 600;
+  padding: 0.187rem 0.773rem;
+  margin: -0.281rem 0 0 0;
+  border: none;
+  border-radius: 0;
+}
+.main #homepageFilters .streamBtn {
+  background-color: #292929;
+  color: #666666;
+  float: left;
+  font-size: 0.703rem;
+  font-weight: 600;
+  padding: 0.187rem 0.773rem;
+  margin: -0.281rem 0 0 0;
+  border: none;
+  border-radius: 0;
+  width: 2.717rem;
+}
+.main #homepageFilters .streamBtn:hover {
+  background-color: #0280e2;
+  color: #ffffff;
+}
+.main hr {
+  background-color: #444343;
+  border: none;
+  height: 1px;
+  margin: 1.171rem 2.079rem 0 2.079rem;
+}
+.main #eventContent {
+  position: relative;
+  overflow: hidden;
+  /* Program Listing */
+  /* End Program Listing */
+  /* Whats On Drop Down */
+  /* Program Card */
+  /* End Program Card */
+}
+.main #eventContent h2 {
+  width: 100%;
+  font-size: 0.843rem;
+  font-weight: 600;
+  margin: 0.4685rem 0 1.077rem 2.173rem;
+}
+.main #eventContent .programListingsScroll {
+  width: 100%;
+  height: 13.879rem;
+  position: relative;
+  overflow: hidden;
+}
+.main #eventContent .programListing:first-child {
+  margin-left: 1.874rem;
+}
+.main #eventContent .programListing {
+  width: 17.98rem;
+  height: 13.879rem;
+  float: left;
+  margin: 0 1.874rem 0 0;
+  position: relative;
+  overflow: visible;
+}
+.main #eventContent .programListing .screenShot {
+  position: relative;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main #eventContent .programListing .screenShot .gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main #eventContent .programListing .screenOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10.014rem;
+}
+.main #eventContent .programListing .screenOverlay .playVideoOverlay {
+  display: table;
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10.014rem;
+  background: rgba(17, 17, 17, 0.67);
+  cursor: pointer;
+}
+.main #eventContent .programListing .screenOverlay .playVideoOverlay .fa-play-circle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.main #eventContent .programListing .screenOverlay .airDate {
+  width: 6.44rem;
+  height: 2.343rem;
+  position: absolute;
+  right: 0;
+  top: 0.609rem;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 1.124rem;
+  -webkit-border-top-left-radius: 1.124rem;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 1.124rem;
+  -moz-border-radius-topleft: 1.124rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 1.124rem;
+  border-top-left-radius: 1.124rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.234rem 0 0 1.581rem;
+}
+.main #eventContent .programListing .screenOverlay .airTime {
+  font-weight: 300;
+}
+.main #eventContent .programListing .screenOverlay .channelLogo {
+  height: 1.874rem;
+  width: 3.748rem;
+  position: absolute;
+  right: 5.27rem;
+  top: 0.843rem;
+}
+.main #eventContent .programListing .screenOverlay .channelLogo img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.main #eventContent .programListing .screenOverlay .reminder {
+  right: 0;
+  top: 3.139rem;
+  cursor: pointer;
+}
+.main #eventContent .programListing .screenOverlay .reminder:hover {
+  background-color: #0280e2;
+}
+.main #eventContent .programListing .screenOverlay .reminder.on {
+  background-color: #0280e2;
+}
+.main #eventContent .programListing .screenOverlay .logo {
+  height: 1.874rem;
+  max-width: 2.928rem;
+  float: left;
+  margin: 7.32rem 0.7613rem 0.586rem 0.586rem;
+}
+.main #eventContent .programListing .screenOverlay .logo img {
+  width: auto;
+  height: 100%;
+}
+.main #eventContent .programListing .screenOverlay .categoryContainer {
+  width: 2.928rem;
+  height: 2.928rem;
+  display: table;
+  float: left;
+  margin: 6.5rem 0.7613rem 0.586rem 0.586rem;
+}
+.main #eventContent .programListing .screenOverlay .category {
+  width: 2.928rem;
+  height: 2.928rem;
+  -webkit-border-top-right-radius: 2.928rem;
+  -webkit-border-bottom-right-radius: 2.928rem;
+  -webkit-border-bottom-left-radius: 2.928rem;
+  -webkit-border-top-left-radius: 2.928rem;
+  -moz-border-radius-topright: 2.928rem;
+  -moz-border-radius-bottomright: 2.928rem;
+  -moz-border-radius-bottomleft: 2.928rem;
+  -moz-border-radius-topleft: 2.928rem;
+  border-top-right-radius: 2.928rem;
+  border-bottom-right-radius: 2.928rem;
+  border-bottom-left-radius: 2.928rem;
+  border-top-left-radius: 2.928rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 0.586rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  display: table-cell;
+  vertical-align: middle;
+}
+.main #eventContent .programListing .screenOverlay .category.blue {
+  background-color: #093a80;
+}
+.main #eventContent .programListing .screenOverlay .category.darkPurple {
+  background-color: #351c35;
+}
+.main #eventContent .programListing .screenOverlay .category.green {
+  background-color: #06646e;
+}
+.main #eventContent .programListing .screenOverlay .category.lightBlue {
+  background-color: #003965;
+}
+.main #eventContent .programListing .screenOverlay .category.orange {
+  background-color: #cc5006;
+}
+.main #eventContent .programListing .screenOverlay .category.red {
+  background-color: #650000;
+}
+.main #eventContent .programListing .screenOverlay .title {
+  width: 100%;
+  max-width: 13.65rem;
+  height: 2.781rem;
+  font-size: 1.288rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+  margin: 7.32rem 0 0 0;
+}
+.main #eventContent .programListing .screenOverlay .title .titleWide {
+  width: 200rem;
+}
+.main #eventContent .programListing .screenOverlay .title .event {
+  float: left;
+}
+.main #eventContent .programListing .screenOverlay .title .team {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main #eventContent .programListing .screenOverlay .title .versus {
+  float: left;
+  font-size: 0.703rem;
+  font-weight: 300;
+  margin: 0.527rem 0.4685rem 0 0.4685rem;
+}
+.main #eventContent .programListing .screenOverlay .title .smallTitlePart {
+  display: block;
+  font-size: 0.644rem;
+  font-weight: 300;
+  margin-bottom: -0.187rem;
+  text-transform: uppercase;
+}
+.main #eventContent .programListing .infoBox {
+  width: 100%;
+  height: 3.865rem;
+  color: #020202;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+.main #eventContent .programListing .infoBox h4 {
+  font-size: 1.171rem;
+  margin: 0.703rem 0 -0.703rem 0.937rem;
+}
+.main #eventContent .programListing .infoBox p {
+  font-size: 0.82rem;
+  margin: 0.703rem 0 0 0.937rem;
+  max-height: 2.108rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main #eventContent .programListing .infoBox .eventStatus {
+  position: relative;
+  overflow: hidden;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team {
+  clear: both;
+  font-size: 1.171rem;
+  font-weight: 300;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team .teamLogo {
+  width: 1.406rem;
+  margin: 0.281rem 0 0 0.498rem;
+  float: left;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team .teamName {
+  float: left;
+  margin: 0.281rem 0 0 0.937rem;
+  width: 7.9rem;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team .teamName.ahead {
+  font-weight: 600;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team .score {
+  float: left;
+  margin-top: 0.281rem;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team .score.ahead {
+  font-weight: 600;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team1 .teamName {
+  position: relative;
+  top: 0.234rem;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team1 .score {
+  position: relative;
+  top: 0.234rem;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team2 .teamName {
+  position: relative;
+  top: -0.234rem;
+}
+.main #eventContent .programListing .infoBox .eventStatus .team2 .score {
+  position: relative;
+  top: -0.234rem;
+}
+.main #eventContent .programListing .infoBox .eventStatus .timePeriod {
+  width: 4.685rem;
+  height: 2.313rem;
+  border-left: #e3e3e3 0.205rem solid;
+  font-size: 0.494rem;
+  position: absolute;
+  bottom: -0.375rem;
+  right: 0;
+  margin: 0.75rem 0;
+  text-align: center;
+}
+.main #eventContent .programListing .infoBox .eventStatus .timePeriod .timeElapsed {
+  display: block;
+  font-size: 0.8785rem;
+}
+.main #eventContent .whatsOnDropDown {
+  position: fixed;
+  top: 3.7rem;
+  left: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 2.1875rem;
+  width: 100%;
+  background: rgba(2, 130, 229, 0.9);
+  z-index: 200;
+  display: none;
+}
+.main #eventContent .programCard {
+  width: 12rem;
+  height: 13.75rem;
+  float: left;
+  margin: 0 0.5625rem 0 0;
+  position: relative;
+  overflow: visible;
+  font-size: 0.7025rem;
+  font-weight: 200;
+  color: #999999;
+  border: 4px solid rgba(78, 168, 237, 0.5);
+  -webkit-background-clip: padding-box;
+  /* for Safari */
+  background-clip: padding-box;
+  /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+.main #eventContent .programCard .screenShot {
+  position: relative;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main #eventContent .programCard .screenOverlay {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main #eventContent .programCard .playVideoOverlay {
+  display: table;
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem;
+  background: rgba(17, 17, 17, 0.67);
+  cursor: pointer;
+}
+.main #eventContent .programCard .playVideoOverlay .fa-play-circle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.main #eventContent .programCard .airDate {
+  width: 9.538rem;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  top: 6.5rem;
+  padding: 0.53rem 0 0 0.4375rem;
+  background: rgba(0, 153, 0, 0.9);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+.main #eventContent .programCard .airTime {
+  font-weight: 200;
+}
+.main #eventContent .programCard .reminder {
+  right: 0;
+  top: 6.5rem;
+  cursor: pointer;
+}
+.main #eventContent .programCard .reminder:hover {
+  background-color: #0280e2;
+}
+.main #eventContent .programCard .reminder.on {
+  background-color: #0280e2;
+}
+.main #eventContent .programCard .infoBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4.75rem;
+  padding: 0.4375rem;
+  background-color: #000000;
+}
+.main #eventContent .programCard .infoBox .league {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.main #eventContent .programCard .infoBox .titleWide {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.7025rem;
+  font-weight: 200;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 2px #363636 solid;
+}
+.main #eventContent .programCard .infoBox .titleWide .event {
+  float: left;
+}
+.main #eventContent .programCard .infoBox .titleWide .team {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main #eventContent .programCard .infoBox .titleWide .vs {
+  text-transform: lowercase;
+}
+.main #eventContent .programCard .infoBox p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main #eventContent .programCard .infoBox .eventStatus {
+  position: relative;
+  overflow: hidden;
+}
+.main #eventContent .programCard .infoBox .eventStatus .team .teamName {
+  float: left;
+  width: 5rem;
+}
+.main #eventContent .programCard .infoBox .eventStatus .team .teamName.ahead {
+  color: #ffffff;
+}
+.main #eventContent .programCard .infoBox .eventStatus .team .score {
+  float: left;
+  width: 2.375rem;
+}
+.main #eventContent .programCard .infoBox .eventStatus .team .score.ahead {
+  color: #ffffff;
+}
+.main #eventContent .programCard .infoBox .eventStatus .timePeriod {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 3.375rem;
+}
+.main #eventContent .featured {
+  clear: both;
+}
+.main #eventContent .whatsOnNow h2 {
+  margin-top: 1.406rem;
+}
+.main #eventContent .featured,
+.main #eventContent .whatsOnNow,
+.main #eventContent .quickPicks {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 1.874rem 0;
+  width: 100%;
+}
+.main #eventContent .quickPicks {
+  position: fixed;
+  top: 3.719rem;
+  left: 0;
+  background-color: #000;
+  padding: 2.343rem 0 0 0;
+  z-index: 200;
+  display: none;
+}
+.main #eventContent .whatsOnNow .programListings {
+  width: 121.124rem;
+  position: relative;
+  overflow: hidden;
+}
+.main #eventContent .featured .programListings {
+  width: 160.832rem;
+  position: relative;
+  overflow: hidden;
+}
+.main #eventContent .quickPicks .programListings {
+  width: 121.124rem;
+  position: relative;
+  overflow: hidden;
+}
+.footer {
+  background-color: #e8e7e7;
+  padding: 1.55rem 2.079rem;
+}
+.modal-content {
+  border-radius: 0.703rem;
+}
+/* Live Event Alt Modal */
+#liveEventAlt .modal-dialog {
+  width: 36.985rem;
+  height: 21.874rem;
+  margin: 9.37rem auto;
+}
+#liveEventAlt .modal-dialog .modal-content {
+  position: relative;
+  overflow: hidden;
+  height: 21.874rem;
+  background: url("../images/heat-vs-hornets.jpg") no-repeat 0 -2.34rem transparent;
+  background-size: 100% 124%;
+  color: #fff;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay {
+  background: url("../images/modal-gradient-overlay.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 11.39rem;
+  width: 100%;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .airDate {
+  left: 0;
+  top: 1.546rem;
+  height: 2.2rem;
+  -webkit-border-top-right-radius: 1.124rem;
+  -webkit-border-bottom-right-radius: 1.124rem;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 1.124rem;
+  -moz-border-radius-bottomright: 1.124rem;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 1.124rem;
+  border-bottom-right-radius: 1.124rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.14rem 0.8785rem 0 0.703rem;
+  font-size: 0.82rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .reminder {
+  left: 0;
+  top: 3.748rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .logo {
+  width: auto;
+  height: 2.4rem;
+  position: absolute;
+  top: 8.4rem;
+  left: 0.937rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title {
+  position: absolute;
+  top: 8.433rem;
+  left: 3.56rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title .team {
+  font-size: 1.523rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title .smallTitlePart {
+  font-size: 0.7613rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title .versus {
+  font-size: 0.82rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 300;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus {
+  width: 11.537rem;
+  height: 3.338rem;
+  position: absolute;
+  right: 0;
+  bottom: 3.397rem;
+  background: rgba(0, 0, 0, 0.48);
+  padding: 0.7613rem 0.937rem 0 0.996rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team {
+  width: 6.56rem;
+  position: relative;
+  overflow: hidden;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .teamName {
+  float: left;
+  width: 5.563rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .score {
+  float: left;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .ahead {
+  font-weight: 600;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod {
+  position: absolute;
+  top: 1.03rem;
+  right: 0.937rem;
+  font-weight: bold;
+  text-align: right;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod .timeElapsed {
+  display: block;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .viewership {
+  width: 11.537rem;
+  height: 3.338rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.48);
+  padding: 0.7613rem 0.937rem 0 0.996rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .who {
+  float: left;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .count {
+  float: right;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay {
+  position: absolute;
+  left: 0;
+  top: 11.39rem;
+  background-color: #ffffff;
+  padding: 0.35rem 0.494rem;
+  height: 10.483rem;
+  width: 100%;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay h4 {
+  color: #666666;
+  font-size: 0.703rem;
+  margin-bottom: -0.0937rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay hr {
+  margin: 0.89rem 0;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchSection {
+  margin-top: 0.562rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchLogo {
+  background: url("../images/ballstreams-logo.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 8.96rem;
+  height: 1.816rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeLogo {
+  background: url("../images/nba-league-pass.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 8.9rem;
+  height: 1.757rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchNowBtn,
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  float: right;
+  width: 7.03rem;
+  padding: 0.527rem 0.35rem;
+  border-radius: 0.293rem;
+  border: none;
+  font-size: 0.703rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchNowBtn:hover,
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeBtn:hover {
+  color: #333333;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchNowBtn {
+  background-color: #0280e2;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  background-color: #828282;
+}
+#liveEventAlt button.close {
+  color: #fff;
+  background-color: #000000;
+  border: 2px #fff solid;
+  opacity: 1;
+  font-size: 1.59rem;
+  line-height: 1;
+  padding: 0 0.38rem;
+  border-radius: 2.343rem;
+  margin: 0.293rem 0.527rem;
+}
+#liveEventAlt button.close:hover {
+  background-color: #666666;
+}
+/* Live Event Modal */
+#liveEvent .modal-dialog {
+  width: 36.985rem;
+  height: 21.874rem;
+  margin: 9.37rem auto;
+}
+#liveEvent .modal-dialog .modal-body {
+  padding: 1.113rem 0.494rem;
+}
+#liveEvent .modal-dialog .modal-content {
+  position: relative;
+  overflow: hidden;
+  height: 21.874rem;
+  background-color: #fff;
+  background-size: 100% 124%;
+  color: #333333;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay {
+  left: 0;
+  top: 0;
+  height: 11.39rem;
+  width: 100%;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage {
+  width: 11.42rem;
+  height: 8.49rem;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage .eventPic {
+  width: 100%;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage .airDate {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.99rem;
+  width: 9.458rem;
+  padding: 0.703rem 0.4685rem 0 0.4685rem;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: normal;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage .reminder {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .airTime {
+  position: absolute;
+  left: 13.47rem;
+  top: 1.113rem;
+  color: #333333;
+  font-size: 0.7613rem;
+  font-weight: bold;
+  line-height: 1;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .logo {
+  width: auto;
+  height: 2.4rem;
+  position: absolute;
+  top: 2.69rem;
+  left: 13.47rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title {
+  position: absolute;
+  top: 2.69rem;
+  left: 15.52rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title .team {
+  font-size: 1.523rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title .smallTitlePart {
+  font-size: 0.7613rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title .versus {
+  font-size: 0.82rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox {
+  color: #333333;
+  font-size: 0.82rem;
+  font-weight: 300;
+  position: relative;
+  overflow: hidden;
+  border-top: 0.146rem solid #cdcdcd;
+  padding-top: 0.41rem;
+  position: absolute;
+  left: 13.47rem;
+  top: 5.97rem;
+  width: 21.67rem;
+  height: 3.689rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus {
+  width: 10.835rem;
+  height: 3.689rem;
+  float: left;
+  background-color: #e2eef7;
+  padding: 0.41rem 0.937rem 0 0.996rem;
+  position: relative;
+  overflow: hidden;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team {
+  width: 6.56rem;
+  position: relative;
+  overflow: hidden;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .teamName {
+  float: left;
+  width: 5.15rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .score {
+  float: left;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .ahead {
+  font-weight: 600;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod {
+  position: absolute;
+  top: 0.4685rem;
+  right: 0.562rem;
+  font-size: 0.834rem;
+  font-weight: 300;
+  text-align: center;
+  color: #999999;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod .timeElapsed {
+  display: block;
+  font-size: 0.695rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .viewership {
+  width: 10.835rem;
+  height: 3.689rem;
+  float: left;
+  background-color: #f5f5f5;
+  padding: 0.41rem 0.937rem 0 0.996rem;
+  color: #333333;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .who {
+  float: left;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .count {
+  float: right;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay {
+  position: absolute;
+  left: 0;
+  top: 9.985rem;
+  background-color: #ffffff;
+  padding: 0.35rem 0.494rem;
+  height: 11.89rem;
+  width: 100%;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay h4 {
+  color: #666666;
+  font-size: 0.703rem;
+  margin-bottom: -0.0937rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay hr {
+  margin: 0.89rem 0;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchSection {
+  margin-top: 0.562rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchLogo {
+  background: url("../images/ballstreams-logo.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 8.96rem;
+  height: 1.816rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeLogo {
+  background: url("../images/nba-league-pass.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 8.9rem;
+  height: 1.757rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchNowBtn,
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  float: right;
+  width: 7.03rem;
+  padding: 0.527rem 0.35rem;
+  border-radius: 0.293rem;
+  border: none;
+  font-size: 0.703rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchNowBtn:hover,
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeBtn:hover {
+  color: #333333;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchNowBtn {
+  background-color: #0280e2;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  background-color: #828282;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeMessage {
+  font-size: 0.644rem;
+  font-weight: 300;
+  color: #666666;
+  width: 16.1rem;
+  position: absolute;
+  top: 6.09rem;
+  left: 10.776rem;
+}
+#liveEvent button.close {
+  color: #fff;
+  background-color: #b9b9b9;
+  opacity: 1;
+  font-size: 1.59rem;
+  line-height: 1;
+  padding: 0 0.38rem;
+  border-radius: 2.343rem;
+  margin: 0.293rem 0.527rem;
+}
+#liveEvent button.close:hover {
+  background-color: #333333;
+}
+/* On Boarding Mods */
+/* Sign Up */
+.onBoarding .modal-dialog {
+  width: 32.875rem;
+  height: 42rem;
+  margin: 9.37rem auto;
+}
+.onBoarding .modal-dialog .onboarding-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  color: #333333;
+  border-bottom: 5px #0280e2 solid;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body {
+  padding: 1.113rem 0.494rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .logo {
+  margin: 0 auto;
+  width: 8.48rem;
+  height: 2.314rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .logo .headerLogo {
+  width: 8.48rem;
+  height: 2.314rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body h1 sup {
+  color: #0163af;
+  font-size: 0.75rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body h2 {
+  color: #333333;
+  font-size: 1.125rem;
+  margin: 0.6rem 0 0.625rem;
+  text-align: left;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body h4 {
+  color: #696969;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body p {
+  color: #666666;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 1.3125rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .emailContainer {
+  position: relative;
+  overflow: hidden;
+  height: 2.125rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .fa-check {
+  color: cccccc;
+  position: absolute;
+  right: 0.625rem;
+  top: 0.75rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body input[type="text"],
+.onBoarding .modal-dialog .onboarding-content .modal-body input[type="password"] {
+  font-size: 0.875rem;
+  line-height: 2.125rem;
+  height: 2.125rem;
+  width: 100%;
+  border: none;
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .signInAux {
+  text-align: left;
+  margin: 0.8rem 0 1.625rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-left: 0.4rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .input[type="checkbox"] {
+  text-align: left;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body a {
+  color: #0280e2;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.6rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .socialLoginButton {
+  border-radius: 0.2rem;
+  padding: 0.375rem 0.875rem;
+  margin-left: 0.5rem;
+}
+.onBoarding .modal-dialog .onboarding-content .modal-body .socialLoginButton:first-child {
+  margin-left: 0;
+}
+.modalButton {
+  margin: 1.4rem 0 0 0;
+  background-color: #0280e2;
+  width: 10rem;
+  height: 2.625rem;
+  font-size: 1.125rem;
+  line-height: 2.625rem;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+.modalButton:hover {
+  color: #ddd;
+}
+#onBoardingSignUp .modal-body {
+  padding: 1rem 2.1875rem 3.4375rem 2.1875rem;
+}
+#onBoardingSignUp .modal-body p {
+  font-size: 1.125rem;
+  margin-bottom: 1.1rem;
+}
+#onBoardingSignUp .modal-body p.intro {
+  color: #666666;
+  font-size: 0.875rem;
+}
+#onBoardingSignUp .modal-body h2 {
+  text-align: center;
+  margin: 0 0 0.4rem 0;
+}
+#onBoardingSignUp .modal-body a {
+  font-size: 1.125rem;
+  display: inline-block;
+}
+#onBoardingSignUp .modal-body .socialLoginButton {
+  margin-bottom: 1rem;
+}
+#onBoardingSignUp .modal-body .emailContainer {
+  clear: both;
+  margin-top: 0.8rem;
+}
+#onBoardingSignUp .modal-body .passwordLengthMessage {
+  font-size: 0.625rem;
+  text-align: left;
+  margin: 0.6rem 0 0.4rem 5.2rem;
+  color: #333333;
+}
+#onBoardingSignUp .modal-body .modalButton {
+  margin: 1rem 0 1rem;
+}
+#onBoardingSignUp .modal-body #password {
+  margin-right: 4%;
+}
+#onBoardingSignUp .modal-body #password2 {
+  float: right;
+}
+#onBoardingSignUp .modal-body #password,
+#onBoardingSignUp .modal-body #password2 {
+  width: 48%;
+}
+#onBoardingLogin .modal-dialog {
+  height: 29.375rem;
+}
+#onBoardingLogin .modal-body {
+  padding: 1rem 3.2rem 3.4375rem 3.2rem;
+}
+#onBoardingLogin .modalButton {
+  float: right;
+}
+#onBoardingLinkAccounts .modal-body {
+  padding: 1rem 1.75rem 3.4375rem 1.75rem;
+}
+#onBoardingLinkAccounts h2 {
+  text-align: center;
+  margin: 2.2rem 0 1.2rem;
+}
+#onBoardingLinkAccounts p {
+  font-size: 1.125rem;
+  margin-bottom: 1.4rem;
+}
+#onBoardingLinkAccounts .tvProviders {
+  margin: 1rem 0;
+  width: 100%;
+}
+#onBoardingLinkAccounts .tvProviders .tvProvider {
+  width: 5.5rem;
+  height: 2.5rem;
+  margin-right: 0.375rem;
+}
+#onBoardingLinkAccounts .addBlock {
+  clear: both;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  width: 100%;
+  color: #666666;
+  background-color: #ebebeb;
+  margin: 4px 0 0 0;
+  cursor: pointer;
+}
+#onBoardingLinkAccounts .circlePlus {
+  margin-right: 0.6rem;
+}
+/* Search Results */
+/* Teams */
+.teamContainer > .teamInfo:first-child {
+  clear: both;
+}
+.search .main {
+  color: #000000;
+  background-color: #ffffff;
+  padding: 1.125rem 2.079rem;
+}
+.search .main #eventContent {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  display: none;
+}
+.search .main #eventContent .quickPicks {
+  margin-bottom: 1.847rem;
+  padding-bottom: 1.847rem;
+  z-index: 100;
+}
+.search .main #eventContent .opaqueBackdrop {
+  z-index: 90;
+}
+.search h2 {
+  color: #999999;
+  font-size: 3rem;
+  border-bottom: 1px #d4d4d4 solid;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+  max-width: 1280px;
+}
+.search h3 {
+  font-size: 1rem;
+}
+.search .resultsTitle {
+  border-bottom: 1px #d4d4d4 solid;
+  padding-bottom: 0.9rem;
+  margin: 0.9rem 0 1.2rem;
+  max-width: 1280px;
+}
+.search .teamName {
+  color: #0280e2;
+}
+.search h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.search .eventsTitle {
+  margin-top: 2rem;
+}
+.search h5 {
+  color: #999999;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 1.4rem 0 0 0;
+}
+.teamContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1280px;
+  border-bottom: 1px #d4d4d4 solid;
+  padding: 0 0 1rem 0;
+}
+.teamContainer .teamInfo {
+  display: table;
+  float: left;
+  width: 33%;
+}
+.teamContainer .teamInfo .logo {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 6.4rem;
+  height: 6.4rem;
+  padding: 0 1.625rem 0 1.5rem;
+  box-sizing: content-box;
+}
+.teamContainer .teamInfo .logo img {
+  width: 100%;
+  height: auto;
+}
+.teamContainer .teamInfo .teamInfoTitles {
+  display: table-cell;
+  vertical-align: bottom;
+}
+.teamContainer .teamInfo .teamInfoTitles .favorited {
+  float: left;
+  color: #999999;
+  font-size: 1rem;
+  width: 1.75rem;
+}
+.teamContainer .teamInfo .teamInfoTitles .favorited .favorite {
+  color: #f3a41c;
+}
+.teamContainer .teamInfo .teamInfoTitles .teamName {
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.teamContainer .teamInfo .teamInfoTitles .league {
+  color: #999999;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 1.75rem;
+}
+/* Search Results */
+/* Whats On Now Event */
+.whatsOnNowEvent,
+.upcomingEvents {
+  line-height: 1.5;
+  font-weight: 200;
+  width: 100%;
+  max-width: 1280px;
+}
+.whatsOnNowEvent .topRow td,
+.upcomingEvents .topRow td {
+  vertical-align: bottom;
+}
+.whatsOnNowEvent .topRow .doubleHeight,
+.upcomingEvents .topRow .doubleHeight {
+  text-align: center;
+  vertical-align: middle;
+}
+.whatsOnNowEvent .topRow .teamLogo,
+.upcomingEvents .topRow .teamLogo {
+  display: table-cell;
+  vertical-align: bottom;
+  padding-bottom: 2px;
+}
+.whatsOnNowEvent .bottomRow,
+.upcomingEvents .bottomRow {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px #d4d4d4 solid;
+}
+.whatsOnNowEvent .bottomRow td,
+.upcomingEvents .bottomRow td {
+  vertical-align: top;
+}
+.whatsOnNowEvent .bottomRow .teamLogo,
+.upcomingEvents .bottomRow .teamLogo {
+  padding-top: 2px;
+}
+.whatsOnNowEvent td,
+.upcomingEvents td {
+  padding-right: 1.0625rem;
+}
+.whatsOnNowEvent .screenView,
+.upcomingEvents .screenView {
+  position: relative;
+  overflow: hidden;
+  width: 8.3125rem;
+  height: 7rem;
+  color: #ffffff;
+  vertical-align: middle;
+}
+.whatsOnNowEvent .screenView .screenShot,
+.upcomingEvents .screenView .screenShot {
+  width: 8.3125rem;
+  height: 5.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.whatsOnNowEvent .screenView .airDate,
+.upcomingEvents .screenView .airDate {
+  width: 6.375rem;
+  height: 2.125rem;
+  position: absolute;
+  right: 0rem;
+  top: 0.5625rem;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 1.0625rem;
+  -webkit-border-top-left-radius: 1.0625rem;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 1.0625rem;
+  -moz-border-radius-topleft: 1.0625rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 1.0625rem;
+  border-top-left-radius: 1.0625rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.3125rem 0 0 1.5625rem;
+  font-size: 0.6875rem;
+}
+.whatsOnNowEvent .screenView .airTime,
+.upcomingEvents .screenView .airTime {
+  font-weight: 300;
+  font-size: 0.6875rem;
+}
+.whatsOnNowEvent .teamLogo,
+.upcomingEvents .teamLogo {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.whatsOnNowEvent .teamLogo img,
+.upcomingEvents .teamLogo img {
+  width: 100%;
+  height: auto;
+}
+.whatsOnNowEvent .teamName,
+.upcomingEvents .teamName {
+  display: inline-block;
+}
+.whatsOnNowEvent .teamName .favorite,
+.upcomingEvents .teamName .favorite {
+  font-size: 0.8rem;
+  color: #f3a41c;
+  margin-right: 0.4rem;
+}
+.whatsOnNowEvent .ahead,
+.upcomingEvents .ahead {
+  font-weight: 600;
+}
+.whatsOnNowEvent .timePeriod,
+.upcomingEvents .timePeriod {
+  font-weight: 400;
+  text-align: center;
+  padding-left: 0.875rem;
+  border-left: 1px #b7b7b7 solid;
+}
+.whatsOnNowEvent .timeElapsed,
+.upcomingEvents .timeElapsed {
+  text-align: center;
+  padding-left: 0.875rem;
+  border-left: 1px #b7b7b7 solid;
+}
+.whatsOnNowEvent .timeElapsed.bold,
+.upcomingEvents .timeElapsed.bold {
+  font-weight: 400;
+}
+.whatsOnNowEvent .channelLogo,
+.upcomingEvents .channelLogo {
+  width: 7.5rem;
+  height: 2.6rem;
+  position: static;
+}
+.whatsOnNowEvent .channelLogo img,
+.upcomingEvents .channelLogo img {
+  width: auto;
+  height: 100%;
+  position: static;
+}
+.whatsOnNowEvent .watchButton,
+.upcomingEvents .watchButton {
+  width: 9rem;
+  height: 2.625rem;
+  font-size: 0.75rem;
+  line-height: 2.625rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #0280e2;
+  cursor: pointer;
+  margin: 2.2rem 0 2.2rem 1.625rem;
+}
+.whatsOnNowEvent .watchButton:hover,
+.upcomingEvents .watchButton:hover {
+  color: #ddd;
+}
+.whatsOnNowEvent {
+  margin-bottom: 3.5rem;
+}
+.whatsOnNowEvent .teamLogoCol {
+  width: 2.1875rem;
+}
+.whatsOnNowEvent .teamNameCol,
+.whatsOnNowEvent .teamName {
+  width: 8rem;
+}
+.whatsOnNowEvent .scoreCol {
+  width: 1.125rem;
+}
+.whatsOnNowEvent .timePeriodCol {
+  width: 4.6875rem;
+}
+.whatsOnNowEvent .channelLogoCol {
+  width: 10.4375rem;
+}
+.whatsOnNowEvent .channelLogo {
+  margin-left: 2.9375rem;
+}
+/* Search Results */
+/* Upcoming Event */
+.upcomingEvents {
+  margin-bottom: 6rem;
+}
+.upcomingEvents .teamLogoCol {
+  width: 2.25rem;
+  padding-right: 0.3rem;
+}
+.upcomingEvents .teamNameCol,
+.upcomingEvents .teamName {
+  width: 7rem;
+}
+.upcomingEvents .scoreCol {
+  width: 1px;
+  padding-right: 0;
+}
+.upcomingEvents .timePeriodCol {
+  width: 6.5rem;
+}
+.upcomingEvents .channelLogoCol {
+  width: 11rem;
+}
+.upcomingEvents .reminderCol {
+  width: 10.5rem;
+}
+.upcomingEvents .reminderLink img {
+  width: 0.8rem;
+  height: auto;
+  margin-right: 0.4375rem;
+}
+.upcomingEvents .viewLink {
+  text-align: left;
+}
+.upcomingEvents .viewLink img {
+  width: 1.4rem;
+  height: auto;
+  margin-right: 0.375rem;
+}
+/* Settings Pages */
+.settings .main {
+  color: #000000;
+  background-color: #f6f6f6;
+  padding: 2.5rem 3.3125rem 8rem 1.4375rem;
+  position: relative;
+  overflow: hidden;
+  /* Edit Profile Content */
+  /* Notifications Settings Content */
+  /* Manage Subscriptions Content */
+}
+.settings .main h2 {
+  font-size: 1.25rem;
+}
+.settings .main h3 {
+  font-size: 1.125rem;
+}
+.settings .main .providerTitle {
+  margin: 2.5rem 0 0;
+  text-align: center;
+}
+.settings .main #settingsTabs {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px #d9d9d9 solid;
+  max-width: 1280px;
+}
+.settings .main #settingsTabs h2 {
+  display: inline-block;
+  margin: 0 4.5rem 0 0;
+  padding: 0 0 18px 0;
+}
+.settings .main #settingsTabs h2.selected,
+.settings .main #settingsTabs h2:hover {
+  color: #0280e2;
+  padding: 0 0 14px 0;
+  cursor: pointer;
+}
+.settings .main #settingsTabs h2.selected {
+  border-bottom: 4px #0280e2 solid;
+}
+.settings .main .subscriptionForm {
+  position: relative;
+  overflow: hidden;
+  width: 53.75rem;
+}
+.settings .main .subscriptionForm .formInput {
+  float: left;
+  margin: 2.125rem 6.5rem 0 0;
+}
+.settings .main .subscriptionForm .formInput:last-child {
+  margin-right: 0;
+}
+.settings .main .subscriptionForm .formInput label {
+  display: block;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+.settings .main .subscriptionForm input[type="text"] {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  height: 2rem;
+  width: 20.375rem;
+  color: #999999;
+  border: 1px #999999 solid;
+  padding: 0 1rem;
+}
+.settings .main .subscriptionForm button {
+  float: right;
+  width: 10.625rem;
+  height: 2.625rem;
+  font-size: 1.125rem;
+  line-height: 2.625rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #999999;
+  cursor: pointer;
+  border: none;
+}
+.settings .main .subscriptionForm button:hover {
+  color: #ddd;
+}
+.settings .main .subscriptionForm .cancelButton {
+  margin: 2.375rem 2rem 0 0;
+}
+.settings .main .subscriptionForm .saveButton {
+  margin: 2.375rem 6.5rem 0 0;
+  background-color: #0280e2;
+}
+.settings .main .accountLogins {
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.875rem;
+  margin-bottom: 8rem;
+}
+.settings .main .accountLogins #userPhoto {
+  float: left;
+  width: 9rem;
+}
+.settings .main .accountLogins #userPhoto .userPic {
+  border: 1px #cdcdcd solid;
+  margin-bottom: 0.4rem;
+}
+.settings .main .accountLogins #userPhoto a {
+  color: #0280e2;
+  margin-top: 0.5rem;
+  display: block;
+  cursor: pointer;
+}
+.settings .main .accountLogins h3 {
+  margin: 1.625rem 0 1.4375rem;
+}
+.settings .main .accountLogins .logOut {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin: 0 2rem 0 1.625rem;
+}
+.settings .main .accountLogins .logOut p {
+  width: 13.5rem;
+  height: 6rem;
+}
+.settings .main .accountLogins .logIn {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  padding-left: 2.6rem;
+  width: 27rem;
+  border-left: 1px #d3d3d3 solid;
+}
+.settings .main .accountLogins .logIn p {
+  height: 6rem;
+}
+.settings .main .accountLogins .userName {
+  float: left;
+  font-weight: 600;
+  margin: 0.5rem 0 0 0.3rem;
+}
+.settings .main .accountLogins .connectLabel {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.settings .main .notificationCheckboxes {
+  position: relative;
+  overflow: visible;
+  margin: 2.75rem 0 0 0;
+}
+.settings .main .notificationCheckbox {
+  font-size: 1rem;
+  float: left;
+  width: 26.875rem;
+  margin: 0 0 1.625rem;
+}
+.settings .main .notificationCheckbox label {
+  font-weight: 400;
+  height: 21px;
+  line-height: 21px;
+}
+.settings .main .notificationCheckbox input[type="checkbox"] {
+  padding: 0 5rem 0 0;
+}
+.settings .main .notificationCheckbox.newLine {
+  clear: both;
+}
+.settings .main .addBlock {
+  clear: both;
+  font-size: 1.1rem;
+  line-height: 1.5625;
+  text-align: center;
+  padding: 1.46875rem 4rem;
+  max-width: 69.625rem;
+  color: #666666;
+  background-color: #ebebeb;
+  margin: 1.1875rem 0 0 0;
+  cursor: pointer;
+}
+.settings .main .circlePlus {
+  margin-right: 0.4rem;
+}
+.settings .main .leaguePackagesTitle {
+  padding: 3rem 0 0.75rem 0.375rem;
+  border-bottom: 1px #d9d9d9 solid;
+}
+.settings .main .packageLogo {
+  margin: 1.25rem 1.625rem 0.25rem 0;
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+}
+.settings .main .titleColumn {
+  width: 15.375rem;
+}
+.settings .main .messageColumn {
+  width: 17.5rem;
+}
+.settings .main .messageColumn.failed .fa-circle {
+  color: #cc0033;
+}
+.settings .main .messageColumn .fa-circle {
+  font-size: 0.6875rem;
+  color: #3cb878;
+  margin-right: 0.2rem;
+}
+.settings .main .messageColumn span a {
+  margin-left: 0.8rem;
+  color: #0280e2;
+  cursor: pointer;
+}
+.settings .main .editColumn {
+  width: 10.375rem;
+  cursor: pointer;
+}
+.settings .main .editColumn .fa-pencil {
+  color: #0280e2;
+  margin-right: 0.2rem;
+}
+.settings .main .deleteColumn {
+  width: 12rem;
+  cursor: pointer;
+}
+.settings .main .deleteColumn .fa-times-circle {
+  color: #0280e2;
+  margin-right: 0.2rem;
+}
+.settings .main .choosePackage {
+  background-color: #dbecf9;
+  margin: 1.25rem 0 2.5rem;
+}
+.settings .main .choosePackage .labelColumn {
+  padding: 1.6875rem 1.8125rem 1.5rem 1.9375rem;
+}
+.settings .main .choosePackage .chooseColumn {
+  padding-right: 2.5625rem;
+}
+.settings .main .choosePackage .chooseColumn .bootstrap-select > .dropdown-toggle {
+  line-height: 1.875rem;
+  padding: 2px 1.875rem 2px 0.75rem;
+}
+.settings .main .choosePackage .chooseColumn .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  border-right: 1px #acacac solid;
+}
+.settings .main .choosePackage .sportsFilter .btn {
+  border-radius: 0;
+  border: 1px #0280e2 solid;
+  background-color: #ffffff;
+  color: #0280e2;
+  font-size: 1em;
+}
+.settings .main .choosePackage .dropdown-menu {
+  border-radius: 0;
+  font-size: 1em;
+}
+.settings .main .choosePackage .dropdown-menu > li > a:hover {
+  color: #white;
+  background-color: #0280e2;
+}
+.settings .main .choosePackage .usernameColumn label,
+.settings .main .choosePackage .passwordColumn label {
+  opacity: 0.38;
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 0.75;
+  display: block;
+}
+.settings .main .choosePackage .usernameColumn input[type="text"],
+.settings .main .choosePackage .passwordColumn input[type="text"] {
+  font-size: 1rem;
+  line-height: 1.5625;
+  width: 14.375rem;
+  opacity: 0.38;
+}
+.settings .main .choosePackage .usernameColumn {
+  padding-right: 1.5rem;
+}
+.settings .main .choosePackage .passwordColumn {
+  padding-right: 1.875rem;
+}
+.settings .main .choosePackage .signInColumn {
+  padding-right: 3rem;
+}
+.settings .main .choosePackage .signInColumn .signInButton {
+  width: 10.375rem;
+  height: 2.125rem;
+  position: relative;
+  top: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #999999;
+  opacity: 0.38;
+  cursor: pointer;
+}
+.settings .main .choosePackage .signInColumn .signInButton:hover {
+  color: #ddd;
+}
+.settings .main #eventContent {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  display: none;
+}
+.settings .main #eventContent .quickPicks {
+  margin-bottom: 1.847rem;
+  padding-bottom: 1.847rem;
+  z-index: 100;
+}
+.settings .main #eventContent .opaqueBackdrop {
+  z-index: 90;
+}
+/* TV Providers */
+.tvProviders {
+  position: relative;
+  overflow: hidden;
+  margin: 1.625rem auto;
+  width: 43.125rem;
+}
+.tvProviders .tvProvider {
+  width: 8rem;
+  height: 3.25rem;
+  border: 2px #000000 solid;
+  float: left;
+  margin-right: 0.625rem;
+  cursor: pointer;
+}
+.tvProviders .tvProvider:last-child {
+  margin-right: 0;
+}
+.tvProviders .xfinity {
+  background: url("/images/provider-xfinity.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+}
+.tvProviders .directTV {
+  background: url("/images/provider-direct-tv.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+}
+.tvProviders .dish {
+  background: url("/images/provider-dish.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+}
+.tvProviders .twc {
+  background: url("/images/provider-twc.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+}
+.tvProviders .att {
+  background: url("/images/provider-att.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+}
+/* Social Login Buttons */
+.socialLoginButton {
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.25rem;
+}
+.socialLoginButton .icon-facebook {
+  position: relative;
+  top: 0rem;
+  left: -0.1rem;
+  font-size: 0.9rem;
+}
+.socialLoginButton .icon-twitter {
+  position: relative;
+  top: 0.05rem;
+  font-size: 0.8rem;
+}
+.socialLoginButton .icon-google {
+  position: relative;
+  top: 0.2rem;
+}
+.twitterBlock {
+  float: left;
+}
+.googleBlock {
+  float: left;
+  margin-left: 1.75rem;
+}
+button.facebook {
+  background-color: #3a589d;
+}
+button.twitter {
+  background-color: #54abf4;
+}
+button.google {
+  background-color: #dc4c30;
+}
+/* Subcompnents of Program Listings */
+.airDate {
+  width: 6.44rem;
+  background: rgba(53, 53, 53, 0.85);
+  font-weight: 900;
+  line-height: 1.1;
+  position: absolute;
+}
+.airDate.airDateLive {
+  background: rgba(255, 0, 0, 0.85);
+}
+.airTime {
+  font-weight: 300;
+}
+.channelLogo {
+  height: 1.874rem;
+  width: 3.748rem;
+  position: absolute;
+  right: 5.27rem;
+  top: 0.843rem;
+}
+.channelLogo img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.reminder {
+  width: 1.962rem;
+  height: 1.962rem;
+  background-color: #666666;
+  position: absolute;
+  right: 0;
+}
+.reminder img {
+  width: 50%;
+  height: 50%;
+  margin: 25% 25%;
+}
+.reminder.on {
+  background-color: #0280e2;
+}
+.logo img {
+  width: auto;
+  height: 100%;
+}
+.categoryContainer {
+  width: 2.928rem;
+  height: 2.928rem;
+  display: table;
+}
+.category {
+  width: 2.928rem;
+  height: 2.928rem;
+  -webkit-border-top-right-radius: 2.928remm;
+  -webkit-border-bottom-right-radius: 2.928rem;
+  -webkit-border-bottom-left-radius: 2.928rem;
+  -webkit-border-top-left-radius: 2.928rem;
+  -moz-border-radius-topright: 2.928remm;
+  -moz-border-radius-bottomright: 2.928rem;
+  -moz-border-radius-bottomleft: 2.928rem;
+  -moz-border-radius-topleft: 2.928rem;
+  border-top-right-radius: 2.928remm;
+  border-bottom-right-radius: 2.928rem;
+  border-bottom-left-radius: 2.928rem;
+  border-top-left-radius: 2.928rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 0.586rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  display: table-cell;
+  vertical-align: middle;
+}
+.title {
+  width: 13.79rem;
+  height: 2.781rem;
+  font-size: 1.288rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+.title .event {
+  float: left;
+}
+.title .team {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.title .versus {
+  float: left;
+  font-size: 0.703rem;
+  font-weight: 300;
+  margin: 0.527rem 0.4685rem 0 0.4685rem;
+}
+.title .smallTitlePart {
+  display: block;
+  font-weight: 300;
+  margin-bottom: -0.187rem;
+  text-transform: uppercase;
+}
+.leftArrow {
+  width: 5.124rem;
+  height: 13.89rem;
+  background: url("/images/left-arrow-gradient.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.leftArrow a {
+  text-decoration: none;
+}
+.leftArrow .fa-angle-left {
+  color: #ffffff;
+  font-size: 5.15rem;
+  display: block;
+  position: relative;
+  top: 3.748rem;
+  left: 1.406rem;
+  cursor: pointer;
+}
+.leftArrow .fa-angle-left:hover {
+  color: #0280e2;
+}
+.rightArrow {
+  width: 5.124rem;
+  height: 13.89rem;
+  background: url("/images/right-arrow-gradient.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.rightArrow a {
+  text-decoration: none;
+}
+.rightArrow .fa-angle-right {
+  color: #ffffff;
+  font-size: 5.15rem;
+  display: block;
+  position: relative;
+  top: 3.748rem;
+  left: 1.406rem;
+  cursor: pointer;
+}
+.rightArrow .fa-angle-right:hover {
+  color: #0280e2;
+}
+/* Modal Launch Buttons */
+.eventModalLiveBtn {
+  float: left;
+  margin: 0 1.874rem 1.874rem 0;
+  padding: 0.35rem 0.937rem;
+  border-radius: 0.3rem;
+  font-size: 0.703rem;
+  background-color: #0280e2;
+}

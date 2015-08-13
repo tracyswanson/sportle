@@ -1,0 +1,1216 @@
+/*
+ * Description: Sportle.tv HTML/CSS markup to be adapted for Laravel Framework
+ *
+ * @author     	Tracy Swanson <tracy@freyadigital.com>
+ * @uri     		http://freyadigital.com/
+ *
+ */
+/*---------------------------------------------------
+    LESS Elements 0.8
+    Created by:  Dmitry Fadeyev -> http://lesselements.com/
+
+    A set of useful LESS mixins.
+    See CREDITS file for full author list.
+-----------------------------------------------------*/
+/* 6 is the current number of program listings in a row for What's On */
+/* 8 is the current number of program listings in a row for Featured */
+/* 6 is the current number of program listings in a row for Quick Picks */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  background-color: #000000;
+  font-size: 46.85%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* Base Styles */
+body,
+select,
+input,
+textarea {
+  /* set base font family here, to apply evenly */
+  font-family: 'Proxima', sans-serif;
+}
+body {
+  /* base font size and color */
+  color: #222222;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+h3 {
+  font-size: 1.875rem;
+}
+p {
+  margin: 0;
+}
+form {
+  margin: 0;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+a {
+  text-decoration: none;
+}
+/* repsonsive images */
+img {
+  max-width: 100%;
+  /* when images are too wide for containing element, force them to fit. */
+  height: auto;
+  /* override height to match resized width for correct aspect ratio. */
+}
+/*
+ * 	text overflow
+ * 	requires inline-block or block for proper styling
+ */
+.header {
+  background-color: #e8e7e7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 100;
+}
+.header #headerLogo {
+  margin: 1.3125rem 5.29rem 1.6875rem 3.876rem;
+  width: 18.1rem;
+  float: left;
+}
+.header .headerLink {
+  font-size: 1.875rem;
+  float: left;
+  margin-top: 3.3125rem;
+}
+.header .headerLink a {
+  color: #333333;
+  text-decoration: none;
+}
+.header .headerLink a:hover {
+  color: #666666;
+}
+.header .quickPicksLink {
+  margin-left: 6rem;
+}
+.header #searchContent {
+  width: 44rem;
+  height: 4.5rem;
+  float: right;
+  margin: 2rem 3rem 0 1rem;
+  position: relative;
+  overflow: visible;
+}
+.header #searchContentField {
+  width: 100%;
+  border: 0.0625rem solid #7c7b7b;
+  -webkit-border-top-right-radius: 2.4rem;
+  -webkit-border-bottom-right-radius: 2.4rem;
+  -webkit-border-bottom-left-radius: 2.4rem;
+  -webkit-border-top-left-radius: 2.4rem;
+  -moz-border-radius-topright: 2.4rem;
+  -moz-border-radius-bottomright: 2.4rem;
+  -moz-border-radius-bottomleft: 2.4rem;
+  -moz-border-radius-topleft: 2.4rem;
+  border-top-right-radius: 2.4rem;
+  border-bottom-right-radius: 2.4rem;
+  border-bottom-left-radius: 2.4rem;
+  border-top-left-radius: 2.4rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 1.625rem;
+  line-height: 3.8rem;
+  padding: 0 6rem 0 2rem;
+}
+.header #searchContentField::-webkit-input-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField:-moz-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField::-moz-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField:-ms-input-placeholder {
+  color: #7c7b7b;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header #searchContentField:focus {
+  border: 0.0625rem solid #61aae4;
+}
+.header .searchIcon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  font-size: 1.875rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.header .searchIcon:hover {
+  color: #0280e2;
+}
+.header .userNotifications {
+  font-size: 3rem;
+  float: right;
+  margin: 2.875rem 4.26875rem 0 0;
+  color: #000000;
+}
+.header .userNotifications:hover {
+  color: #0280e2;
+}
+.header #userPic {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  border: 0.125rem #333333 solid;
+  border-radius: 50%;
+  float: right;
+  margin: 1.875rem 1.5rem 0 0;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.header #userPic:hover {
+  border: 0.125rem #0280e2 solid;
+}
+.header #userProfile {
+  float: right;
+  font-size: 1.8rem;
+  margin: 3.3125rem 5.58rem 0 0;
+  color: #333333;
+  text-decoration: none;
+}
+.header #userProfile:hover {
+  color: #0280e2;
+}
+.header .settingsDownArrow {
+  font-size: 1.5rem;
+  margin: 0 0 0 1.2rem;
+  position: relative;
+  top: 0.25rem;
+}
+.header .pointerTriangle {
+  position: absolute;
+  left: 48.75rem;
+  top: 5.3rem;
+  font-size: 4rem;
+  display: none;
+}
+.main {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.75rem;
+  margin-top: 8rem;
+  padding: 3.3125rem 0 3.3125rem 0;
+}
+.main .opaqueBackdrop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.main #homepageFilters {
+  margin: 1rem 4.4375rem 0rem 4.4375rem;
+}
+.main #homepageFilters h3 {
+  float: left;
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+.main #homepageFilters label {
+  font-weight: 300;
+}
+.main #homepageFilters label[for="sportsFilter"] {
+  float: left;
+  margin-left: 5.7rem;
+}
+.main #homepageFilters .sportleSelect {
+  float: left;
+  margin: -0.4em 0 0 2.5rem;
+}
+.main #homepageFilters .sportsFilter .btn {
+  border-radius: 0;
+  border: none;
+  background-color: #292929;
+  background: url("../images/select-sports-bkgd.jpg") no-repeat 0 0 #292929;
+  background-size: 100% 100%;
+  color: #ffffff;
+  font-size: 1.4rem;
+  padding: 0.75rem 1.16rem;
+}
+.main #homepageFilters .dropdown-menu {
+  border-radius: 0;
+  font-size: 1.4rem;
+}
+.main #homepageFilters .dropdown-menu > li > a:hover {
+  color: #white;
+  background-color: #0280e2;
+}
+.main #homepageFilters label[for="streamBtns"] {
+  float: left;
+  margin: 0 2rem 0 4.5rem;
+}
+.main #homepageFilters .streamBtn.active {
+  background-color: #0280e2;
+  color: #ffffff;
+  float: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.4rem 1.65rem;
+  margin: -0.6rem 0 0 0;
+  border: none;
+  border-radius: 0;
+}
+.main #homepageFilters .streamBtn {
+  background-color: #292929;
+  color: #666666;
+  float: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.4rem 1.65rem;
+  margin: -0.6rem 0 0 0;
+  border: none;
+  border-radius: 0;
+  width: 5.8rem;
+}
+.main #homepageFilters .streamBtn:hover {
+  background-color: #0280e2;
+  color: #ffffff;
+}
+.main hr {
+  background-color: #444343;
+  border: none;
+  height: 1px;
+  margin: 2.5rem 4.4375rem 0 4.4375rem;
+}
+.main #homeContent {
+  position: relative;
+  overflow: hidden;
+}
+.main #homeContent h2 {
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0 2.3rem 4.6375rem;
+}
+.main #homeContent .programListingsScroll {
+  width: 100%;
+  height: 29.625rem;
+  position: relative;
+  overflow: hidden;
+}
+.main #homeContent .programListing:first-child {
+  margin-left: 4rem;
+}
+.main #homeContent .programListing {
+  width: 38.375rem;
+  height: 29.625rem;
+  float: left;
+  margin: 0 4rem 0 0;
+  position: relative;
+  overflow: visible;
+}
+.main #homeContent .programListing .screenShot {
+  position: relative;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main #homeContent .programListing .screenShot .gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main #homeContent .programListing .screenOverlay {
+  position: relative;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 21.375rem;
+}
+.main #homeContent .programListing .screenOverlay .airDate {
+  width: 13.75rem;
+  height: 5rem;
+  position: absolute;
+  right: 0;
+  top: 1.3rem;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 2.4rem;
+  -webkit-border-top-left-radius: 2.4rem;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 2.4rem;
+  -moz-border-radius-topleft: 2.4rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2.4rem;
+  border-top-left-radius: 2.4rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.3rem 0 0 3.375rem;
+}
+.main #homeContent .programListing .screenOverlay .airTime {
+  font-weight: 300;
+}
+.main #homeContent .programListing .screenOverlay .channelLogo {
+  height: 4rem;
+  width: 8rem;
+  position: absolute;
+  right: 11.25rem;
+  top: 1.8rem;
+}
+.main #homeContent .programListing .screenOverlay .channelLogo img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.main #homeContent .programListing .screenOverlay .reminder {
+  right: 0;
+  top: 6.7rem;
+}
+.main #homeContent .programListing .screenOverlay .reminder.on {
+  background-color: #0280e2;
+}
+.main #homeContent .programListing .screenOverlay .logo {
+  height: 4rem;
+  max-width: 6.25rem;
+  float: left;
+  margin: 15.625rem 1.625rem 1.25rem 1.25rem;
+}
+.main #homeContent .programListing .screenOverlay .logo img {
+  width: auto;
+  height: 100%;
+}
+.main #homeContent .programListing .screenOverlay .categoryContainer {
+  width: 6.25rem;
+  height: 6.25rem;
+  display: table;
+  float: left;
+  margin: 13.875rem 1.625rem 1.25rem 1.25rem;
+}
+.main #homeContent .programListing .screenOverlay .category {
+  width: 6.25rem;
+  height: 6.25rem;
+  -webkit-border-top-right-radius: 6.25rem;
+  -webkit-border-bottom-right-radius: 6.25rem;
+  -webkit-border-bottom-left-radius: 6.25rem;
+  -webkit-border-top-left-radius: 6.25rem;
+  -moz-border-radius-topright: 6.25rem;
+  -moz-border-radius-bottomright: 6.25rem;
+  -moz-border-radius-bottomleft: 6.25rem;
+  -moz-border-radius-topleft: 6.25rem;
+  border-top-right-radius: 6.25rem;
+  border-bottom-right-radius: 6.25rem;
+  border-bottom-left-radius: 6.25rem;
+  border-top-left-radius: 6.25rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 1.25rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  display: table-cell;
+  vertical-align: middle;
+}
+.main #homeContent .programListing .screenOverlay .category.blue {
+  background-color: #093a80;
+}
+.main #homeContent .programListing .screenOverlay .category.darkPurple {
+  background-color: #351c35;
+}
+.main #homeContent .programListing .screenOverlay .category.green {
+  background-color: #06646e;
+}
+.main #homeContent .programListing .screenOverlay .category.lightBlue {
+  background-color: #003965;
+}
+.main #homeContent .programListing .screenOverlay .category.orange {
+  background-color: #cc5006;
+}
+.main #homeContent .programListing .screenOverlay .category.red {
+  background-color: #650000;
+}
+.main #homeContent .programListing .screenOverlay .title {
+  width: 100%;
+  max-width: 29.125rem;
+  height: 5.937rem;
+  font-size: 2.75rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+  margin: 15.625rem 0 0 0;
+}
+.main #homeContent .programListing .screenOverlay .title .titleWide {
+  width: 200rem;
+}
+.main #homeContent .programListing .screenOverlay .title .event {
+  float: left;
+}
+.main #homeContent .programListing .screenOverlay .title .team {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main #homeContent .programListing .screenOverlay .title .versus {
+  float: left;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 1.125rem 1rem 0 1rem;
+}
+.main #homeContent .programListing .screenOverlay .title .smallTitlePart {
+  display: block;
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-bottom: -0.4rem;
+  text-transform: uppercase;
+}
+.main #homeContent .programListing .infoBox {
+  width: 100%;
+  height: 8.25rem;
+  color: #020202;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+.main #homeContent .programListing .infoBox h4 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0 -1.5rem 2rem;
+}
+.main #homeContent .programListing .infoBox p {
+  font-size: 1.75rem;
+  margin: 1.5rem 0 0 2rem;
+  max-height: 4.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main #homeContent .programListing .infoBox .eventStatus {
+  position: relative;
+  overflow: hidden;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team {
+  clear: both;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team .teamLogo {
+  width: 3rem;
+  margin: 0.6rem 0 0 1.0625rem;
+  float: left;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team .teamName {
+  float: left;
+  margin: 0.6rem 0 0 2rem;
+  width: 16.875rem;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team .teamName.ahead {
+  font-weight: 600;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team .score {
+  float: left;
+  margin-top: 0.6rem;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team .score.ahead {
+  font-weight: 600;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team1 .teamName {
+  position: relative;
+  top: 0.5rem;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team1 .score {
+  position: relative;
+  top: 0.5rem;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team2 .teamName {
+  position: relative;
+  top: -0.5rem;
+}
+.main #homeContent .programListing .infoBox .eventStatus .team2 .score {
+  position: relative;
+  top: -0.5rem;
+}
+.main #homeContent .programListing .infoBox .eventStatus .timePeriod {
+  width: 10rem;
+  height: 4.9375rem;
+  border-left: #e3e3e3 0.4375rem solid;
+  font-size: 2.25rem;
+  position: absolute;
+  bottom: -0.8rem;
+  right: 0;
+  margin: 1.6rem 0;
+  text-align: center;
+}
+.main #homeContent .programListing .infoBox .eventStatus .timePeriod .timeElapsed {
+  display: block;
+  font-size: 1.875rem;
+}
+.main #homeContent .featured {
+  clear: both;
+}
+.main #homeContent .whatsOnNow h2 {
+  margin-top: 3rem;
+}
+.main #homeContent .featured,
+.main #homeContent .whatsOnNow,
+.main #homeContent .quickPicks {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 4rem 0;
+  width: 100%;
+}
+.main #homeContent .quickPicks {
+  position: fixed;
+  top: 7.9375rem;
+  left: 0;
+  background-color: #000;
+  padding: 5rem 0 0 0;
+  z-index: 200;
+  display: none;
+}
+.main #homeContent .whatsOnNow .programListings {
+  width: 259.25rem;
+}
+.main #homeContent .featured .programListings {
+  width: 344rem;
+}
+.main #homeContent .quickPicks .programListings {
+  width: 259.25rem;
+}
+.footer {
+  background-color: #000;
+  padding: 3.3125rem 4.4375rem;
+}
+.modal-content {
+  border-radius: 1.5rem;
+}
+#liveEventAlt .modal-dialog {
+  width: 78.94rem;
+  height: 46.6875rem;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#liveEventAlt .modal-dialog .modal-content {
+  position: relative;
+  overflow: hidden;
+  height: 46.6875rem;
+  background: url("../images/heat-vs-hornets.jpg") no-repeat 0 -5rem transparent;
+  background-size: 100% 124%;
+  color: #fff;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay {
+  background: url("../images/modal-gradient-overlay.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 24.3125rem;
+  width: 100%;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .airDate {
+  left: 0;
+  top: 3.3rem;
+  height: 4.7rem;
+  -webkit-border-top-right-radius: 2.4rem;
+  -webkit-border-bottom-right-radius: 2.4rem;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 2.4rem;
+  -moz-border-radius-bottomright: 2.4rem;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 2.4rem;
+  border-bottom-right-radius: 2.4rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0.3rem 1.875rem 0 1.5rem;
+  font-size: 1.75rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .reminder {
+  left: 0;
+  top: 8rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .logo {
+  width: auto;
+  height: 5.125rem;
+  position: absolute;
+  top: 17.9375rem;
+  left: 2rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title {
+  position: absolute;
+  top: 18rem;
+  left: 7.6rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title .team {
+  font-size: 3.25rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title .smallTitlePart {
+  font-size: 1.625rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .title .versus {
+  font-size: 1.75rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus {
+  width: 24.625rem;
+  height: 7.125rem;
+  position: absolute;
+  right: 0;
+  bottom: 7.25rem;
+  background: rgba(0, 0, 0, 0.48);
+  padding: 1.625rem 2rem 0 2.125rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team {
+  width: 14rem;
+  position: relative;
+  overflow: hidden;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .teamName {
+  float: left;
+  width: 11.875rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .score {
+  float: left;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .ahead {
+  font-weight: 600;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod {
+  position: absolute;
+  top: 2.2rem;
+  right: 2rem;
+  font-weight: bold;
+  text-align: right;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod .timeElapsed {
+  display: block;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .viewership {
+  width: 24.625rem;
+  height: 7.125rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.48);
+  padding: 1.625rem 2rem 0 2.125rem;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .who {
+  float: left;
+}
+#liveEventAlt .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .count {
+  float: right;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay {
+  position: absolute;
+  left: 0;
+  top: 24.3125rem;
+  background-color: #ffffff;
+  padding: 0.75rem 2.25rem;
+  height: 22.375rem;
+  width: 100%;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay h4 {
+  color: #666666;
+  font-size: 1.5rem;
+  margin-bottom: -0.2rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay hr {
+  margin: 1.9rem 0;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchSection {
+  margin-top: 1.2rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchLogo {
+  background: url("../images/ballstreams-logo.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 19.125rem;
+  height: 3.875rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeLogo {
+  background: url("../images/nba-league-pass.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 19rem;
+  height: 3.75rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchNowBtn,
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  float: right;
+  width: 15rem;
+  padding: 1.125rem 0.75rem;
+  border-radius: 0.625rem;
+  border: none;
+  font-size: 1.5rem;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchNowBtn:hover,
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeBtn:hover {
+  opacity: 0.8;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .watchNowBtn {
+  background-color: #0280e2;
+}
+#liveEventAlt .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  background-color: #828282;
+}
+#liveEventAlt button.close {
+  color: #fff;
+  background-color: #000000;
+  border: 2px #fff solid;
+  opacity: 1;
+  font-size: 3.4rem;
+  line-height: 1;
+  padding: 0 0.8125rem;
+  border-radius: 5rem;
+  margin: 0.625rem 1.125rem;
+}
+#liveEventAlt button.close:hover {
+  opacity: 0.6;
+}
+#liveEvent .modal-dialog {
+  width: 78.94rem;
+  height: 46.6875rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#liveEvent .modal-dialog .modal-body {
+  padding: 2.375rem 2.25rem;
+}
+#liveEvent .modal-dialog .modal-content {
+  position: relative;
+  overflow: hidden;
+  height: 46.6875rem;
+  background-color: #fff;
+  background-size: 100% 124%;
+  color: #333333;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay {
+  left: 0;
+  top: 0;
+  height: 24.3125rem;
+  width: 100%;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage {
+  width: 24.375rem;
+  height: 18.125rem;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage .eventPic {
+  width: 100%;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage .airDate {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4.25rem;
+  width: 20.1875rem;
+  padding: 1.5rem 1rem 0 1rem;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: normal;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .eventImage .reminder {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .airTime {
+  position: absolute;
+  left: 28.75rem;
+  top: 2.375rem;
+  color: #333333;
+  font-size: 1.625rem;
+  font-weight: bold;
+  line-height: 1;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .logo {
+  width: auto;
+  height: 5.125rem;
+  position: absolute;
+  top: 5.75rem;
+  left: 28.75rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title {
+  position: absolute;
+  top: 5.75rem;
+  left: 33.125rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title .team {
+  font-size: 3.25rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title .smallTitlePart {
+  font-size: 1.625rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .title .versus {
+  font-size: 1.75rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox {
+  color: #333333;
+  font-size: 1.75rem;
+  font-weight: 300;
+  position: relative;
+  overflow: hidden;
+  border-top: 0.3125rem solid #cdcdcd;
+  padding-top: 0.875rem;
+  position: absolute;
+  left: 28.75rem;
+  top: 12.75rem;
+  width: 46.25rem;
+  height: 7.875rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus {
+  width: 23.125rem;
+  height: 7.875rem;
+  float: left;
+  background-color: #e2eef7;
+  padding: 0.875rem 2rem 0 2.125rem;
+  position: relative;
+  overflow: hidden;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team {
+  width: 14rem;
+  position: relative;
+  overflow: hidden;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .teamName {
+  float: left;
+  width: 11rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .score {
+  float: left;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .team .ahead {
+  font-weight: 600;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 1.78rem;
+  font-weight: 300;
+  text-align: center;
+  color: #999999;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .eventStatus .timePeriod .timeElapsed {
+  display: block;
+  font-size: 1.48375rem;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .viewership {
+  width: 23.125rem;
+  height: 7.875rem;
+  float: left;
+  background-color: #f5f5f5;
+  padding: 0.875rem 2rem 0 2.125rem;
+  color: #333333;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .who {
+  float: left;
+}
+#liveEvent .modal-dialog .modal-content .topOverlay .infoBox .viewership .whosWatching .count {
+  float: right;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay {
+  position: absolute;
+  left: 0;
+  top: 21.3125rem;
+  background-color: #ffffff;
+  padding: 0.75rem 2.25rem;
+  height: 25.375rem;
+  width: 100%;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay h4 {
+  color: #666666;
+  font-size: 1.5rem;
+  margin-bottom: -0.2rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay hr {
+  margin: 1.9rem 0;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchSection {
+  margin-top: 1.2rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchLogo {
+  background: url("../images/ballstreams-logo.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 19.125rem;
+  height: 3.875rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeLogo {
+  background: url("../images/nba-league-pass.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  width: 19rem;
+  height: 3.75rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchNowBtn,
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  float: right;
+  width: 15rem;
+  padding: 1.125rem 0.75rem;
+  border-radius: 0.625rem;
+  border: none;
+  font-size: 1.5rem;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchNowBtn:hover,
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeBtn:hover {
+  opacity: 0.8;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .watchNowBtn {
+  background-color: #0280e2;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeBtn {
+  background-color: #828282;
+}
+#liveEvent .modal-dialog .modal-content .bottomOverlay .subscribeMessage {
+  font-size: 1.375rem;
+  font-weight: 300;
+  color: #666666;
+  width: 34.375rem;
+  position: absolute;
+  top: 13rem;
+  left: 23rem;
+}
+#liveEvent button.close {
+  color: #fff;
+  background-color: #b9b9b9;
+  opacity: 1;
+  font-size: 3.4rem;
+  line-height: 1;
+  padding: 0 0.8125rem;
+  border-radius: 5rem;
+  margin: 0.625rem 1.125rem;
+}
+#liveEvent button.close:hover {
+  opacity: 0.6;
+}
+.airDate {
+  width: 13.75rem;
+  background: rgba(53, 53, 53, 0.85);
+  font-weight: 900;
+  line-height: 1.1;
+  position: absolute;
+}
+.airDate.airDateLive {
+  background: rgba(255, 0, 0, 0.85);
+}
+.airTime {
+  font-weight: 300;
+}
+.channelLogo {
+  height: 4rem;
+  width: 8rem;
+  position: absolute;
+  right: 11.25rem;
+  top: 1.8rem;
+}
+.channelLogo img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.reminder {
+  width: 4.1875rem;
+  height: 4.1875rem;
+  background-color: #666666;
+  position: absolute;
+  right: 0;
+}
+.reminder img {
+  width: 50%;
+  height: 50%;
+  margin: 25% 25%;
+}
+.reminder.on {
+  background-color: #0280e2;
+}
+.logo img {
+  width: auto;
+  height: 100%;
+}
+.categoryContainer {
+  width: 6.25rem;
+  height: 6.25rem;
+  display: table;
+}
+.category {
+  width: 6.25rem;
+  height: 6.25rem;
+  -webkit-border-top-right-radius: 6.25rem;
+  -webkit-border-bottom-right-radius: 6.25rem;
+  -webkit-border-bottom-left-radius: 6.25rem;
+  -webkit-border-top-left-radius: 6.25rem;
+  -moz-border-radius-topright: 6.25rem;
+  -moz-border-radius-bottomright: 6.25rem;
+  -moz-border-radius-bottomleft: 6.25rem;
+  -moz-border-radius-topleft: 6.25rem;
+  border-top-right-radius: 6.25rem;
+  border-bottom-right-radius: 6.25rem;
+  border-bottom-left-radius: 6.25rem;
+  border-top-left-radius: 6.25rem;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 1.25rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  display: table-cell;
+  vertical-align: middle;
+}
+.title {
+  width: 29.437rem;
+  height: 5.937rem;
+  font-size: 2.75rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+.title .titleWide {
+  width: 200rem;
+}
+.title .event {
+  float: left;
+}
+.title .team {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.title .versus {
+  float: left;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 1.125rem 1rem 0 1rem;
+}
+.title .smallTitlePart {
+  display: block;
+  font-weight: 300;
+  margin-bottom: -0.4rem;
+  text-transform: uppercase;
+}
+.leftArrow {
+  width: 10.9375rem;
+  height: 29.65rem;
+  background: url("/images/left-arrow-gradient.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.leftArrow a {
+  text-decoration: none;
+}
+.leftArrow .fa-angle-left {
+  color: #ffffff;
+  font-size: 11rem;
+  display: block;
+  position: relative;
+  top: 8rem;
+  left: 3rem;
+  cursor: pointer;
+}
+.leftArrow .fa-angle-left:hover {
+  color: #333333;
+}
+.rightArrow {
+  width: 10.9375rem;
+  height: 29.65rem;
+  background: url("/images/right-arrow-gradient.png") no-repeat 0 0 transparent;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.rightArrow a {
+  text-decoration: none;
+}
+.rightArrow .fa-angle-right {
+  color: #ffffff;
+  font-size: 11rem;
+  display: block;
+  position: relative;
+  top: 8rem;
+  left: 3rem;
+  cursor: pointer;
+}
+.rightArrow .fa-angle-right:hover {
+  color: #666666;
+}
+.eventModalLiveBtn {
+  float: left;
+  margin: 0 4rem 4rem 0;
+  padding: 0.75rem 2rem;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  background-color: #0280e2;
+}

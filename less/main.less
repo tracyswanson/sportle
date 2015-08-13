@@ -1,0 +1,2717 @@
+/*
+ * Description: Sportle.tv HTML/CSS markup to be adapted for Laravel Framework
+ *
+ * @author     	Tracy Swanson <tracy@freyadigital.com>
+ * @uri     		http://freyadigital.com/
+ *
+ */
+
+/*---------------------------------------------------
+    LESS Elements 0.8
+    Created by:  Dmitry Fadeyev -> http://lesselements.com/
+
+    A set of useful LESS mixins.
+    See CREDITS file for full author list.
+-----------------------------------------------------*/
+@import "_elements.less";
+
+@headerColor: #e8e7e7;
+@mainFontColor: #222222;
+@sportleBlue: #0280e2;
+@lightGray: #666666;
+@darkGray: #333333;
+@charcoal: #292929;
+@white: #fff;
+@black: #000;
+
+@headerFontSize: 0.8785rem;
+@pageMaxWidth: 1280px;
+
+@programListingWidth: 17.98rem;
+@programListingHeight: 13.879rem;
+@whatsOnRowWidth: ( ( @programListingWidth + 1.874 ) * 6 ) + 2;  /* 6 is the current number of program listings in a row for What's On */
+@featuredRowWidth:  ( ( @programListingWidth + 1.874 ) * 8 ) + 2; /* 8 is the current number of program listings in a row for Featured */
+@quickPicksRowWidth:  ( ( @programListingWidth + 1.874 ) * 6 ) + 2; /* 6 is the current number of program listings in a row for Quick Picks */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  	box-sizing: border-box;
+  	background-color: @headerColor;
+  	font-size: 100%;
+}
+*, *:before, *:after {
+  	box-sizing: inherit;
+}
+
+/* Base Styles */
+body,
+select,
+input,
+textarea {
+  	/* set base font family here, to apply evenly */
+  	font-family: 'Proxima', sans-serif;
+}
+
+body {
+	/* base font size and color */
+	color: @mainFontColor;
+	background-color: @headerColor;
+  	font-size: 16px;
+  	font-weight: 400;
+  	line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 0;
+}
+h3 {
+	font-size: 0.8785rem;
+}
+p {
+	margin: 0;
+}
+form {
+	margin: 0;
+}
+select {
+	appearance: none;
+	-webkit-appearance: none;
+  	-webkit-border-radius: 0px;
+}
+a {
+	text-decoration: none;
+	color: @black;
+
+	&:hover {
+		color: @sportleBlue;
+		text-decoration: none;
+	}
+}
+
+/* repsonsive images */
+img {
+	max-width: 100%; 	/* when images are too wide for containing element, force them to fit. */
+	height: auto; 		/* override height to match resized width for correct aspect ratio. */
+}
+
+/*
+ * 	text overflow
+ * 	requires inline-block or block for proper styling
+ */
+.textOverflow() {
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+.colorMixin(@color:false) when not (@color=false){color: @color;}
+.styleMixin(@style:false) when not (@style=false){
+    .style(@style) when (@style=italic) {font-style: @style;}
+    .style(@style) when (@style=bold) {font-weight: @style;}
+    .style(@style);
+}
+.placeholder(@color: false, @style: false){
+    &::-webkit-input-placeholder {
+        .colorMixin(@color);
+        .styleMixin(@style);
+        .textOverflow;
+    }
+    &:-moz-placeholder {
+        .colorMixin(@color);
+        .styleMixin(@style);
+        .textOverflow;
+    }
+    &::-moz-placeholder {
+        .colorMixin(@color);
+        .styleMixin(@style);
+        .textOverflow;
+    }
+    &:-ms-input-placeholder {
+        .colorMixin(@color);
+        .styleMixin(@style);
+        .textOverflow;
+    }
+}
+/* Header */
+.header {
+	background-color: @headerColor;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	overflow: visible;
+	z-index: 100;
+
+	#headerLogo {
+		margin: 0.615rem 2.478rem 0.79rem 1.816rem;
+		width: 8.48rem;
+		height: 2.314rem;
+		float: left;
+	}
+	.headerLink {
+		font-size: @headerFontSize;
+		float: left;
+		margin-top: 1.55rem;
+		cursor: pointer;
+		color: @darkGray;
+		text-decoration: none;
+
+		&:hover {
+			color: @sportleBlue;
+		}
+	}
+	.whatsOnNowLink {
+		width: 6rem;
+	}
+	.quickPicksLink {
+		margin-left: 2.343rem;
+		width: 4.539rem;
+	}
+	#searchContent {
+		width: 20.61rem;
+		height: 2.1rem;
+		float: right;
+		margin: 0.937rem 1.406rem 0 0.4685rem;
+		position: relative;
+		overflow: visible;
+	}
+	#searchContentField {
+		width: 100%;
+		border: 1px solid #7c7b7b;
+		#border.radius(1.124rem, 1.124rem, 1.124rem, 1.124rem);
+		font-size: 0.7613rem;
+		line-height: 1.78rem;
+		padding: 0 2.81rem 0 0.937rem;
+		.placeholder(#7c7b7b, italic);
+	}
+	#searchContentField:focus {
+		border: 1px solid #61aae4;
+		outline: none;
+	}
+	.searchIcon {
+	    background: transparent;
+	    border: none;
+	    cursor: pointer;
+	    color: @black;
+	    font-size: @headerFontSize;
+	    position: absolute;
+	    right: 0.5rem;
+	    top: 0.4rem;
+	    #transform.scaleX(-1);
+
+	    &:hover {
+			color: @sportleBlue;
+		}
+	}
+	.userNotifications {
+		font-size: 1.406rem;
+		float: right;
+		padding: 1.347rem 2rem 0 0;
+		color: @black;
+		position: relative;
+		overflow: visible;
+		display: table;
+		cursor: pointer;
+
+		&:hover {
+			color: @sportleBlue;
+		}
+
+		.notificationsNumber {
+			position: absolute;
+			left: 0.656rem;
+			top: 0.89rem;
+			width: 1.113rem;
+			height: 1.113rem;
+		    border-radius: 1.874rem;
+		    display: table-cell;
+		    color: @white;
+		    background-color: #cf392c;
+		    font-size: 0.75rem;
+		    line-height: 1.113rem;
+		    font-weight: 300;
+		    overflow: hidden;
+		    text-align: center;
+		    text-transform: uppercase;
+		    vertical-align: middle;
+		}
+	}
+	#userProfile {
+		cursor: pointer;
+
+		#userPic {
+			width: 2.108rem;
+			height: 2.108rem;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 100% 100%;
+			border: 0.0585rem @darkGray solid;
+			border-radius: 50%;
+			float: right;
+			margin: 0.8785rem 0.703rem 0 0;
+			#shadow.inner(@horizontal:2px, @vertical:2px);
+		}
+		#userName {
+			float: right;
+			font-size: 0.843rem;
+			margin: 1.55rem 3.28rem 0 0;
+			color: @darkGray;
+			text-decoration: none;
+		}
+		&:hover {
+			#userPic {
+				border: 0.0585rem @sportleBlue solid;
+			}
+			#userName {
+				color: @sportleBlue;
+			}
+		}
+	}
+	.settingsDownArrow {
+		font-size: 0.703rem;
+		margin: 0 0 0 0.562rem;
+		position: relative;
+		top: 0.117rem;
+	}
+	.whatsOnDropDownTriangle {
+		position: absolute;
+		left: 15rem;
+		top: 2.45rem;
+		font-size: 1.874rem;
+		line-height: 1;
+		color: #0282e5;
+		display: none;
+	}
+	.quickPicksTriangle {
+		position: absolute;
+		left: 22.34rem;
+		top: 2.45rem;
+		font-size: 1.874rem;
+		line-height: 1;
+		display: none;
+	}
+	.notificationsTriangle {
+		display: none;
+		position: absolute;
+		right: 15.133rem;
+		top: 2.74rem;
+		font-size: 1.64rem;
+		line-height: 1;
+		color: #f9f9f9;
+	}
+	.userTriangle {
+		display: none;
+		position: absolute;
+		right: 2.67rem;
+		top: 2.74rem;
+		font-size: 1.64rem;
+		line-height: 1;
+		color: #f9f9f9;
+	}
+	.dropDownMenu {
+		display: none;
+		position: absolute;
+		list-style: none;
+		background-color: #f9f9f9;
+		border: 1px #c3c3c3 solid;
+		border-top: none;
+		padding: 0.293rem 0;
+		margin: 0;
+
+		li {
+			font-size: 0.937rem;
+			border-bottom: 1px #b8b8b8 solid;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+		li.emptyMenu {
+			border-bottom: none;
+
+			.spacer {
+				height: 1.124rem;
+				width: 2.343rem;
+			}
+		}
+	}
+	#searchResults {
+		position: absolute;
+		right: 18.076rem;
+		top: 3.72rem;
+		padding: 0.293rem 0;
+
+		.unread {
+			background-color: #ebebeb;
+		}
+		.resultsHeader {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			font-size: 0.703rem;
+
+			 h3 {
+			 	float: left;
+			 	font-size: 0.703rem;
+			 	color: #999999;
+			 }
+			 .viewAll {
+			 	float: right;
+			 	font-weight: 600;
+			 	color: @sportleBlue;
+			 	cursor: pointer;
+
+			 	a {
+			 		color: @sportleBlue;
+			 	}
+			 }
+		}
+		.league {
+			border-bottom: none;
+			padding-bottom: 0;
+			padding-left: 1.406rem;
+			font-size: 0.703rem;
+			color: #999999;
+		}
+		li {
+			display: table;
+			margin: 0;
+			padding: 0.7613rem 0.7613rem;
+			width: 100%;
+
+			span {
+				display: inline-block;
+			}
+			.image {
+				vertical-align: top;
+				width: 2.723rem;
+				display: table-cell;
+			}
+			.screenShot {
+				width: 2.723rem;
+				height: 0.8346rem;
+				margin-right: 1.406rem;
+			}
+			.logo {
+				width: 2.723rem;
+				height: 2.05rem;
+				margin-right: 1.406rem;
+				text-align: center;
+
+				img {
+					width: auto;
+					height: 100%;
+				}
+			}
+			.teams {
+				width:  10.835rem;
+				height: 2.05rem;
+				padding: 0 0.234rem 0 0;
+				display: table-cell;
+				vertical-align: middle;
+				color: #666666;
+			}
+			.typed {
+				color: #000;
+			}
+			a:hover .typed {
+				color: @sportleBlue;
+			}
+			.gameTime,
+			.favorite {
+				height: 100%;
+				vertical-align: top;
+				text-align: right;
+				float: right;
+			}
+			.gameTime {
+				color: #000;
+			}
+			.favorite {
+				color: #f3a41c;
+				margin-top: 0.3rem;
+			}
+			a {
+				color: #666666;
+				text-decoration: none;
+				font-weight: 600;
+
+				&:hover {
+					color: @sportleBlue;
+				}
+			}
+		}
+	}
+	#notifications {
+		position: absolute;
+		right: 13.177rem;
+		top: 3.72rem;
+		padding: 0.293rem 0;
+
+		.unread {
+			background-color: #ebebeb;
+		}
+		.notificationsHeader {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+
+			 h3 {
+			 	float: left;
+			 	font-weight: 600;
+			 }
+			 .markAllRead {
+			 	float: right;
+			 	color: @sportleBlue;
+			 	cursor: pointer;
+			 }
+		}
+		li {
+			display: table;
+			margin: 0;
+			padding: 0.903rem 0.7613rem;
+			width: 100%;
+
+			span {
+				display: inline-block;
+			}
+			.orange {
+				background-color: #ff6600;
+			}
+			.notificationIcon {
+				width: 2.577rem;
+				height: 2.577rem;
+			    border-radius: 2.928rem;
+			    display: table-cell;
+			    color: @white;
+			    font-size: 0.586rem;
+			    font-weight: 600;
+			    overflow: hidden;
+			    text-align: center;
+			    text-transform: uppercase;
+			    vertical-align: middle;
+			}
+			.croppedLogo {
+				width: 2.577rem;
+				height: 2.577rem;
+				overflow: hidden;
+				background-size: 366.67% 100%;
+
+				img {
+					top: 0;
+					left: 0;
+				}
+			}
+			.notificationMessage {
+				width: 16.984rem;
+				margin: 0 0.7613rem;
+			}
+			.notificationTime {
+				height: 100%;
+				vertical-align: top;
+				text-align: right;
+				float: right;
+				color: #999999;
+			}
+			a {
+				color: @sportleBlue;
+				text-decoration: none;
+				font-weight: 600;
+
+				&:hover {
+					color: @sportleBlue;
+				}
+			}
+		}
+	}
+	#userSettings {
+		position: absolute;
+		right: 1.55rem;
+		top: 3.72rem;
+
+		li {
+			margin: 0 1.406rem;
+			padding: 0.703rem 7.32rem 0.703rem 1.083rem;
+
+			a {
+				color: #0a131f;
+				text-decoration: none;
+
+				&:hover {
+					color: @sportleBlue;
+				}
+			}
+		}
+	}
+}
+
+.home .main {
+	color: @white;
+	background-color: @black;
+}
+/* Main Body Content */
+.main {
+	font-size: 0.82rem;
+	margin-top: 3.748rem;
+	padding: 1.55rem 0 1.55rem 0;
+	min-height: 35rem;
+
+	.opaqueBackdrop {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: rgba( 0, 0, 0, 0.8 );
+		display: none;
+	}
+	/* Filters */
+	#homepageFilters {
+		margin: 0.4685rem 2.079rem 0rem 2.079rem;
+
+		h3 {
+			float: left;
+			font-weight: 600;
+			margin-left: 0.14rem;
+		}
+		label {
+			font-weight: 300;
+		}
+		label[for="sportsFilter"] {
+			float: left;
+			margin-left: 2.67rem;
+		}
+		.sportleSelect {
+			float: left;
+			margin: -0.187rem 0 0 1.171rem;
+		}
+		.sportsFilter .btn {
+			border-radius: 0;
+			border: none;
+			background-color: @charcoal;
+			background: url("../images/select-sports-bkgd.jpg") no-repeat 0 0 @charcoal;
+			background-size: 100% 100%;
+			color: @white;
+			font-size: 0.656rem;
+			padding: 0.35rem 0.543rem;
+
+		}
+		.dropdown-menu {
+			border-radius: 0;
+			font-size: 0.656rem;
+		}
+		.dropdown-menu > li > a:hover {
+			color: #white;
+			background-color: @sportleBlue;
+		}
+		label[for="streamBtns"] {
+			float: left;
+			margin: 0 0.937rem 0 2.108rem;
+		}
+		.streamBtn.active {
+			background-color: @sportleBlue;
+			color: @white;
+			float: left;
+			font-size: 0.703rem;
+			font-weight: 600;
+			padding: 0.187rem 0.773rem;
+			margin: -0.281rem 0 0 0;
+			border: none;
+			border-radius: 0;
+		}
+		.streamBtn {
+			background-color: @charcoal;
+			color: @lightGray;
+			float: left;
+			font-size: 0.703rem;
+			font-weight: 600;
+			padding: 0.187rem 0.773rem;
+			margin: -0.281rem 0 0 0;
+			border: none;
+			border-radius: 0;
+			width: 2.717rem;
+
+			&:hover {
+				background-color: @sportleBlue;
+				color: @white;
+			}
+		}
+	}
+	hr {
+		background-color: #444343;
+		border: none;
+		height: 1px;
+		margin: 1.171rem 2.079rem 0 2.079rem;
+	}
+	/* Program Listings */
+	#eventContent {
+		position: relative;
+		overflow: hidden;
+
+		h2 {
+			width: 100%;
+			font-size: 0.843rem;
+			font-weight: 600;
+			margin: 0.4685rem 0 1.077rem 2.173rem;
+		}
+		.programListingsScroll {
+			width: 100%;
+			height: @programListingHeight;
+			position: relative;
+			overflow: hidden;
+		}
+		.programListing:first-child {
+			margin-left: 1.874rem;
+		}
+		/* Program Listing */
+		.programListing {
+			width: @programListingWidth;
+			height: @programListingHeight;
+			float: left;
+			margin: 0 1.874rem 0 0;
+			position: relative;
+			overflow: visible;
+
+			.screenShot {
+				position: relative;
+				overflow: visible;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+				.gradientOverlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			.screenOverlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: @programListingHeight - 3.865rem;
+
+				.playVideoOverlay {
+					display: table;
+					visibility: hidden;
+					position: absolute;
+					overflow: hidden;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: @programListingHeight - 3.865rem;
+					background: rgba( 17, 17, 17, 0.67 );
+					cursor: pointer;
+
+					.fa-play-circle {
+						display: table-cell;
+						vertical-align: middle;
+						text-align: center;
+						font-size: 4rem;
+						color: rgba( 255, 255, 255, 0.9 );
+					}
+				}
+
+				.airDate {
+					width: 6.44rem;
+					height: 2.343rem;
+					position: absolute;
+					right: 0;
+					top: 0.609rem;
+					#border.radius( 0, 0, 1.124rem, 1.124rem );
+					padding: 0.234rem 0 0 1.581rem;
+				}
+				.airTime {
+					font-weight: 300;
+				}
+				.channelLogo {
+					height: 1.874rem;
+					width: 3.748rem;
+					position: absolute;
+					right: 5.27rem;
+					top: 0.843rem;
+
+					img {
+						width: auto;
+						height: 100%;
+						position: absolute;
+						right: 0;
+						top: 0;
+					}
+				}
+				.reminder {
+					right: 0;
+					top: 3.139rem;
+					cursor: pointer;
+
+					&:hover {
+						background-color: @sportleBlue;
+					}
+				}
+				.reminder.on {
+					background-color: @sportleBlue;
+				}
+				.logo {
+					height: 1.874rem;
+					max-width: 2.928rem;
+					float: left;
+					margin: 7.32rem 0.7613rem 0.586rem 0.586rem;
+
+					img {
+						width: auto;
+						height: 100%;
+					}
+				}
+				.categoryContainer {
+					width: 2.928rem;
+					height: 2.928rem;
+					display: table;
+					float: left;
+					margin: 6.5rem 0.7613rem 0.586rem 0.586rem;
+				}
+				.category {
+					width: 2.928rem;
+					height: 2.928rem;
+					#border.radius(2.928rem, 2.928rem, 2.928rem, 2.928rem);
+					font-size: 0.586rem;
+					font-weight: 600;
+					overflow: hidden;
+					text-align: center;
+					text-transform: uppercase;
+					display: table-cell;
+					vertical-align: middle;
+				}
+				.category.blue {
+					background-color: #093a80;
+				}
+				.category.darkPurple {
+					background-color: #351c35;
+				}
+				.category.green {
+					background-color: #06646e;
+				}
+				.category.lightBlue {
+					background-color: #003965;
+				}
+				.category.orange {
+					background-color: #cc5006;
+				}
+				.category.red {
+					background-color: #650000;
+				}
+				.title {
+					width: 100%;
+					max-width: @programListingWidth - 4.33rem;
+					height: 2.781rem;
+					font-size: 1.288rem;
+					font-weight: 600;
+					overflow: hidden;
+				  	text-overflow: ellipsis;
+					float: left;
+					margin: 7.32rem 0 0 0;
+
+					.titleWide {
+						width: 200rem;
+					}
+					.event {
+						float: left;
+					}
+					.team {
+						float: left;
+						.textOverflow();
+					}
+					.versus {
+						float: left;
+						font-size: 0.703rem;
+						font-weight: 300;
+						margin: 0.527rem 0.4685rem 0 0.4685rem;
+					}
+					.smallTitlePart {
+						display: block;
+						font-size: 0.644rem;
+						font-weight: 300;
+						margin-bottom: -0.187rem;
+						text-transform: uppercase;
+					}
+				}
+			}
+			.infoBox {
+				width: 100%;
+				height: 3.865rem;
+				color: #020202;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: @white;
+
+				h4 {
+					font-size: 1.171rem;
+					margin: 0.703rem 0 -0.703rem 0.937rem;
+				}
+				p {
+					font-size: 0.82rem;
+					margin: 0.703rem 0 0 0.937rem;
+					max-height: 2.108rem;
+					overflow: hidden;
+				  	text-overflow: ellipsis;
+				}
+				.eventStatus {
+					position: relative;
+					overflow: hidden;
+
+					.team {
+						clear: both;
+						font-size: 1.171rem;
+						font-weight: 300;
+
+						.teamLogo {
+							width: 1.406rem;
+							margin: 0.281rem 0 0 0.498rem;
+							float: left;
+						}
+						.teamName {
+							float: left;
+							margin: 0.281rem 0 0 0.937rem;
+							width: 7.9rem;
+						}
+						.teamName.ahead {
+							font-weight: 600;
+						}
+						.score {
+							float: left;
+							margin-top: 0.281rem;
+						}
+						.score.ahead {
+							font-weight: 600;
+						}
+					}
+					.team1 {
+						.teamName {
+							position: relative;
+							top: 0.234rem;
+						}
+						.score {
+							position: relative;
+							top: 0.234rem;
+						}
+					}
+					.team2 {
+						.teamName {
+							position: relative;
+							top: -0.234rem;
+						}
+						.score {
+							position: relative;
+							top: -0.234rem;
+						}
+					}
+
+					.timePeriod {
+						width: 4.685rem;
+						height: 2.313rem;
+						border-left: #e3e3e3 0.205rem solid;
+						font-size: 0.494rem;
+						position: absolute;
+						bottom: -0.375rem;
+						right: 0;
+						margin: 0.75rem 0;
+						text-align: center;
+
+						.timeElapsed {
+							display: block;
+							font-size: 0.8785rem;
+						}
+					}
+				}
+			}
+		} /* End Program Listing */
+		/* Whats On Drop Down */
+		.whatsOnDropDown {
+			position: fixed;
+			top: 3.7rem;
+			left: 0;
+			overflow: hidden;
+			margin: 0;
+			padding: 2.1875rem;
+			width: 100%;
+			background: rgba( 2, 130, 229, 0.9 );
+			z-index: 200;
+			display: none;
+		}
+		/* Program Card */
+		.programCard {
+			width: 12rem;
+			height: 13.75rem;
+			float: left;
+			margin: 0 0.5625rem 0 0;
+			position: relative;
+			overflow: visible;
+			font-size: 0.7025rem;
+			font-weight: 200;
+			color: #999999;
+			border: 4px solid rgba(78, 168, 237, .5);
+    		-webkit-background-clip: padding-box; /* for Safari */
+    		background-clip: padding-box;         /* for IE9+, Firefox 4+, Opera, Chrome */
+
+			.screenShot {
+				position: relative;
+				overflow: visible;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.screenOverlay {
+				position: absolute;
+				overflow: hidden;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.playVideoOverlay {
+				display: table;
+				visibility: hidden;
+				position: absolute;
+				overflow: hidden;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 7rem;
+				background: rgba( 17, 17, 17, 0.67 );
+				cursor: pointer;
+
+				.fa-play-circle {
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 3rem;
+					color: rgba( 255, 255, 255, 0.9 );
+				}
+			}
+			.airDate {
+				width: 9.538rem;
+				height: 2rem;
+				position: absolute;
+				left: 0;
+				top: 6.5rem;
+				padding: 0.53rem 0 0 0.4375rem;
+				background: rgba( 0, 153, 0, 0.9 );
+				color: @white;
+				font-size: 0.8125rem;
+				font-weight: 400;
+			}
+			.airTime {
+				font-weight: 200;
+			}
+			.reminder {
+				right: 0;
+				top: 6.5rem;
+				cursor: pointer;
+
+				&:hover {
+					background-color: @sportleBlue;
+				}
+			}
+			.reminder.on {
+				background-color: @sportleBlue;
+			}
+			.infoBox {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 4.75rem;
+				padding: 0.4375rem;
+				background-color: @black;
+
+				.league {
+					color: @white;
+					text-transform: uppercase;
+				}
+				.titleWide {
+					width: 100%;
+					overflow: hidden;
+			  		text-overflow: ellipsis;
+					font-size: 0.7025rem;
+					font-weight: 200;
+					padding-bottom: 0.25rem;
+					margin-bottom: 0.25rem;
+					border-bottom: 2px #363636 solid;
+
+					.event {
+						float: left;
+					}
+					.team {
+						float: left;
+						.textOverflow();
+					}
+					.vs {
+						text-transform: lowercase;
+					}
+				}
+				h4 {
+
+				}
+				p {
+					overflow: hidden;
+				  	text-overflow: ellipsis;
+				}
+				.eventStatus {
+					position: relative;
+					overflow: hidden;
+
+					.team {
+						.teamName {
+							float: left;
+							width: 5rem;
+						}
+						.teamName.ahead {
+							color: @white;
+						}
+						.score {
+							float: left;
+							width: 2.375rem;
+						}
+						.score.ahead {
+							color: @white;
+						}
+					}
+					.team1 {
+						.teamName {
+						}
+						.score {
+						}
+					}
+					.team2 {
+						.teamName {
+						}
+						.score {
+						}
+					}
+					.timePeriod {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						width: 3.375rem;
+					}
+				}
+			}
+		} /* End Program Card */
+		.featured {
+			clear: both;
+		}
+		.whatsOnNow {
+
+			h2 {
+				margin-top: 1.406rem;
+			}
+		}
+		.featured,
+		.whatsOnNow,
+		.quickPicks {
+			position: relative;
+			overflow: hidden;
+			margin: 0 0 1.874rem 0;
+			width: 100%;
+		}
+		.quickPicks {
+			position: fixed;
+			top: 3.719rem;
+			left: 0;
+			background-color: #000;
+			padding: 2.343rem 0 0 0;
+			z-index: 200;
+			display: none;
+		}
+		.whatsOnNow .programListings {
+			width: @whatsOnRowWidth;
+			position: relative;
+			overflow: hidden;
+		}
+		.featured .programListings {
+			width: @featuredRowWidth;
+			position: relative;
+			overflow: hidden;
+		}
+		.quickPicks .programListings {
+			width: @quickPicksRowWidth;
+			position: relative;
+			overflow: hidden;
+		}
+	}
+}
+
+.footer {
+	background-color: @headerColor;
+	padding: 1.55rem 2.079rem;
+}
+
+.modal-content {
+	border-radius: 0.703rem;
+}
+/* Live Event Alt Modal */
+#liveEventAlt {
+	.modal-dialog {
+		width: 36.985rem;
+		height: 21.874rem;
+		margin: 9.37rem auto;
+
+		.modal-content {
+			position: relative;
+			overflow: hidden;
+			height: 21.874rem;
+			background: url("../images/heat-vs-hornets.jpg") no-repeat 0 -2.34rem transparent;
+			background-size: 100% 124%;
+			color: #fff;
+
+			.topOverlay {
+				background: url("../images/modal-gradient-overlay.png") no-repeat 0 0 transparent;
+				background-size: 100% 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 11.39rem;
+				width: 100%;
+
+				.airDate {
+					left: 0;
+					top: 1.546rem;
+					height: 2.2rem;
+					#border.radius( 1.124rem, 1.124rem, 0, 0);
+					padding: 0.14rem 0.8785rem 0 0.703rem;
+					font-size: 0.82rem;
+				}
+				.airTime {
+				}
+				.reminder {
+					left: 0;
+					top: 3.748rem;
+				}
+				.logo {
+					width: auto;
+					height: 2.4rem;
+					position: absolute;
+					top: 8.4rem;
+					left: 0.937rem;
+				}
+				.title {
+					position: absolute;
+					top: 8.433rem;
+					left: 3.56rem;
+
+					.team {
+						font-size: 1.523rem;
+					}
+					.smallTitlePart {
+						font-size: 0.7613rem;
+					}
+					.versus {
+						font-size: 0.82rem;
+					}
+				}
+				.infoBox {
+					color: @white;
+					font-size: 0.82rem;
+					font-weight: 300;
+
+					.eventStatus {
+						width: 11.537rem;
+						height: 3.338rem;
+						position: absolute;
+						right: 0;
+						bottom: 3.397rem;
+						background: rgba( 0, 0, 0, 0.48 );
+						padding: 0.7613rem 0.937rem 0 0.996rem;
+
+						.team {
+							width: 6.56rem;
+							position: relative;
+							overflow: hidden;
+
+							.teamName {
+								float: left;
+								width: 5.563rem;
+							}
+							.score {
+								float: left;
+							}
+							.ahead {
+								font-weight: 600;
+							}
+						}
+						.timePeriod {
+							position: absolute;
+							top: 1.03rem;
+							right: 0.937rem;
+							font-weight: bold;
+							text-align: right;
+
+							.timeElapsed {
+								display: block;
+							}
+						}
+					}
+					.viewership {
+						width: 11.537rem;
+						height: 3.338rem;
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						background: rgba( 0, 0, 0, 0.48 );
+						padding: 0.7613rem 0.937rem 0 0.996rem;
+
+						.whosWatching {
+							.who {
+								float: left;
+							}
+							.count {
+								float: right;
+							}
+						}
+					}
+				}
+			}
+			.bottomOverlay {
+				position: absolute;
+				left: 0;
+				top: 11.39rem;
+				background-color: @white;
+				padding: 0.35rem 0.494rem;
+				height: 10.483rem;
+				width: 100%;
+
+				h4 {
+					color: @lightGray;
+					font-size: 0.703rem;
+					margin-bottom: -0.0937rem;
+				}
+				hr {
+					margin: 0.89rem 0;
+				}
+				.watchSection {
+					margin-top: 0.562rem;
+				}
+				.watchLogo {
+					background: url("../images/ballstreams-logo.png") no-repeat 0 0 transparent;
+					background-size: 100% 100%;
+					width: 8.96rem;
+					height: 1.816rem;
+				}
+				.subscribeLogo {
+					background: url("../images/nba-league-pass.png") no-repeat 0 0 transparent;
+					background-size: 100% 100%;
+					width: 8.9rem;
+					height: 1.757rem;
+				}
+				.watchNowBtn,
+				.subscribeBtn {
+					float: right;
+					width: 7.03rem;
+					padding: 0.527rem 0.35rem;
+					border-radius: 0.293rem;
+					border: none;
+					font-size: 0.703rem;
+
+					&:hover {
+						color: @darkGray;
+					}
+				}
+				.watchNowBtn {
+					background-color: @sportleBlue;
+				}
+				.subscribeBtn {
+					background-color: #828282;
+				}
+			}
+		}
+	}
+	button.close {
+		color: #fff;
+		background-color: @black;
+		border: 2px #fff solid;
+		opacity: 1;
+		font-size: 1.59rem;
+		line-height: 1;
+		padding: 0 0.38rem;
+		border-radius: 2.343rem;
+		margin: 0.293rem 0.527rem;
+
+		&:hover {
+			background-color: @lightGray;
+		}
+	}
+}
+/* Live Event Modal */
+#liveEvent {
+	.modal-dialog {
+		width: 36.985rem;
+		height: 21.874rem;
+		margin: 9.37rem auto;
+
+		.modal-body {
+			padding: 1.113rem 0.494rem;
+		}
+		.modal-content {
+			position: relative;
+			overflow: hidden;
+			height: 21.874rem;
+			background-color: #fff;
+			background-size: 100% 124%;
+			color: @darkGray;
+
+			.topOverlay {
+				left: 0;
+				top: 0;
+				height: 11.39rem;
+				width: 100%;
+
+				.eventImage {
+					width: 11.42rem;
+					height: 8.49rem;
+					float: left;
+					position: relative;
+					overflow: hidden;
+
+					.eventPic {
+						width: 100%;
+					}
+					.airDate {
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						height: 1.99rem;
+						width: 9.458rem;
+						padding: 0.703rem 0.4685rem 0 0.4685rem;
+						color: #fff;
+						font-size: 0.82rem;
+						font-weight: normal;
+					}
+					.reminder {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+					}
+				}
+				.airTime {
+					position: absolute;
+					left: 13.47rem;
+					top: 1.113rem;
+					color: @darkGray;
+					font-size: 0.7613rem;
+					font-weight: bold;
+					line-height: 1;
+				}
+				.logo {
+					width: auto;
+					height: 2.4rem;
+					position: absolute;
+					top: 2.69rem;
+					left: 13.47rem;
+				}
+				.title {
+					position: absolute;
+					top: 2.69rem;
+					left: 15.52rem;
+
+					.team {
+						font-size: 1.523rem;
+					}
+					.smallTitlePart {
+						font-size: 0.7613rem;
+					}
+					.versus {
+						font-size: 0.82rem;
+					}
+				}
+				.infoBox {
+					color: @darkGray;
+					font-size: 0.82rem;
+					font-weight: 300;
+					position: relative;
+					overflow: hidden;
+					border-top: 0.146rem solid #cdcdcd;
+					padding-top: 0.41rem;
+					position: absolute;
+					left: 13.47rem;
+					top: 5.97rem;
+					width: 21.67rem;
+					height: 3.689rem;
+
+
+					.eventStatus {
+						width:  10.835rem;
+						height: 3.689rem;
+						float: left;
+						background-color: #e2eef7;
+						padding: 0.41rem 0.937rem 0 0.996rem;
+						position: relative;
+						overflow: hidden;
+
+						.team {
+							width: 6.56rem;
+							position: relative;
+							overflow: hidden;
+
+							.teamName {
+								float: left;
+								width: 5.15rem;
+							}
+							.score {
+								float: left;
+							}
+							.ahead {
+								font-weight: 600;
+							}
+						}
+						.timePeriod {
+							position: absolute;
+							top: 0.4685rem;
+							right: 0.562rem;
+							font-size: 0.834rem;
+							font-weight: 300;
+							text-align: center;
+							color: #999999;
+
+							.timeElapsed {
+								display: block;
+								font-size: 0.695rem;
+							}
+						}
+					}
+					.viewership {
+						width:  10.835rem;
+						height: 3.689rem;
+						float: left;
+						background-color: #f5f5f5;
+						padding: 0.41rem 0.937rem 0 0.996rem;
+						color: @darkGray;
+
+						.whosWatching {
+							.who {
+								float: left;
+							}
+							.count {
+								float: right;
+							}
+						}
+					}
+				}
+			}
+			.bottomOverlay {
+				position: absolute;
+				left: 0;
+				top: 9.985rem;
+				background-color: @white;
+				padding: 0.35rem 0.494rem;
+				height: 11.89rem;
+				width: 100%;
+
+				h4 {
+					color: @lightGray;
+					font-size: 0.703rem;
+					margin-bottom: -0.0937rem;
+				}
+				hr {
+					margin: 0.89rem 0;
+				}
+				.watchSection {
+					margin-top: 0.562rem;
+				}
+				.watchLogo {
+					background: url("../images/ballstreams-logo.png") no-repeat 0 0 transparent;
+					background-size: 100% 100%;
+					width: 8.96rem;
+					height: 1.816rem;
+				}
+				.subscribeLogo {
+					background: url("../images/nba-league-pass.png") no-repeat 0 0 transparent;
+					background-size: 100% 100%;
+					width: 8.9rem;
+					height: 1.757rem;
+				}
+				.watchNowBtn,
+				.subscribeBtn {
+					float: right;
+					width: 7.03rem;
+					padding: 0.527rem 0.35rem;
+					border-radius: 0.293rem;
+					border: none;
+					font-size: 0.703rem;
+
+					&:hover {
+						color: @darkGray;
+					}
+				}
+				.watchNowBtn {
+					background-color: @sportleBlue;
+				}
+				.subscribeBtn {
+					background-color: #828282;
+				}
+				.subscribeMessage {
+					font-size: 0.644rem;
+					font-weight: 300;
+					color: @lightGray;
+					width: 16.1rem;
+					position: absolute;
+					top: 6.09rem;
+					left: 10.776rem;
+				}
+			}
+		}
+	}
+	button.close {
+		color: #fff;
+		background-color: #b9b9b9;
+		opacity: 1;
+		font-size: 1.59rem;
+		line-height: 1;
+		padding: 0 0.38rem;
+		border-radius: 2.343rem;
+		margin: 0.293rem 0.527rem;
+
+		&:hover {
+			background-color: @darkGray;
+		}
+	}
+}
+/* On Boarding Mods */
+/* Sign Up */
+.onBoarding {
+  .modal-dialog {
+    width: 32.875rem;
+    height: 42rem;
+    margin: 9.37rem auto;
+
+    .onboarding-content {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0;
+      color: @darkGray;
+      border-bottom: 5px @sportleBlue solid;
+
+      .modal-body {
+        padding: 1.113rem 0.494rem;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+
+        .logo {
+          margin: 0 auto;
+          width: 8.48rem;
+          height: 2.314rem;
+
+          .headerLogo {
+            width: 8.48rem;
+            height: 2.314rem;
+          }
+        }
+        h1 {
+          font-size: 1.75rem;
+          font-weight: 400;
+          margin-top: 1.5rem;
+
+          sup {
+            color: #0163af;
+            font-size: 0.75rem;
+          }
+        }
+        h2 {
+          color: @darkGray;
+          font-size: 1.125rem;
+          margin: 0.6rem 0 0.625rem;
+          text-align: left;
+        }
+        h4 {
+          color: #696969;
+          font-size: 0.875rem;
+          margin-top: 0.75rem;
+        }
+        p {
+          color: @lightGray;
+          font-size: 0.875rem;
+          margin: 0.5rem 0 1.3125rem;
+        }
+        .emailContainer {
+          position: relative;
+          overflow: hidden;
+          height: 2.125rem;
+          width: 100%;
+          margin-bottom: 0.75rem;
+        }
+        .fa-check {
+          color: cccccc;
+          position: absolute;
+          right: 0.625rem;
+          top: 0.75rem;
+        }
+        input[type="text"],
+        input[type="password"] {
+          font-size: 0.875rem;
+          line-height: 2.125rem;
+          height: 2.125rem;
+          width: 100%;
+          border: none;
+          padding: 0 1rem;
+          margin-bottom: 0.75rem;
+        }
+        .signInAux {
+          text-align: left;
+          margin: 0.8rem 0 1.625rem;
+        }
+        label {
+          font-size: 0.875rem;
+          font-weight: 400;
+          margin-left: 0.4rem;
+        }
+        .input[type="checkbox"] {
+          text-align: left;
+        }
+        a {
+          color: @sportleBlue;
+          font-size: 0.875rem;
+          display: block;
+          margin-top: 0.6rem;
+        }
+        .socialLoginButton {
+          border-radius: 0.2rem;
+          padding: 0.375rem 0.875rem;
+          margin-left: 0.5rem;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.modalButton {
+  margin: 1.4rem 0 0 0;
+  background-color: @sportleBlue;
+  width: 10rem;
+  height: 2.625rem;
+  font-size: 1.125rem;
+  line-height: 2.625rem;
+  text-align: center;
+  color: @white;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    color: #ddd;
+  }
+}
+
+#onBoardingSignUp {
+  .modal-body {
+    padding: 1rem 2.1875rem 3.4375rem 2.1875rem;
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 1.1rem;
+    }
+    p.intro {
+      color: @lightGray;
+      font-size: 0.875rem;
+    }
+    h2 {
+      text-align: center;
+      margin: 0 0 0.4rem 0;
+    }
+    a {
+      font-size: 1.125rem;
+      display: inline-block;
+    }
+    .socialLoginButton {
+      margin-bottom: 1rem;
+    }
+    .emailContainer {
+      clear: both;
+      margin-top: 0.8rem;
+    }
+    .passwordLengthMessage {
+      font-size: 0.625rem;
+      text-align: left;
+      margin: 0.6rem 0 0.4rem 5.2rem;
+      color: @darkGray;
+    }
+    .modalButton {
+      margin: 1rem 0 1rem;
+    }
+    #password {
+      margin-right: 4%;
+    }
+    #password2 {
+      float: right;
+    }
+    #password,
+    #password2 {
+      width: 48%;
+    }
+  }
+}
+#onBoardingLogin {
+  .modal-dialog {
+    height: 29.375rem;
+  }
+  .modal-body {
+    padding: 1rem 3.2rem 3.4375rem 3.2rem;
+  }
+  .modalButton {
+    float: right;
+  }
+}
+#onBoardingLinkAccounts {
+  .modal-body {
+    padding: 1rem 1.75rem 3.4375rem 1.75rem;
+  }
+  h2 {
+    text-align: center;
+    margin: 2.2rem 0 1.2rem;
+  }
+  p {
+    font-size: 1.125rem;
+    margin-bottom: 1.4rem;
+  }
+  .tvProviders {
+    margin: 1rem 0;
+    width: 100%;
+
+    .tvProvider {
+      width: 5.5rem;
+      height: 2.5rem;
+      margin-right: 0.375rem;
+    }
+  }
+  .addBlock {
+      clear: both;
+      font-size: 1.1rem;
+      line-height: 2.5rem;
+      height: 2.5rem;
+      text-align: center;
+      width: 100%;
+      color: @lightGray;
+      background-color: #ebebeb;
+      margin: 4px 0 0 0;
+      cursor: pointer;
+    }
+    .circlePlus {
+      margin-right: 0.6rem;
+    }
+}
+/* Search Results */
+/* Teams */
+.teamContainer>.teamInfo:first-child {
+	clear: both;
+}
+.search {
+	.main {
+		color: @black;
+		background-color: @white;
+		padding: 1.125rem 2.079rem;
+
+		#eventContent {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			color: #fff;
+			display: none;
+
+			.quickPicks {
+				margin-bottom: 1.847rem;
+				padding-bottom: 1.847rem;
+				z-index: 100;
+			}
+			.opaqueBackdrop {
+				z-index: 90;
+			}
+		}
+	}
+	h2 {
+		color: #999999;
+		font-size: 3rem;
+		border-bottom: 1px #d4d4d4 solid;
+		padding-bottom: 0.4rem;
+		margin-bottom: 0.8rem;
+		max-width: @pageMaxWidth;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+	.resultsTitle {
+	  border-bottom: 1px #d4d4d4 solid;
+    padding-bottom: 0.9rem;
+    margin: 0.9rem 0 1.2rem;
+    max-width: @pageMaxWidth;
+	}
+	.teamName {
+    color: @sportleBlue;
+  }
+	h4 {
+		font-size: 1rem;
+		font-weight: bold;
+	}
+	.eventsTitle {
+		margin-top: 2rem;
+	}
+	h5 {
+		color: #999999;
+		font-size: 0.875rem;
+		font-weight: 600;
+		margin: 1.4rem 0 0 0;
+	}
+}
+.teamContainer {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: @pageMaxWidth;
+	border-bottom: 1px #d4d4d4 solid;
+	padding: 0 0 1rem 0;
+
+	.teamInfo {
+		display: table;
+		float: left;
+		width: 33%;
+
+		.logo {
+			display: table-cell;
+			vertical-align: bottom;
+			width: 6.4rem;
+			height: 6.4rem;
+			padding: 0 1.625rem 0 1.5rem;
+			box-sizing: content-box;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.teamInfoTitles {
+			display: table-cell;
+			vertical-align: bottom;
+
+			.favorited {
+				float: left;
+				color: #999999;
+				font-size: 1rem;
+				width: 1.75rem;
+
+				.favorite {
+					color: #f3a41c;
+				}
+			}
+			.teamName {
+				color: @black;
+				font-size: 1rem;
+				font-weight: 600;
+				white-space: nowrap;
+			}
+			.league {
+				color: #999999;
+				font-size: 1rem;
+				font-weight: 400;
+				margin-left: 1.75rem;
+			}
+		}
+	}
+}
+/* Search Results */
+/* Whats On Now Event */
+.whatsOnNowEvent,
+.upcomingEvents {
+	line-height: 1.5;
+	font-weight: 200;
+	width: 100%;
+	max-width: 1280px;
+
+	.topRow {
+		td {
+			vertical-align: bottom;
+		}
+		.doubleHeight {
+			text-align: center;
+			vertical-align: middle;
+		}
+		.teamLogo {
+			display: table-cell;
+			vertical-align: bottom;
+			padding-bottom: 2px;
+		}
+	}
+	.bottomRow {
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px #d4d4d4 solid;
+
+		td {
+			vertical-align: top;
+		}
+		.teamLogo {
+			padding-top: 2px;
+		}
+	}
+	td {
+		padding-right: 1.0625rem;
+	}
+	.screenView {
+		position: relative;
+		overflow: hidden;
+		width: 8.3125rem;
+		height: 7rem;
+		color: @white;
+		vertical-align: middle;
+
+		.screenShot {
+			width: 8.3125rem;
+			height: 5.25rem;
+			position: relative;
+			overflow: hidden;
+		}
+		.airDateLive {}
+		.airDate {
+			width: 6.375rem;
+			height: 2.125rem;
+			position: absolute;
+			right: 0rem;
+			top: 0.5625rem;
+			#border.radius( 0, 0, 1.0625rem, 1.0625rem );
+			padding: 0.3125rem 0 0 1.5625rem;
+			font-size: 0.6875rem;
+		}
+		.airTime {
+			font-weight: 300;
+			font-size: 0.6875rem;
+		}
+	}
+	.teamLogo {
+		width: 2.2rem;
+		height: 2.2rem;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.teamName {
+		display: inline-block;
+
+		.favorite {
+			font-size: 0.8rem;
+			color: #f3a41c;
+			margin-right: 0.4rem;
+		}
+	}
+	.score {}
+	.ahead {
+		font-weight: 600;
+	}
+	.timePeriod {
+		font-weight: 400;
+		text-align: center;
+		padding-left: 0.875rem;
+		border-left: 1px #b7b7b7 solid;
+	}
+	.timeElapsed {
+		text-align: center;
+		padding-left: 0.875rem;
+		border-left: 1px #b7b7b7 solid;
+	}
+	.timeElapsed.bold {
+		font-weight: 400;
+	}
+	.channelLogo {
+		width: 7.5rem;
+		height: 2.6rem;
+		position: static;
+
+		img {
+			width: auto;
+			height: 100%;
+			position: static;
+		}
+	}
+	.watchButton {
+		width: 9rem;
+		height: 2.625rem;
+		font-size: 0.75rem;
+		line-height: 2.625rem;
+		text-transform: uppercase;
+		color: @white;
+		background-color: @sportleBlue;
+		cursor: pointer;
+		margin: 2.2rem 0 2.2rem 1.625rem;
+
+		&:hover {
+			color: #ddd;
+		}
+	}
+}
+.whatsOnNowEvent {
+	margin-bottom: 3.5rem;
+
+	.teamLogoCol {
+		width: 2.1875rem;
+	}
+	.teamNameCol,
+	.teamName {
+		width: 8rem;
+	}
+	.scoreCol {
+		width: 1.125rem;
+	}
+	.timePeriodCol {
+		width: 4.6875rem;
+	}
+	.channelLogoCol {
+		width: 10.4375rem;
+	}
+	.channelLogo {
+		margin-left: 2.9375rem;
+	}
+	.watchButtonCol {
+	}
+}
+/* Search Results */
+/* Upcoming Event */
+.upcomingEvents {
+	margin-bottom: 6rem;
+
+	.teamLogoCol {
+		width: 2.25rem;
+		padding-right: 0.3rem;
+	}
+	.teamNameCol,
+	.teamName {
+		width: 7rem;
+	}
+	.scoreCol {
+		width: 1px;
+		padding-right: 0;
+	}
+	.timePeriodCol {
+		width: 6.5rem;
+	}
+	.channelLogoCol {
+		width: 11rem;
+	}
+	.reminderCol {
+		width: 10.5rem;
+	}
+	.reminderLink {
+		img {
+			width: 0.8rem;
+			height: auto;
+			margin-right: 0.4375rem;
+		}
+	}
+	.viewLink {
+		text-align: left;
+
+		img {
+			width: 1.4rem;
+			height: auto;
+			margin-right: 0.375rem;
+		}
+	}
+}
+/* Settings Pages */
+.settings {
+  .main {
+    color: @black;
+    background-color: #f6f6f6;
+    padding: 2.5rem 3.3125rem 8rem 1.4375rem;
+    position: relative;
+    overflow: hidden;
+
+    h2 {
+      font-size: 1.25rem;
+    }
+    h3 {
+      font-size: 1.125rem;
+    }
+    .providerTitle {
+        margin: 2.5rem 0 0;
+        text-align: center;
+    }
+    #settingsTabs {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px #d9d9d9 solid;
+      max-width: @pageMaxWidth;
+
+      h2 {
+        display: inline-block;
+        margin: 0 4.5rem 0 0;
+        padding: 0 0 18px 0;
+
+        &.selected,
+        &:hover {
+          color: @sportleBlue;
+          padding: 0 0 14px 0;
+          cursor: pointer;
+        }
+        &.selected {
+          border-bottom: 4px @sportleBlue solid;
+        }
+      }
+    }
+    /* Edit Profile Content */
+   .subscriptionForm {
+     position: relative;
+     overflow: hidden;
+     width: 53.75rem;
+
+     .formInput {
+       float: left;
+       margin: 2.125rem 6.5rem 0 0;
+
+       &:last-child {
+         margin-right: 0;
+       }
+       label {
+         display: block;
+         font-weight: 400;
+         font-size: 0.875rem;
+       }
+     }
+     input[type="text"] {
+       font-size: 0.875rem;
+       line-height: 2rem;
+       height: 2rem;
+       width: 20.375rem;
+       color: #999999;
+       border: 1px #999999 solid;
+       padding: 0 1rem;
+     }
+     button {
+        float: right;
+        width: 10.625rem;
+        height: 2.625rem;
+        font-size: 1.125rem;
+        line-height: 2.625rem;
+        text-align: center;
+        color: @white;
+        background-color: #999999;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          color: #ddd;
+        }
+      }
+     .cancelButton {
+       margin: 2.375rem 2rem 0 0;
+     }
+     .saveButton {
+       margin: 2.375rem 6.5rem 0 0;
+       background-color: @sportleBlue;
+     }
+   }
+   .accountLogins {
+     clear: both;
+     position: relative;
+     overflow: hidden;
+     font-size: 0.875rem;
+     margin-bottom: 8rem;
+
+     #userPhoto {
+       float: left;
+       width: 9rem;
+
+       .userPic {
+         border: 1px #cdcdcd solid;
+         margin-bottom: 0.4rem;
+       }
+       a {
+         color: @sportleBlue;
+         margin-top: 0.5rem;
+         display: block;
+         cursor: pointer;
+       }
+     }
+     h3 {
+       margin: 1.625rem 0 1.4375rem;
+     }
+     .logOut {
+       float: left;
+       position: relative;
+       overflow: hidden;
+       margin: 0 2rem 0 1.625rem;
+
+       p {
+         width: 13.5rem;
+         height: 6rem;
+       }
+     }
+     .logIn {
+       float: left;
+       position: relative;
+       overflow: hidden;
+       padding-left: 2.6rem;
+       width: 27rem;
+       border-left: 1px #d3d3d3 solid;
+
+       p {
+         height: 6rem;
+       }
+     }
+     .userName {
+       float: left;
+       font-weight: 600;
+       margin: 0.5rem 0 0 0.3rem;
+     }
+     .connectLabel {
+       margin-bottom: 1rem;
+       font-weight: 600;
+     }
+   }
+    /* Notifications Settings Content */
+    .notificationCheckboxes {
+      position: relative;
+      overflow: visible;
+      margin: 2.75rem 0 0 0;
+    }
+    .notificationCheckbox {
+      font-size: 1rem;
+      float: left;
+      width: 26.875rem;
+      margin: 0 0 1.625rem;
+
+      label {
+        font-weight: 400;
+        height: 21px;
+        line-height: 21px;
+      }
+
+      input[type="checkbox"] {
+        padding: 0 5rem 0 0;
+      }
+
+      &.newLine {
+        clear: both;
+      }
+    }
+    /* Manage Subscriptions Content */
+    .addBlock {
+      clear: both;
+      font-size: 1.1rem;
+      line-height: 1.5625;
+      text-align: center;
+      padding: 1.46875rem 4rem;
+      max-width: 69.625rem;
+      color: @lightGray;
+      background-color: #ebebeb;
+      margin: 1.1875rem 0 0 0;
+      cursor: pointer;
+    }
+    .circlePlus {
+      margin-right: 0.4rem;
+    }
+    .leaguePackagesTitle {
+      padding: 3rem 0 0.75rem 0.375rem;
+      border-bottom: 1px #d9d9d9 solid;
+    }
+    .packageLogo {
+      margin: 1.25rem 1.625rem 0.25rem 0;
+      background-color: #fff;
+      padding: 3px;
+      border: 1px solid #999999;
+      border-radius: 6px;
+    }
+    .titleColumn {
+      width: 15.375rem;
+    }
+    .messageColumn {
+      width: 17.5rem;
+
+      &.failed {
+        .fa-circle {
+          color: #cc0033;
+        }
+      }
+      .fa-circle {
+        font-size: 0.6875rem;
+        color: #3cb878;
+        margin-right: 0.2rem;
+      }
+      span a {
+        margin-left: 0.8rem;
+        color: @sportleBlue;
+        cursor: pointer;
+      }
+    }
+    .editColumn {
+      width: 10.375rem;
+      cursor: pointer;
+
+      .fa-pencil {
+        color: @sportleBlue;
+        margin-right: 0.2rem;
+      }
+    }
+    .deleteColumn {
+      width: 12rem;
+      cursor: pointer;
+
+      .fa-times-circle {
+        color: @sportleBlue;
+        margin-right: 0.2rem;
+      }
+    }
+    .choosePackage {
+      background-color: #dbecf9;
+      margin: 1.25rem 0 2.5rem;
+
+      .labelColumn {
+        padding: 1.6875rem 1.8125rem 1.5rem 1.9375rem;
+      }
+      .chooseColumn {
+        padding-right: 2.5625rem;
+
+        .bootstrap-select > .dropdown-toggle {
+          line-height: 1.875rem;
+          padding: 2px 1.875rem 2px 0.75rem;
+        }
+        .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+          border-right: 1px #acacac solid;
+        }
+      }
+      .sportsFilter .btn {
+        border-radius: 0;
+        border: 1px @sportleBlue solid;
+        background-color: @white;
+        color: @sportleBlue;
+        font-size: 1em;
+      }
+      .dropdown-menu {
+        border-radius: 0;
+        font-size: 1em;
+      }
+      .dropdown-menu > li > a:hover {
+        color: #white;
+        background-color: @sportleBlue;
+      }
+      .usernameColumn,
+      .passwordColumn {
+      }
+      .usernameColumn label,
+      .passwordColumn label {
+        opacity: 0.38;
+        font-size: 0.875rem;
+        font-weight: 200;
+        line-height: 0.75;
+        display: block;
+      }
+      .usernameColumn input[type="text"],
+      .passwordColumn input[type="text"] {
+        font-size: 1rem;
+        line-height: 1.5625;
+        width: 14.375rem;
+        opacity: 0.38;
+      }
+      .usernameColumn input[type="text"]:focus,
+      .passwordColumn input[type="text"]:focus {
+      }
+      .usernameColumn {
+        padding-right: 1.5rem;
+      }
+      .passwordColumn {
+        padding-right: 1.875rem;
+      }
+      .signInColumn {
+        padding-right: 3rem;
+
+        .signInButton {
+          width: 10.375rem;
+          height: 2.125rem;
+          position: relative;
+          top: 0.25rem;
+          font-size: 1.125rem;
+          line-height: 2.125rem;
+          text-align: center;
+          color: @white;
+          background-color: #999999;
+          opacity: 0.38;
+          cursor: pointer;
+
+          &:hover {
+            color: #ddd;
+          }
+        }
+      }
+    }
+    #eventContent {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      display: none;
+
+      .quickPicks {
+        margin-bottom: 1.847rem;
+        padding-bottom: 1.847rem;
+        z-index: 100;
+      }
+      .opaqueBackdrop {
+        z-index: 90;
+      }
+    }
+  }
+}
+/* TV Providers */
+.tvProviders {
+    position: relative;
+    overflow: hidden;
+    margin: 1.625rem auto;
+    width: 43.125rem;
+
+    .tvProvider {
+      width: 8rem;
+      height: 3.25rem;
+      border: 2px @black solid;
+      float: left;
+      margin-right: 0.625rem;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .xfinity {
+      background: url("/images/provider-xfinity.png") no-repeat 0 0 transparent;
+      background-size: 100% 100%;
+    }
+    .directTV {
+      background: url("/images/provider-direct-tv.png") no-repeat 0 0 transparent;
+      background-size: 100% 100%;
+    }
+    .dish {
+      background: url("/images/provider-dish.png") no-repeat 0 0 transparent;
+      background-size: 100% 100%;
+    }
+    .twc {
+      background: url("/images/provider-twc.png") no-repeat 0 0 transparent;
+      background-size: 100% 100%;
+    }
+    .att {
+      background: url("/images/provider-att.png") no-repeat 0 0 transparent;
+      background-size: 100% 100%;
+    }
+}
+/* Social Login Buttons */
+.socialLoginButton {
+   color: @white;
+   border: none;
+   border-radius: 0.5rem;
+   padding: 0.5rem 1.25rem;
+
+   .icon-facebook {
+     position: relative;
+     top: 0rem;
+     left: -0.1rem;
+     font-size: 0.9rem;
+   }
+   .icon-twitter {
+     position: relative;
+     top: 0.05rem;
+     font-size: 0.8rem;
+   }
+   .icon-google {
+     position: relative;
+     top: 0.2rem;
+   }
+ }
+ .twitterBlock {
+   float: left;
+ }
+ .googleBlock {
+   float: left;
+   margin-left: 1.75rem;
+ }
+ button.facebook {
+   background-color: #3a589d;
+ }
+ button.twitter {
+   background-color: #54abf4;
+ }
+ button.google {
+   background-color: #dc4c30;
+ }
+/* Subcompnents of Program Listings */
+.airDate {
+	width: 6.44rem;
+	background: rgba( 53, 53, 53, 0.85 );
+
+	font-weight: 900;
+	line-height: 1.1;
+	position: absolute;
+}
+.airDate.airDateLive {
+	background: rgba(255,0,0,.85);
+}
+.airTime {
+	font-weight: 300;
+}
+.channelLogo {
+	height: 1.874rem;
+	width: 3.748rem;
+	position: absolute;
+	right: 5.27rem;
+	top: 0.843rem;
+
+	img {
+		width: auto;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+.reminder {
+	width: 1.962rem;
+	height: 1.962rem;
+	background-color: @lightGray;
+	position: absolute;
+	right: 0;
+
+	img {
+		width: 50%;
+		height: 50%;
+		margin: 25% 25%;
+	}
+}
+.reminder.on {
+	background-color: @sportleBlue;
+}
+.logo {
+	img {
+		width: auto;
+		height: 100%;
+	}
+}
+.categoryContainer {
+	width: 2.928rem;
+	height: 2.928rem;
+	display: table;
+}
+.category {
+	width: 2.928rem;
+	height: 2.928rem;
+	#border.radius(2.928remm, 2.928rem, 2.928rem, 2.928rem);
+	font-size: 0.586rem;
+	font-weight: 600;
+	overflow: hidden;
+	text-align: center;
+	text-transform: uppercase;
+	display: table-cell;
+	vertical-align: middle;
+}
+.title {
+	width: 13.79rem;
+	height: 2.781rem;
+	font-size: 1.288rem;
+	font-weight: 600;
+	overflow: hidden;
+
+	.event {
+		float: left;
+	}
+	.team {
+		float: left;
+		.textOverflow();
+	}
+	.versus {
+		float: left;
+		font-size: 0.703rem;
+		font-weight: 300;
+		margin: 0.527rem 0.4685rem 0 0.4685rem;
+	}
+	.smallTitlePart {
+		display: block;
+		font-weight: 300;
+		margin-bottom: -0.187rem;
+		text-transform: uppercase;
+	}
+}
+.leftArrow {
+	width: 5.124rem;
+	height: 13.89rem;
+	background: url("/images/left-arrow-gradient.png") no-repeat 0 0 transparent;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+
+	a {
+		text-decoration: none;
+	}
+
+	.fa-angle-left {
+		color: @white;
+		font-size: 5.15rem;
+		display: block;
+		position: relative;
+		top: 3.748rem;
+		left: 1.406rem;
+		cursor: pointer;
+
+		&:hover {
+			color: @sportleBlue;
+		}
+	}
+}
+.rightArrow {
+	width: 5.124rem;
+	height: 13.89rem;
+	background: url("/images/right-arrow-gradient.png") no-repeat 0 0 transparent;
+	background-size: 100% 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	a {
+		text-decoration: none;
+	}
+
+	.fa-angle-right {
+		color: @white;
+		font-size: 5.15rem;
+		display: block;
+		position: relative;
+		top: 3.748rem;
+		left: 1.406rem;
+		cursor: pointer;
+
+		&:hover {
+			color: @sportleBlue;
+		}
+	}
+}
+/* Modal Launch Buttons */
+.eventModalLiveBtn {
+	float: left;
+	margin: 0 1.874rem 1.874rem 0;
+	padding: 0.35rem 0.937rem;
+	border-radius: 0.3rem;
+	font-size: 0.703rem;
+	background-color: @sportleBlue;
+}
