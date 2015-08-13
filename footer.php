@@ -122,7 +122,7 @@
 	  </div>
 	</div>
 
-	<!-- OnBoarding Sign-Up -->
+	<!-- OnBoarding Sign Up -->
 	<div class="modal fade onBoarding" id="onBoardingSignUp" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="onboarding-content">
@@ -139,13 +139,62 @@
 						<input type="text" id="email" name="email" placeholder="Email Address (i.e john@webmail.com)" />
 						<i class="fa fa-check"></i>
 					</div>
-					<input class="fullname" type="text" id="fullname" name="fullname" placeholder="Full name" />
+					<input class="username" type="text" id="username" name="username" placeholder="Username" />
+					<input class="firstname" type="text" id="firstname" name="firstname" placeholder="First Name" />
+					<input class="lastname" type="text" id="lastname" name="lastname" placeholder="Last Name" />
 					<div class="passwordLengthMessage">*Must be at least 6 characters</div>
 					<input class="password" type="password" id="password" name="password" placeholder="Password*" />
 					<input class="password2" type="password" id="password2" name="password2" placeholder="Confirm Password*" />
-					<input class="betaInvite" type="text" id="betaInvite" name="betaInvite" placeholder="Beta Invite Code*" />
-					<button class="modalButton">Sign In</button>
+					<!--input class="betaInvite" type="text" id="betaInvite" name="betaInvite" placeholder="Beta Invite Code*" /-->
+					<input type="checkbox" name="remember" value="remember" /><label for="remember">I agree to the <a>Terms of Service</a> and <a>Privacy Policy</a> lorem ipsum</label>
+					<button class="modalButton">Sign up</button>
 					<p>Already a Beta member? <a>Login now</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- OnBoarding Sign Up Social Connect -->
+	<div class="modal fade onBoarding" id="onBoardingSignUpSocial" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="onboarding-content">
+				<div class="modal-body">
+					<div class="logo"><img src="/images/sportle-logo.png" alt="Sportle Logo" class="headerLogo" /></div>
+					<h2>Just a couple more items and you’re all set</h2>
+					<div id="userPhoto">
+						<img src="/images/user-pic.png" class="userPic" />
+						<div><a>Change picture</a></div>
+					</div>
+					<div class="firstNameContainer">
+						<label for="firstname">First Name</label>
+						<input class="firstname" type="text" id="firstname" name="firstname" />
+					</div>
+					<div class="lastNameContainer">
+						<label for="lastname">Last Name</label>
+						<input class="lastname" type="text" id="lastname" name="lastname" />
+					</div>
+					<div class="emailContainer">
+						<label for="email">Email Address</label>
+						<input type="text" id="email" name="email" />
+						<i class="fa fa-check"></i>
+					</div>
+					<div class="usernameContainer">
+						<label for="username">Username</label>
+						<input class="username" type="text" id="username" name="username" />
+					</div>
+					<div class="passwordContainer">
+						<label for="password">Password*</label>
+						<div class="passwordLengthMessage">*min 6 characters</div>
+						<input class="password" type="password" id="password" name="password" />
+					</div>
+					<div class="password2Container">
+						<label for="password2">Confirm Password*</label>
+						<input class="password2" type="password" id="password2" name="password2" />
+					</div>
+					<!--input class="betaInvite" type="text" id="betaInvite" name="betaInvite" placeholder="Beta Invite Code*" /-->
+					<div class="checkboxContainer">
+						<input type="checkbox" name="remember" value="remember" /><label for="remember">I agree to the <a>Terms of Service</a> and <a>Privacy Policy</a> lorem ipsum</label>
+					</div>
+					<button class="modalButton">Sign up</button>
 				</div>
 			</div>
 		</div>
@@ -170,7 +219,7 @@
 					<input type="password" id="password" name="password" placeholder="Password" />
 					<button class="modalButton">Sign In</button>
 					<div class="signInAux">
-						<input type="checkbox" name="remember" value="remember" /><label>Remember Me</label>
+						<input type="checkbox" name="remember" value="remember" /><label for="remember">Remember Me</label>
 						<a>Forgot Password?</a>
 					</div>
 				</div>
@@ -184,7 +233,7 @@
 				<div class="modal-body">
 					<div class="logo"><img src="/images/sportle-logo.png" alt="Sportle Logo" class="headerLogo" /></div>
 					<h2>Link Accounts</h2>
-					<p>Would you like to link any pre-existing<br>cable providers or sports league packages?</p>
+					<p>Would you like to link any pre-existing<br />cable providers or sports league packages?</p>
 					<div class="tvProviders">
 						<div class="tvProvider xfinity"></div>
 						<div class="tvProvider directTV"></div>
@@ -192,9 +241,40 @@
 						<div class="tvProvider twc"></div>
 						<div class="tvProvider att"></div>
 					</div>
-					<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> More Providers</div>
-					<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> Add League Package</div>
-					<button class="modalButton">Link Accounts</button>
+					<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> <span class="blockLabel">More Providers</span></div>
+					<table id="leaguePackages">
+						<tr>
+							<td class="logoColumn"><img src="/images/college-sports-live.png" class="packageLogo" /></td>
+							<td class="titleColumn">College Sports Live</td>
+							<td class="messageColumn"><i class="fa fa-circle"></i> Verified</td>
+						</tr>
+						<tr>
+							<td class="logoColumn"><img src="/images/center-ice.png" class="packageLogo" /></td>
+							<td class="titleColumn">NHL Center Ice</td>
+							<td class="messageColumn"><i class="fa fa-circle"></i> Verified</td>
+						</tr>
+					</table>
+					<table id="choosePackage">
+						<tr>
+							<td class="chooseColumn" colspan="2">
+								<select class="sportsFilter selectpicker">
+									<option selected>Select Your Package</option>
+									<option>College Sports Live</option>
+									<option>NHL Center Ice</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="usernameColumn"><label for="username">Username:</label><input type="text" id="username" name="username" /></td>
+							<td class="passwordColumn"><label for="password">Password:</label><input type="text" id="password" name="password" /><div class="signInText">Press "Enter" to Sign In</div></td>
+						</tr>
+					</table>
+					<div class="addBlock" id="addLeaguePackage"><img src="/images/circle-plus.png" class="circlePlus" /> <span class="blockLabel">Add League Package</span></div>
+					<div class="bottomBlock">
+						<button class="modalButton">Link Accounts</button>
+						<p>Skip, I’ll do this later</p>
+						<p class="subText">**Some events may not be available to watch until you link your accounts,<br /><b>Please visit  Settings > Manage Subscriptions to add your providers</b></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -208,16 +288,20 @@
 	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#liveEvent">
 	  Modal Live
 	</button>
-	<!-- Button trigger OnBoarding Sign-Up -->
+	<!-- Button trigger OnBoarding Sign Up -->
 	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUp">
 	  OnBoarding Sign Up
 	</button>
-	<!-- Button trigger OnBoarding Login -->
+	<!-- Button trigger OnBoarding Sign Up Social -->
+	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUpSocial">
+	  OnBoarding Social Connect
+	</button>
+	<!-- Button trigger OnBoarding Sign In -->
 	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLogin">
-	  OnBoarding Login
+	  OnBoarding Sign In
 	</button>
 	<!-- Button trigger OnBoarding Link Accounts -->
-	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLinkAccounts">
+	<button type="button" id="onBoardingLinkButton" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLinkAccounts">
 	  OnBoarding Link Accounts
 	</button>
 

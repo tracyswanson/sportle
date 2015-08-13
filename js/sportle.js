@@ -62,6 +62,20 @@ function hideDivs( index ) {
 			$( ".whatsOnDropDown" ).hide();
 			$( ".whatsOnDropDownTriangle" ).hide();
 	        break;
+	    case 5: // quickPicks
+	    	$( "#searchResults" ).hide();
+	        $( "#notifications" ).hide();
+			$( ".notificationsTriangle" ).hide();
+			$( "#userSettings" ).hide();
+			$( ".userTriangle" ).hide();
+			$( ".whatsOnDropDown" ).hide();
+			$( ".whatsOnDropDownTriangle" ).hide();
+			$( ".quickPicks" ).hide();
+			$( ".quickPicksTriangle" ).hide();
+			$( ".opaqueBackdrop" ).hide();
+	        $( "#choosePackage" ).hide();
+	        $( "#leaguePackages" ).hide();
+	        break;
 	}
 }
 
@@ -94,6 +108,24 @@ jQuery(document).ready(function() {
 			// Animation complete.
 			$( ".userTriangle" ).toggle();
 		});
+	});
+	// Add League Package
+    $( "#addLeaguePackage" ).click( function() {
+    	hideDivs(5);
+		$( "#choosePackage" ).slideToggle( "slow", function() {
+			// Animation complete.
+		});
+	});
+	// Show League Package
+    $( "#choosePackage .chooseColumn" ).click( function() {
+    	hideDivs(5);
+		$( "#leaguePackages" ).slideToggle( "slow", function() {
+			// Animation complete.
+		});
+	});
+	// Reset League Package and Add League Package divs to hidden
+	$( "#onBoardingLinkButton" ).click( function() {
+    	hideDivs(5);
 	});
 	// Free Streams On/Off
     $( ".streamBtn" ).click( function() {

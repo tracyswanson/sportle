@@ -80,8 +80,8 @@ select {
   	-webkit-border-radius: 0px;
 }
 a {
+	color: @sportleBlue;
 	text-decoration: none;
-	color: @black;
 
 	&:hover {
 		color: @sportleBlue;
@@ -1580,11 +1580,10 @@ img {
 	}
 }
 /* On Boarding Mods */
-/* Sign Up */
 .onBoarding {
   .modal-dialog {
     width: 32.875rem;
-    height: 42rem;
+    height: 44rem;
     margin: 9.37rem auto;
 
     .onboarding-content {
@@ -1636,7 +1635,7 @@ img {
           margin-top: 0.75rem;
         }
         p {
-          color: @lightGray;
+          color: @black;
           font-size: 0.875rem;
           margin: 0.5rem 0 1.3125rem;
         }
@@ -1645,7 +1644,7 @@ img {
           overflow: hidden;
           height: 2.125rem;
           width: 100%;
-          margin-bottom: 0.75rem;
+          margin-bottom: 1.125rem;
         }
         .fa-check {
           color: cccccc;
@@ -1661,7 +1660,7 @@ img {
           width: 100%;
           border: none;
           padding: 0 1rem;
-          margin-bottom: 0.75rem;
+          margin-bottom: 1.125rem;
         }
         .signInAux {
           text-align: left;
@@ -1710,7 +1709,7 @@ img {
     color: #ddd;
   }
 }
-
+/* Sign Up */
 #onBoardingSignUp {
   .modal-body {
     padding: 1rem 2.1875rem 3.4375rem 2.1875rem;
@@ -1724,12 +1723,16 @@ img {
       font-size: 0.875rem;
     }
     h2 {
+      font-weight: 600;
       text-align: center;
       margin: 0 0 0.4rem 0;
     }
     a {
       font-size: 1.125rem;
       display: inline-block;
+    }
+    label a {
+      font-size: 0.875rem;
     }
     .socialLoginButton {
       margin-bottom: 1rem;
@@ -1741,24 +1744,158 @@ img {
     .passwordLengthMessage {
       font-size: 0.625rem;
       text-align: left;
-      margin: 0.6rem 0 0.4rem 5.2rem;
+      margin: 0.2rem 0 0.8rem 5.2rem;
       color: @darkGray;
     }
     .modalButton {
-      margin: 1rem 0 1rem;
+      margin: 1rem 0 0;
     }
-    #password {
-      margin-right: 4%;
+    #password,
+    #firstname {
+      margin-right: 3%;
     }
-    #password2 {
+    #password2,
+    #lastname {
       float: right;
     }
     #password,
-    #password2 {
-      width: 48%;
+    #password2,
+    #firstname,
+    #lastname {
+      width: 48.5%;
     }
   }
 }
+/* Sign Up Social Connect */
+#onBoardingSignUpSocial .modal-dialog .onboarding-content .modal-body {
+    text-align: left;
+
+    .fa-check {
+      top: 2.125rem;
+    }
+}
+#onBoardingSignUpSocial {
+  .modal-body {
+    padding: 1rem 4rem 3.4375rem 3.75rem;
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 1.1rem;
+    }
+    p.intro {
+      color: @lightGray;
+      font-size: 0.875rem;
+    }
+    h2 {
+      font-weight: 600;
+      text-align: left;
+      margin: 2rem 0 1.5rem 1.875rem;
+    }
+    #userPhoto {
+      float: left;
+      margin-left: 1.875rem;
+      text-align: center;
+
+      .userPic {
+         border: 1px #cdcdcd solid;
+      }
+      a {
+        font-size: 0.875rem;
+      }
+    }
+    a {
+      font-size: 1.125rem;
+      display: inline-block;
+    }
+    label {
+      display: block;
+      margin-left: 0;
+    }
+    label a {
+      font-size: 0.875rem;
+    }
+    .socialLoginButton {
+      margin-bottom: 1rem;
+    }
+    .firstNameContainer {
+      float: right;
+      width: 12rem;
+      margin-bottom: 1.125rem;
+    }
+    .lastNameContainer {
+      float: right;
+      width: 12rem;
+      margin-bottom: 1.125rem;
+    }
+    .usernameContainer {
+      position: relative;
+      overflow: hidden;
+      float: left;
+      width: 100%;
+      margin-bottom: 1.125rem;
+    }
+    .emailContainer {
+      margin: 0.875rem 0 0 0;
+      position: relative;
+      overflow: hidden;
+      height: auto;
+      float: left;
+
+      input[type="text"] {
+        display: block;
+      }
+    }
+    .passwordLengthMessage {
+      font-size: 0.625rem;
+      text-align: right;
+      margin: 0.2rem 0.4rem 0 0;
+      color: @darkGray;
+      float: right;
+    }
+    .modalButton {
+      margin: 1rem 7.5625rem 0 7.5625rem;
+    }
+    .passwordContainer {
+      position: relative;
+      overflow: hidden;
+      width: 48.5%;
+      margin-right: 3%;
+      float: left;
+
+      label[for=password] {
+        width: 7rem;
+        float: left;
+      }
+    }
+    .password2Container {
+      position: relative;
+      overflow: hidden;
+      width: 48.5%;
+      float: left;
+    }
+    #password,
+    #password2,
+    #firstname,
+    #lastname,
+    #username {
+      width: 100%;
+      margin: 0;
+    }
+    .checkboxContainer {
+      position: relative;
+      overflow: hidden;
+      float: left;
+      width: 100%;
+      margin: 2.375rem 0 1.125rem;
+
+      label[for=remember] {
+        display: inline-block;
+        margin-left: 0.4rem;
+      }
+    }
+  }
+}
+/* Login */
 #onBoardingLogin {
   .modal-dialog {
     height: 29.375rem;
@@ -1770,17 +1907,21 @@ img {
     float: right;
   }
 }
+/* Link Accounts */
 #onBoardingLinkAccounts {
   .modal-body {
+    position: relative;
+    overflow: hidden;
     padding: 1rem 1.75rem 3.4375rem 1.75rem;
   }
   h2 {
+    font-weight: 500;
     text-align: center;
     margin: 2.2rem 0 1.2rem;
   }
   p {
     font-size: 1.125rem;
-    margin-bottom: 1.4rem;
+    margin: 1.125rem 0 1.625rem;
   }
   .tvProviders {
     margin: 1rem 0;
@@ -1793,20 +1934,151 @@ img {
     }
   }
   .addBlock {
-      clear: both;
-      font-size: 1.1rem;
-      line-height: 2.5rem;
-      height: 2.5rem;
-      text-align: center;
-      width: 100%;
-      color: @lightGray;
-      background-color: #ebebeb;
-      margin: 4px 0 0 0;
-      cursor: pointer;
+    clear: both;
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    width: 100%;
+    color: @lightGray;
+    background-color: #ebebeb;
+    margin: 4px 0 0 0;
+    cursor: pointer;
+  }
+  .blockLabel {
+    display: inline-block;
+    text-align: left;
+    min-width: 10.375rem;
+  }
+  .circlePlus {
+    margin-right: 0.6rem;
+  }
+  .bottomBlock {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+
+    p {
+      text-size: 1rem;
     }
-    .circlePlus {
-      margin-right: 0.6rem;
+  }
+  .subText {
+    font-size: 0.75rem;
+    margin: 0;
+
+    b {
+      font-weight: 600;
     }
+  }
+  #leaguePackages {
+    border-top: 1px solid #cdcdcd;
+    margin-top: 1.125rem;
+    display: none;
+  }
+  .packageLogo {
+    margin: 0.875rem 1rem 0.875rem 0;
+    background-color: #fff;
+    padding: 3px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    width: 5.8125rem;
+    height: 2.1875rem;
+  }
+  .titleColumn {
+    width: 16rem;
+    font-size: 1rem;
+  }
+  .messageColumn {
+    width: 6.5625rem;
+    font-size: 0.875rem;
+
+    &.failed {
+      .fa-circle {
+        color: #cc0033;
+      }
+    }
+    .fa-circle {
+      font-size: 0.6875rem;
+      color: #3cb878;
+      margin-right: 0.2rem;
+    }
+  }
+  #choosePackage {
+    background-color: #dbecf9;
+    margin: 0.9375rem 0 0.375rem;
+    display: none;
+
+    .chooseColumn {
+      padding: 1.1875rem 0.875rem;
+
+      .bootstrap-select > .dropdown-toggle {
+        line-height: 1.875rem;
+        padding: 2px 1.875rem 2px 0.75rem;
+      }
+      .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+        border-right: 1px #acacac solid;
+      }
+    }
+    .sportsFilter .btn {
+      border-radius: 0;
+      border: 1px @sportleBlue solid;
+      background-color: @white;
+      color: @sportleBlue;
+      font-size: 1em;
+      width: 13rem;
+    }
+    .dropdown-menu {
+      border-radius: 0;
+      font-size: 1em;
+      width: 13rem;
+    }
+    .dropdown-menu > li > a:hover {
+      color: #white;
+      background-color: @sportleBlue;
+    }
+    .usernameColumn,
+    .passwordColumn {
+    }
+    .usernameColumn label,
+    .passwordColumn label,
+    .signInText {
+      opacity: 0.38;
+      font-size: 0.875rem;
+      font-weight: 200;
+      line-height: 0.75;
+      display: block;
+    }
+    .usernameColumn input[type="text"],
+    .passwordColumn input[type="text"] {
+      font-size: 1rem;
+      line-height: 1.5625;
+      width: 13rem;
+      opacity: 0.38;
+    }
+    .usernameColumn input[type="text"]:focus,
+    .passwordColumn input[type="text"]:focus {
+    }
+    .usernameColumn {
+      padding: 0 1rem 0 0.875rem;
+
+      input[type="text"] {
+        margin-bottom: 1.9rem;
+      }
+    }
+    .passwordColumn {
+      padding-right: 0.875rem;
+
+      input[type="text"] {
+        margin-bottom: 0.525rem;
+      }
+    }
+    .signInText {
+      float: right;
+      text-align: right;
+      margin: 0 0.625rem 0.6875rem 0;
+    }
+  }
 }
 /* Search Results */
 /* Teams */

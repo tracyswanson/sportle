@@ -67,8 +67,8 @@ select {
   -webkit-border-radius: 0px;
 }
 a {
+  color: #0280e2;
   text-decoration: none;
-  color: #000000;
 }
 a:hover {
   color: #0280e2;
@@ -1519,10 +1519,9 @@ img {
   background-color: #333333;
 }
 /* On Boarding Mods */
-/* Sign Up */
 .onBoarding .modal-dialog {
   width: 32.875rem;
-  height: 42rem;
+  height: 44rem;
   margin: 9.37rem auto;
 }
 .onBoarding .modal-dialog .onboarding-content {
@@ -1572,7 +1571,7 @@ img {
   margin-top: 0.75rem;
 }
 .onBoarding .modal-dialog .onboarding-content .modal-body p {
-  color: #666666;
+  color: #000000;
   font-size: 0.875rem;
   margin: 0.5rem 0 1.3125rem;
 }
@@ -1581,7 +1580,7 @@ img {
   overflow: hidden;
   height: 2.125rem;
   width: 100%;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.125rem;
 }
 .onBoarding .modal-dialog .onboarding-content .modal-body .fa-check {
   color: cccccc;
@@ -1597,7 +1596,7 @@ img {
   width: 100%;
   border: none;
   padding: 0 1rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.125rem;
 }
 .onBoarding .modal-dialog .onboarding-content .modal-body .signInAux {
   text-align: left;
@@ -1640,6 +1639,7 @@ img {
 .modalButton:hover {
   color: #ddd;
 }
+/* Sign Up */
 #onBoardingSignUp .modal-body {
   padding: 1rem 2.1875rem 3.4375rem 2.1875rem;
 }
@@ -1652,12 +1652,16 @@ img {
   font-size: 0.875rem;
 }
 #onBoardingSignUp .modal-body h2 {
+  font-weight: 600;
   text-align: center;
   margin: 0 0 0.4rem 0;
 }
 #onBoardingSignUp .modal-body a {
   font-size: 1.125rem;
   display: inline-block;
+}
+#onBoardingSignUp .modal-body label a {
+  font-size: 0.875rem;
 }
 #onBoardingSignUp .modal-body .socialLoginButton {
   margin-bottom: 1rem;
@@ -1669,22 +1673,148 @@ img {
 #onBoardingSignUp .modal-body .passwordLengthMessage {
   font-size: 0.625rem;
   text-align: left;
-  margin: 0.6rem 0 0.4rem 5.2rem;
+  margin: 0.2rem 0 0.8rem 5.2rem;
   color: #333333;
 }
 #onBoardingSignUp .modal-body .modalButton {
-  margin: 1rem 0 1rem;
+  margin: 1rem 0 0;
 }
-#onBoardingSignUp .modal-body #password {
-  margin-right: 4%;
+#onBoardingSignUp .modal-body #password,
+#onBoardingSignUp .modal-body #firstname {
+  margin-right: 3%;
 }
-#onBoardingSignUp .modal-body #password2 {
+#onBoardingSignUp .modal-body #password2,
+#onBoardingSignUp .modal-body #lastname {
   float: right;
 }
 #onBoardingSignUp .modal-body #password,
-#onBoardingSignUp .modal-body #password2 {
-  width: 48%;
+#onBoardingSignUp .modal-body #password2,
+#onBoardingSignUp .modal-body #firstname,
+#onBoardingSignUp .modal-body #lastname {
+  width: 48.5%;
 }
+/* Sign Up Social Connect */
+#onBoardingSignUpSocial .modal-dialog .onboarding-content .modal-body {
+  text-align: left;
+}
+#onBoardingSignUpSocial .modal-dialog .onboarding-content .modal-body .fa-check {
+  top: 2.125rem;
+}
+#onBoardingSignUpSocial .modal-body {
+  padding: 1rem 4rem 3.4375rem 3.75rem;
+}
+#onBoardingSignUpSocial .modal-body p {
+  font-size: 1.125rem;
+  margin-bottom: 1.1rem;
+}
+#onBoardingSignUpSocial .modal-body p.intro {
+  color: #666666;
+  font-size: 0.875rem;
+}
+#onBoardingSignUpSocial .modal-body h2 {
+  font-weight: 600;
+  text-align: left;
+  margin: 2rem 0 1.5rem 1.875rem;
+}
+#onBoardingSignUpSocial .modal-body #userPhoto {
+  float: left;
+  margin-left: 1.875rem;
+  text-align: center;
+}
+#onBoardingSignUpSocial .modal-body #userPhoto .userPic {
+  border: 1px #cdcdcd solid;
+}
+#onBoardingSignUpSocial .modal-body #userPhoto a {
+  font-size: 0.875rem;
+}
+#onBoardingSignUpSocial .modal-body a {
+  font-size: 1.125rem;
+  display: inline-block;
+}
+#onBoardingSignUpSocial .modal-body label {
+  display: block;
+  margin-left: 0;
+}
+#onBoardingSignUpSocial .modal-body label a {
+  font-size: 0.875rem;
+}
+#onBoardingSignUpSocial .modal-body .socialLoginButton {
+  margin-bottom: 1rem;
+}
+#onBoardingSignUpSocial .modal-body .firstNameContainer {
+  float: right;
+  width: 12rem;
+  margin-bottom: 1.125rem;
+}
+#onBoardingSignUpSocial .modal-body .lastNameContainer {
+  float: right;
+  width: 12rem;
+  margin-bottom: 1.125rem;
+}
+#onBoardingSignUpSocial .modal-body .usernameContainer {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+  margin-bottom: 1.125rem;
+}
+#onBoardingSignUpSocial .modal-body .emailContainer {
+  margin: 0.875rem 0 0 0;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  float: left;
+}
+#onBoardingSignUpSocial .modal-body .emailContainer input[type="text"] {
+  display: block;
+}
+#onBoardingSignUpSocial .modal-body .passwordLengthMessage {
+  font-size: 0.625rem;
+  text-align: right;
+  margin: 0.2rem 0.4rem 0 0;
+  color: #333333;
+  float: right;
+}
+#onBoardingSignUpSocial .modal-body .modalButton {
+  margin: 1rem 7.5625rem 0 7.5625rem;
+}
+#onBoardingSignUpSocial .modal-body .passwordContainer {
+  position: relative;
+  overflow: hidden;
+  width: 48.5%;
+  margin-right: 3%;
+  float: left;
+}
+#onBoardingSignUpSocial .modal-body .passwordContainer label[for=password] {
+  width: 7rem;
+  float: left;
+}
+#onBoardingSignUpSocial .modal-body .password2Container {
+  position: relative;
+  overflow: hidden;
+  width: 48.5%;
+  float: left;
+}
+#onBoardingSignUpSocial .modal-body #password,
+#onBoardingSignUpSocial .modal-body #password2,
+#onBoardingSignUpSocial .modal-body #firstname,
+#onBoardingSignUpSocial .modal-body #lastname,
+#onBoardingSignUpSocial .modal-body #username {
+  width: 100%;
+  margin: 0;
+}
+#onBoardingSignUpSocial .modal-body .checkboxContainer {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+  margin: 2.375rem 0 1.125rem;
+}
+#onBoardingSignUpSocial .modal-body .checkboxContainer label[for=remember] {
+  display: inline-block;
+  margin-left: 0.4rem;
+}
+/* Login */
 #onBoardingLogin .modal-dialog {
   height: 29.375rem;
 }
@@ -1694,16 +1824,20 @@ img {
 #onBoardingLogin .modalButton {
   float: right;
 }
+/* Link Accounts */
 #onBoardingLinkAccounts .modal-body {
+  position: relative;
+  overflow: hidden;
   padding: 1rem 1.75rem 3.4375rem 1.75rem;
 }
 #onBoardingLinkAccounts h2 {
+  font-weight: 500;
   text-align: center;
   margin: 2.2rem 0 1.2rem;
 }
 #onBoardingLinkAccounts p {
   font-size: 1.125rem;
-  margin-bottom: 1.4rem;
+  margin: 1.125rem 0 1.625rem;
 }
 #onBoardingLinkAccounts .tvProviders {
   margin: 1rem 0;
@@ -1726,8 +1860,124 @@ img {
   margin: 4px 0 0 0;
   cursor: pointer;
 }
+#onBoardingLinkAccounts .blockLabel {
+  display: inline-block;
+  text-align: left;
+  min-width: 10.375rem;
+}
 #onBoardingLinkAccounts .circlePlus {
   margin-right: 0.6rem;
+}
+#onBoardingLinkAccounts .bottomBlock {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+}
+#onBoardingLinkAccounts .bottomBlock p {
+  text-size: 1rem;
+}
+#onBoardingLinkAccounts .subText {
+  font-size: 0.75rem;
+  margin: 0;
+}
+#onBoardingLinkAccounts .subText b {
+  font-weight: 600;
+}
+#onBoardingLinkAccounts #leaguePackages {
+  border-top: 1px solid #cdcdcd;
+  margin-top: 1.125rem;
+  display: none;
+}
+#onBoardingLinkAccounts .packageLogo {
+  margin: 0.875rem 1rem 0.875rem 0;
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  width: 5.8125rem;
+  height: 2.1875rem;
+}
+#onBoardingLinkAccounts .titleColumn {
+  width: 16rem;
+  font-size: 1rem;
+}
+#onBoardingLinkAccounts .messageColumn {
+  width: 6.5625rem;
+  font-size: 0.875rem;
+}
+#onBoardingLinkAccounts .messageColumn.failed .fa-circle {
+  color: #cc0033;
+}
+#onBoardingLinkAccounts .messageColumn .fa-circle {
+  font-size: 0.6875rem;
+  color: #3cb878;
+  margin-right: 0.2rem;
+}
+#onBoardingLinkAccounts #choosePackage {
+  background-color: #dbecf9;
+  margin: 0.9375rem 0 0.375rem;
+  display: none;
+}
+#onBoardingLinkAccounts #choosePackage .chooseColumn {
+  padding: 1.1875rem 0.875rem;
+}
+#onBoardingLinkAccounts #choosePackage .chooseColumn .bootstrap-select > .dropdown-toggle {
+  line-height: 1.875rem;
+  padding: 2px 1.875rem 2px 0.75rem;
+}
+#onBoardingLinkAccounts #choosePackage .chooseColumn .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  border-right: 1px #acacac solid;
+}
+#onBoardingLinkAccounts #choosePackage .sportsFilter .btn {
+  border-radius: 0;
+  border: 1px #0280e2 solid;
+  background-color: #ffffff;
+  color: #0280e2;
+  font-size: 1em;
+  width: 13rem;
+}
+#onBoardingLinkAccounts #choosePackage .dropdown-menu {
+  border-radius: 0;
+  font-size: 1em;
+  width: 13rem;
+}
+#onBoardingLinkAccounts #choosePackage .dropdown-menu > li > a:hover {
+  color: #white;
+  background-color: #0280e2;
+}
+#onBoardingLinkAccounts #choosePackage .usernameColumn label,
+#onBoardingLinkAccounts #choosePackage .passwordColumn label,
+#onBoardingLinkAccounts #choosePackage .signInText {
+  opacity: 0.38;
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 0.75;
+  display: block;
+}
+#onBoardingLinkAccounts #choosePackage .usernameColumn input[type="text"],
+#onBoardingLinkAccounts #choosePackage .passwordColumn input[type="text"] {
+  font-size: 1rem;
+  line-height: 1.5625;
+  width: 13rem;
+  opacity: 0.38;
+}
+#onBoardingLinkAccounts #choosePackage .usernameColumn {
+  padding: 0 1rem 0 0.875rem;
+}
+#onBoardingLinkAccounts #choosePackage .usernameColumn input[type="text"] {
+  margin-bottom: 1.9rem;
+}
+#onBoardingLinkAccounts #choosePackage .passwordColumn {
+  padding-right: 0.875rem;
+}
+#onBoardingLinkAccounts #choosePackage .passwordColumn input[type="text"] {
+  margin-bottom: 0.525rem;
+}
+#onBoardingLinkAccounts #choosePackage .signInText {
+  float: right;
+  text-align: right;
+  margin: 0 0.625rem 0.6875rem 0;
 }
 /* Search Results */
 /* Teams */
