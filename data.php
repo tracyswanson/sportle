@@ -812,6 +812,7 @@
 			echo '			<div class="timePeriod">' . $programListing['timePeriod'] . '<span class="timeElapsed">' . $programListing['timeElapsed'] . '</span></div>' . PHP_EOL;
 			echo '		</div>' . PHP_EOL;
 			echo '	</div>' . PHP_EOL;
+			echo '	<div class="reminderTip">Set Reminder<div class="reminderTriangle glyphicon glyphicon-triangle-bottom"></div></div>';
 			echo '</div>' . PHP_EOL;
 		}
 	 }

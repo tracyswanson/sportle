@@ -156,7 +156,12 @@ jQuery(document).ready(function() {
 	},function(){
 	    $( this ).find( ".sportsFilter .btn" ).css("background-image", "url(../images/select-sports-bkgd.jpg)");
 	});
-
+	// Reminder rollover change color and show tool tip
+	$( ".reminder" ).hover( function(){
+	    $( this ).parent().parent().find( ".reminderTip" ).show();
+	},function(){
+	    $( this ).parent().parent().find( ".reminderTip" ).hide();
+	});
 	// Scroll Up/Down
 	// What's On Drop Down
 	$( ".whatsOnNowLink" ).click( function() {

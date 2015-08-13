@@ -2858,6 +2858,27 @@ button.google {
 .rightArrow .fa-angle-right:hover {
   color: #0280e2;
 }
+.reminderTip {
+  color: #ffffff;
+  background-color: #2f2e2e;
+  font-size: 0.82rem;
+  line-height: 2.34rem;
+  text-align: center;
+  width: 7.5rem;
+  height: 2.34rem;
+  position: absolute;
+  right: -0.2rem;
+  top: 0.6rem;
+  display: none;
+}
+.reminderTip .reminderTriangle {
+  color: #2f2e2e;
+  font-size: 1.5rem;
+  position: absolute;
+  vertical-align: text-top;
+  left: 5.56rem;
+  top: 2rem;
+}
 /* Modal Launch Buttons */
 .eventModalLiveBtn {
   float: left;
