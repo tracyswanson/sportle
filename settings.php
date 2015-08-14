@@ -13,6 +13,16 @@
 	$tabClass1 = $tab == 'profile' ? ' class="selected"' : '';
 	$tabClass2 = $tab == 'notifications' ? ' class="selected"' : '';
 	$tabClass3 = $tab == 'subscriptions' ? ' class="selected"' : '';
+	$div = $_GET['div'];
+	$divAdd = $div == 'add' ? 'style="display:block;"' : 'style="display:none;"';
+	$divInteractions = $div == 'interactions' ? true : false;
+	$divConfirmation = $div == 'confirmation' ? 'style="display:block;"' : 'style="display:none;"';
+	$divSaved = $div == 'saved' ? 'style="display:block;"' : 'style="display:none;"';
+	$divConnect = $div == 'connect' ? true : false;
+	$divDisconnect = $div == 'disconnect' ? true : false;
+	$divSuccess = $div == 'success' ? 'style="display:block;"' : 'style="display:none;"';
+	$divFail = $div == 'fail' ? 'style="display:block;"' : 'style="display:none;"';
+	$divFailClass = $div == 'fail' ? ' class="validateFailed"' : '';
 ?>
 <html>
 	<head>
@@ -71,7 +81,9 @@
 						<label for="username">First Name</label><input type="text" id="firstName" name="firstName" />
 					</div>
 					<div class="formInput">
-						<label for="username">Edit Username</label><input type="text" id="userName" name="userName" />
+						<label for="username">Edit Username</label><input type="text" id="userName" name="userName" <?php echo $divFailClass; ?>/>
+						<div class="validated" <?php echo $divSuccess; ?>><i class="fa fa-check"></i></div>
+						<div class="validateErrorMessage" <?php echo $divFail; ?>>Sorry that username is taken</div>
 					</div>
 					<div class="formInput">
 						<label for="username">Last Name</label><input type="text" id="lastName" name="lastName" />
@@ -86,7 +98,7 @@
 						<label for="username">Confirm Password*</label><input type="text" id="username" name="username" />
 					</div>
 					<button class="saveButton">Save Changes</button>
-					<button class="cancelButton">Cancel</button>
+					<!--button class="cancelButton">Cancel</button-->
 				</div>
 				<div class="accountLogins">
 					<h3>Sign Out/Switch Accounts</h3>
@@ -95,23 +107,70 @@
 						<div><a>Upload profile photo</a></div>
 						<div><a>Remove profile photo</a></div>
 					</div>
-					<div class="logOut">
-						<p>Your Sportle account is currently connected to Facebook and you are logged in as:
-	 <br><span class="userName">Justin LaBaw Rivers</span></p>
-	 					<div class="connectLabel facebook">Disconnect Facebook</div>
-	 					<button class="socialLoginButton facebook">Sign out with <span class="icon-facebook"></span></button>
-					</div>
-	 				<div class="logIn">
-	 					<p>Connecting your social media accounts allows a quick & easy way for you to import your favorite sports teams and customize your Sportle experience.</p>
-	 					<div class="twitterBlock">
-		 					<div class="connectLabel twitter">Connect with Twitter</div>
-			 				<button class="socialLoginButton twitter">Sign in with <span class="icon-twitter"></span></button>
+					<?php if ( $divConnect ) : ?>
+		 				<div class="logIn logInOnly">
+		 					<p>Connecting your social media accounts allows a quick & easy way for you to import your favorite sports teams and customize your Sportle experience.</p>
+		 					<div class="facebookBlock">
+			 					<div class="connectLabel facebook">Connect with Facebook</div>
+				 				<button class="socialLoginButton facebook">Sign in with <span class="icon-facebook"></span></button>
+			 				</div>
+		 					<div class="twitterBlock">
+			 					<div class="connectLabel twitter">Connect with Twitter</div>
+				 				<button class="socialLoginButton twitter">Sign in with <span class="icon-twitter"></span></button>
+			 				</div>
+			 				<div class="googleBlock">
+			 					<div class="connectLabel google">Connect with Google</div>
+			 					<button class="socialLoginButton google">Sign in with <span class="icon-google"></span></button>
+			 				</div>
 		 				</div>
-		 				<div class="googleBlock">
-		 					<div class="connectLabel google">Connect with Google</div>
-		 					<button class="socialLoginButton google">Sign in with <span class="icon-google"></span></button>
+					<?php elseif ( $divDisconnect ) : ?>
+						<div class="logOut logOutFirst">
+							<p>Your Sportle account is currently connected to Facebook and you are logged in as:
+		 <br><span class="userName">Justin LaBaw Rivers</span></p>
+		 					<div class="connectLabel facebook">Disconnect Facebook</div>
+		 					<button class="socialLoginButton facebook">Sign out with <span class="icon-facebook"></span></button>
 		 				</div>
-	 				</div>
+		 				<div class="logOut logOutOnly">
+							<p>Your Sportle account is currently connected to Twitter and you are logged in as:
+		 <br><span class="userName">Justin LaBaw Rivers</span></p>
+		 					<div class="connectLabel twitter">Disconnect Twitter</div>
+		 					<button class="socialLoginButton twitter">Sign out with <span class="icon-twitter"></span></button>
+		 				</div>
+		 				<div class="logOut logOutOnly">
+							<p>Your Sportle account is currently connected to Google and you are logged in as:
+		 <br><span class="userName">Justin LaBaw Rivers</span></p>
+		 					<div class="connectLabel google">Disconnect Google</div>
+		 					<button class="socialLoginButton google">Sign out with <span class="icon-google"></span></button>
+						</div>
+					<?php else : ?>
+						<div class="logOut">
+							<p>Your Sportle account is currently connected to Facebook and you are logged in as:
+		 <br><span class="userName">Justin LaBaw Rivers</span></p>
+		 					<div class="connectLabel facebook">Disconnect Facebook</div>
+		 					<button class="socialLoginButton facebook">Sign out with <span class="icon-facebook"></span></button>
+						</div>
+		 				<div class="logIn">
+		 					<p>Connecting your social media accounts allows a quick & easy way for you to import your favorite sports teams and customize your Sportle experience.</p>
+		 					<div class="twitterBlock">
+			 					<div class="connectLabel twitter">Connect with Twitter</div>
+				 				<button class="socialLoginButton twitter">Sign in with <span class="icon-twitter"></span></button>
+			 				</div>
+			 				<div class="googleBlock">
+			 					<div class="connectLabel google">Connect with Google</div>
+			 					<button class="socialLoginButton google">Sign in with <span class="icon-google"></span></button>
+			 				</div>
+		 				</div>
+					<?php endif; ?>
+				</div>
+				<div class="confirmationBox" <?php echo $divConfirmation; ?>>
+					<h2>Are you sure you want to change your username?</h2>
+					<p>Changing your username lorem ipsum dolor color and my require you lorem ipsum etc.</p>
+					<button class="modalButton cancelButton">Cancel</button>
+					<button class="modalButton yesButton">Yes, please</button>
+				</div>
+				<div class="successModal" <?php echo $divSaved; ?>>
+					<div class="closeNotice">X</div>
+					<p><i class="fa fa-check"></i> Your profile has been saved succesfully!</p>
 				</div>
 			<?php endif; ?>
 			<?php if ( !empty( $tabClass2 ) ) : ?>
@@ -123,16 +182,36 @@
 				</div>
 			<?php endif; ?>
 			<?php if ( !empty( $tabClass3 ) ) : ?>
-				<h3 class="providerTitle">First Select your TV Provider:</h3>
-				<div class="tvProviders">
-					<div class="tvProvider xfinity"></div>
-					<div class="tvProvider directTV"></div>
-					<div class="tvProvider dish"></div>
-					<div class="tvProvider twc"></div>
-					<div class="tvProvider att"></div>
+				<div class="providers">
+					<h3 class="providerTitle">First Select your TV Provider:</h3>
+					<div class="tvProviders">
+						<div class="tvProvider xfinity"></div>
+						<div class="tvProvider directTV"></div>
+						<div class="tvProvider dish"></div>
+						<div class="tvProvider twc"></div>
+						<div class="tvProvider att"></div>
+					</div>
 				</div>
 				<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> More Providers</div>
 				<h3 class="leaguePackagesTitle">My League Packages</h3>
+				<?php if ( $divInteractions ) : ?>
+				<table class="leaguePackages">
+					<tr>
+						<td class="logoColumn"><img src="/images/college-sports-live.png" class="packageLogo" /></td>
+						<td class="titleColumn">College Sports Live</td>
+						<td class="usernameColumn"><label for="username">Username:</label><input type="text" id="username" name="username" /></td>
+						<td class="passwordColumn"><label for="password">Password:</label><input type="text" id="password" name="password" /></td>
+						<td class="signInColumn"><button class="signInButtonSuccess"><i class="fa fa-check"></i> Login Successful</button></td>
+					</tr>
+					<tr>
+						<td class="logoColumn"><img src="/images/center-ice.png" class="packageLogo" /></td>
+						<td class="titleColumn">NHL Center Ice</td>
+						<td class="usernameColumn"><label for="username">Username:</label><input type="text" id="username" name="username" class="error" /><div class="errorMessage">Username is incorrect</div></td>
+						<td class="passwordColumn"><label for="password">Password:</label><input type="text" id="password" name="password" class="error" /><div class="errorMessage">Password is incorrect</div></td>
+						<td class="signInColumn"><button class="signInButton">Login</button></td>
+					</tr>
+				</table>
+				<?php else : ?>
 				<table class="leaguePackages">
 					<tr>
 						<td class="logoColumn"><img src="/images/college-sports-live.png" class="packageLogo" /></td>
@@ -149,7 +228,8 @@
 						<td class="deleteColumn"><i class="fa fa-times-circle"></i> Remove package</td>
 					</tr>
 				</table>
-				<table class="choosePackage">
+				<?php endif; ?>
+				<table class="choosePackage" <?php echo $divAdd; ?>>
 					<tr>
 						<td class="labelColumn">Choose Package:</td>
 						<td class="chooseColumn">
@@ -161,7 +241,7 @@
 						</td>
 						<td class="usernameColumn"><label for="username">Username:</label><input type="text" id="username" name="username" /></td>
 						<td class="passwordColumn"><label for="password">Password:</label><input type="text" id="password" name="password" /></td>
-						<td class="signInColumn"><div class="signInButton">Sign In</div></td>
+						<td class="signInColumn"><button class="signInButton">Sign In</button></td>
 					</tr>
 				</table>
 				<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> Add Package</div>

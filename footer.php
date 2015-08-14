@@ -279,32 +279,313 @@
 			</div>
 		</div>
 	</div>
+	<!-- OnBoarding Link Accounts 2 -->
+	<div class="modal fade onBoarding" id="onBoardingLinkAccounts2" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="onboarding-content">
+				<div class="modal-body">
+					<div class="logo"><img src="/images/sportle-logo.png" alt="Sportle Logo" class="headerLogo" /></div>
+					<h2>Link Accounts</h2>
+					<p>Would you like to link any pre-existing<br />cable providers or sports league packages?</p>
+					<div class="tvProviders">
+						<div class="tvProvider xfinity"></div>
+						<div class="tvProvider directTV"></div>
+						<div class="tvProvider dish"></div>
+						<div class="tvProvider twc"></div>
+						<div class="tvProvider att"></div>
+					</div>
+					<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> <span class="blockLabel">More Providers</span></div>
+					<table id="leaguePackages">
+						<tr>
+							<td class="logoColumn"><img src="/images/college-sports-live.png" class="packageLogo" /></td>
+							<td class="titleColumn">College Sports Live</td>
+							<td class="messageColumn"><i class="fa fa-circle"></i> Verified</td>
+						</tr>
+						<tr>
+							<td class="logoColumn"><img src="/images/center-ice.png" class="packageLogo" /></td>
+							<td class="titleColumn">NHL Center Ice</td>
+							<td class="messageColumn"><i class="fa fa-circle"></i> Verified</td>
+						</tr>
+					</table>
+					<table id="choosePackage">
+						<tr>
+							<td class="chooseColumn" colspan="2">
+								<select class="sportsFilter selectpicker">
+									<option selected>Select Your Package</option>
+									<option>College Sports Live</option>
+									<option>NHL Center Ice</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="usernameColumn"><label for="username">Username:</label><input type="text" id="username" name="username" /></td>
+							<td class="passwordColumn"><label for="password">Password:</label><input type="text" id="password" name="password" /><div class="signInText">Press "Enter" to Sign In</div></td>
+						</tr>
+					</table>
+					<div class="addBlock" id="addLeaguePackage"><img src="/images/circle-plus.png" class="circlePlus" /> <span class="blockLabel">Add League Package</span></div>
+					<div class="bottomBlock">
+						<button class="modalButton">Link Accounts</button>
+						<p>Skip, I’ll do this later</p>
+						<p class="subText">**Some events may not be available to watch until you link your accounts,<br /><b>Please visit  Settings > Manage Subscriptions to add your providers</b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- OnBoarding Link Accounts 3 -->
+	<div class="modal fade onBoarding" id="onBoardingLinkAccounts3" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="onboarding-content">
+				<div class="modal-body">
+					<div class="logo"><img src="/images/sportle-logo.png" alt="Sportle Logo" class="headerLogo" /></div>
+					<h2>Link Accounts</h2>
+					<p>Would you like to link any pre-existing<br />cable providers or sports league packages?</p>
+					<div class="tvProviders">
+						<div class="tvProvider xfinity"></div>
+						<div class="tvProvider directTV"></div>
+						<div class="tvProvider dish"></div>
+						<div class="tvProvider twc"></div>
+						<div class="tvProvider att"></div>
+					</div>
+					<div class="addBlock"><img src="/images/circle-plus.png" class="circlePlus" /> <span class="blockLabel">More Providers</span></div>
+					<table id="leaguePackages">
+						<tr>
+							<td class="logoColumn"><img src="/images/college-sports-live.png" class="packageLogo" /></td>
+							<td class="titleColumn">College Sports Live</td>
+							<td class="messageColumn"><i class="fa fa-circle"></i> Verified</td>
+						</tr>
+						<tr>
+							<td class="logoColumn"><img src="/images/center-ice.png" class="packageLogo" /></td>
+							<td class="titleColumn">NHL Center Ice</td>
+							<td class="messageColumn"><i class="fa fa-circle"></i> Verified</td>
+						</tr>
+					</table>
+					<table id="choosePackage">
+						<tr>
+							<td class="chooseColumn" colspan="2">
+								<select class="sportsFilter selectpicker">
+									<option selected>Select Your Package</option>
+									<option>College Sports Live</option>
+									<option>NHL Center Ice</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="usernameColumn"><label for="username">Username:</label><input type="text" id="username" name="username" /></td>
+							<td class="passwordColumn"><label for="password">Password:</label><input type="text" id="password" name="password" /><div class="signInText">Press "Enter" to Sign In</div></td>
+						</tr>
+					</table>
+					<div class="addBlock" id="addLeaguePackage"><img src="/images/circle-plus.png" class="circlePlus" /> <span class="blockLabel">Add League Package</span></div>
+					<div class="bottomBlock">
+						<button class="modalButton">Link Accounts</button>
+						<p>Skip, I’ll do this later</p>
+						<p class="subText">**Some events may not be available to watch until you link your accounts,<br /><b>Please visit  Settings > Manage Subscriptions to add your providers</b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<!-- Button trigger event modal live -->
-	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#liveEventAlt">
-	  Modal Live Alt
-	</button>
-	<!-- Button trigger event modal live -->
-	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#liveEvent">
-	  Modal Live
-	</button>
-	<!-- Button trigger OnBoarding Sign Up -->
-	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUp">
-	  OnBoarding Sign Up
-	</button>
-	<!-- Button trigger OnBoarding Sign Up Social -->
-	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUpSocial">
-	  OnBoarding Social Connect
-	</button>
-	<!-- Button trigger OnBoarding Sign In -->
-	<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLogin">
-	  OnBoarding Sign In
-	</button>
-	<!-- Button trigger OnBoarding Link Accounts -->
-	<button type="button" id="onBoardingLinkButton" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLinkAccounts">
-	  OnBoarding Link Accounts
-	</button>
+	<table id="footerButtons" style="border: 1px #999 solid;">
+		<tr>
+			<th colspan="3">&nbsp;</th>
+			<th colspan="3">Settings Page Tabs & Alternate States from Layer Comps</th>
+		</tr>
+		<tr>
+			<th>Event Modals</th>
+			<th>On Boarding</th>
+			<th>Search Pages</th>
+			<th>Edit Profile</th>
+			<th>Notification Settings</th>
+			<th>Manage Subscriptions</th>
+		</tr>
+		<tr>
+			<td>
+				<!-- Button trigger event modal live -->
+				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#liveEvent">
+				  Modal Live
+				</button>
+			</td>
+			<td>
+				<!-- Button trigger OnBoarding Sign Up -->
+				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUp">
+				  Sign Up
+				</button>
+			</td>
+			<td>
+				<!-- Button Search Results City -->
+				<a href="/search.php?type=city">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Search Results City
+					</button>
+				</a>
+			</td>
+			<td>
+				<!-- Edit Profile -->
+				<a href="/settings.php?tab=profile">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Edit Profile
+					</button>
+				</a>
+			</td>
+			<td>
+				<!-- Notification Settings -->
+				<a href="/settings.php?tab=notifications">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Notification Settings
+					</button>
+				</a>
+			</td>
+			<td>
+				<!-- Manage Subscriptions -->
+				<a href="/settings.php?tab=subscriptions">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Manage Subscriptions
+					</button>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<!-- Button trigger event modal live alt -->
+				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#liveEventAlt">
+				  Modal Live Alt
+				</button>
+			</td>
+			<td>
+				<!-- Button trigger OnBoarding Sign Up Social -->
+				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUpSocial">
+				  Social Connect
+				</button>
+			</td>
+			<td>
+				<!-- Button Search Results Team -->
+				<a href="/search.php?type=team">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Search Results Team
+					</button>
+				</a>
+			</td>
+			<td>
+				<!-- Edit Profile - Confirmation -->
+				<a href="/settings.php?tab=profile&div=confirmation">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Confirmation
+					</button>
+				</a>
+			</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Interactions / Errors -->
+				<a href="/settings.php?tab=subscriptions&div=interactions">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Interactions / Errors
+					</button>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Button trigger OnBoarding Sign In -->
+				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLogin">
+				  Sign In
+				</button>
+			</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Edit Profile - Saved Success Modal -->
+				<a href="/settings.php?tab=profile&div=saved">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Saved Success Modal
+					</button>
+				</a>
+			</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Add Subscription -->
+				<a href="/settings.php?tab=subscriptions&div=add">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Add Subscription
+					</button>
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Button trigger OnBoarding Link Accounts -->
+				<button type="button" id="onBoardingLinkButton" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLinkAccounts">
+				  Link Accounts
+				</button>
+			</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Edit Profile - Connect All -->
+				<a href="/settings.php?tab=profile&div=connect">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Connect All
+					</button>
+				</a>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Button trigger OnBoarding Link Accounts -->
+				<button type="button" id="onBoardingLinkButton" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLinkAccounts2">
+				  Add Subscription
+				</button>
+			</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Edit Profile - Disconnect All -->
+				<a href="/settings.php?tab=profile&div=disconnect">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Disconnect All
+					</button>
+				</a>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Button trigger OnBoarding Link Accounts -->
+				<button type="button" id="onBoardingLinkButton" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingLinkAccounts3">
+				  Subscriptions Added
+				</button>
+			</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Edit Profile - Validation Success -->
+				<a href="/settings.php?tab=profile&div=success">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Validation Success
+					</button>
+				</a>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>
+				<!-- Edit Profile - Validation Fail -->
+				<a href="/settings.php?tab=profile&div=fail">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Validation Fail
+					</button>
+				</a>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
 
-	<div style="clear:both; margin-bottom: 20px;"></div>
+	</table>
 
 </div>

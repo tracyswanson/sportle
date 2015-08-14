@@ -1980,6 +1980,315 @@ img {
   text-align: right;
   margin: 0 0.625rem 0.6875rem 0;
 }
+/* Link Accounts 2 */
+#onBoardingLinkAccounts2 .modal-body {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 1.75rem 3.4375rem 1.75rem;
+}
+#onBoardingLinkAccounts2 h2 {
+  font-weight: 500;
+  text-align: center;
+  margin: 2.2rem 0 1.2rem;
+}
+#onBoardingLinkAccounts2 p {
+  font-size: 1.125rem;
+  margin: 1.125rem 0 1.625rem;
+}
+#onBoardingLinkAccounts2 .tvProviders {
+  margin: 1rem 0;
+  width: 100%;
+}
+#onBoardingLinkAccounts2 .tvProviders .tvProvider {
+  width: 5.5rem;
+  height: 2.5rem;
+  margin-right: 0.375rem;
+}
+#onBoardingLinkAccounts2 .addBlock {
+  clear: both;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  width: 100%;
+  color: #666666;
+  background-color: #ebebeb;
+  margin: 4px 0 0 0;
+  cursor: pointer;
+}
+#onBoardingLinkAccounts2 .blockLabel {
+  display: inline-block;
+  text-align: left;
+  min-width: 10.375rem;
+}
+#onBoardingLinkAccounts2 .circlePlus {
+  margin-right: 0.6rem;
+}
+#onBoardingLinkAccounts2 .bottomBlock {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+}
+#onBoardingLinkAccounts2 .bottomBlock p {
+  text-size: 1rem;
+}
+#onBoardingLinkAccounts2 .subText {
+  font-size: 0.75rem;
+  margin: 0;
+}
+#onBoardingLinkAccounts2 .subText b {
+  font-weight: 600;
+}
+#onBoardingLinkAccounts2 #leaguePackages {
+  border-top: 1px solid #cdcdcd;
+  margin-top: 1.125rem;
+  display: none;
+}
+#onBoardingLinkAccounts2 .packageLogo {
+  margin: 0.875rem 1rem 0.875rem 0;
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  width: 5.8125rem;
+  height: 2.1875rem;
+}
+#onBoardingLinkAccounts2 .titleColumn {
+  width: 16rem;
+  font-size: 1rem;
+}
+#onBoardingLinkAccounts2 .messageColumn {
+  width: 6.5625rem;
+  font-size: 0.875rem;
+}
+#onBoardingLinkAccounts2 .messageColumn.failed .fa-circle {
+  color: #cc0033;
+}
+#onBoardingLinkAccounts2 .messageColumn .fa-circle {
+  font-size: 0.6875rem;
+  color: #3cb878;
+  margin-right: 0.2rem;
+}
+#onBoardingLinkAccounts2 #choosePackage {
+  background-color: #dbecf9;
+  margin: 0.9375rem 0 0.375rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .chooseColumn {
+  padding: 1.1875rem 0.875rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .chooseColumn .bootstrap-select > .dropdown-toggle {
+  line-height: 1.875rem;
+  padding: 2px 1.875rem 2px 0.75rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .chooseColumn .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  border-right: 1px #acacac solid;
+}
+#onBoardingLinkAccounts2 #choosePackage .sportsFilter .btn {
+  border-radius: 0;
+  border: 1px #0280e2 solid;
+  background-color: #ffffff;
+  color: #0280e2;
+  font-size: 1em;
+  width: 13rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .dropdown-menu {
+  border-radius: 0;
+  font-size: 1em;
+  width: 13rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .dropdown-menu > li > a:hover {
+  color: #white;
+  background-color: #0280e2;
+}
+#onBoardingLinkAccounts2 #choosePackage .usernameColumn label,
+#onBoardingLinkAccounts2 #choosePackage .passwordColumn label,
+#onBoardingLinkAccounts2 #choosePackage .signInText {
+  opacity: 0.38;
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 0.75;
+  display: block;
+}
+#onBoardingLinkAccounts2 #choosePackage .usernameColumn input[type="text"],
+#onBoardingLinkAccounts2 #choosePackage .passwordColumn input[type="text"] {
+  font-size: 1rem;
+  line-height: 1.5625;
+  width: 13rem;
+  opacity: 0.38;
+}
+#onBoardingLinkAccounts2 #choosePackage .usernameColumn {
+  padding: 0 1rem 0 0.875rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .usernameColumn input[type="text"] {
+  margin-bottom: 1.9rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .passwordColumn {
+  padding-right: 0.875rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .passwordColumn input[type="text"] {
+  margin-bottom: 0.525rem;
+}
+#onBoardingLinkAccounts2 #choosePackage .signInText {
+  float: right;
+  text-align: right;
+  margin: 0 0.625rem 0.6875rem 0;
+}
+/* Link Accounts 3 */
+#onBoardingLinkAccounts3 .modal-body {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 1.75rem 3.4375rem 1.75rem;
+}
+#onBoardingLinkAccounts3 h2 {
+  font-weight: 500;
+  text-align: center;
+  margin: 2.2rem 0 1.2rem;
+}
+#onBoardingLinkAccounts3 p {
+  font-size: 1.125rem;
+  margin: 1.125rem 0 1.625rem;
+}
+#onBoardingLinkAccounts3 .tvProviders {
+  margin: 1rem 0;
+  width: 100%;
+}
+#onBoardingLinkAccounts3 .tvProviders .tvProvider {
+  width: 5.5rem;
+  height: 2.5rem;
+  margin-right: 0.375rem;
+}
+#onBoardingLinkAccounts3 .addBlock {
+  clear: both;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  width: 100%;
+  color: #666666;
+  background-color: #ebebeb;
+  margin: 4px 0 0 0;
+  cursor: pointer;
+}
+#onBoardingLinkAccounts3 .blockLabel {
+  display: inline-block;
+  text-align: left;
+  min-width: 10.375rem;
+}
+#onBoardingLinkAccounts3 .circlePlus {
+  margin-right: 0.6rem;
+}
+#onBoardingLinkAccounts3 .bottomBlock {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+}
+#onBoardingLinkAccounts3 .bottomBlock p {
+  text-size: 1rem;
+}
+#onBoardingLinkAccounts3 .subText {
+  font-size: 0.75rem;
+  margin: 0;
+}
+#onBoardingLinkAccounts3 .subText b {
+  font-weight: 600;
+}
+#onBoardingLinkAccounts3 #leaguePackages {
+  border-top: 1px solid #cdcdcd;
+  margin-top: 1.125rem;
+  display: block;
+}
+#onBoardingLinkAccounts3 .packageLogo {
+  margin: 0.875rem 1rem 0.875rem 0;
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  width: 5.8125rem;
+  height: 2.1875rem;
+}
+#onBoardingLinkAccounts3 .titleColumn {
+  width: 16rem;
+  font-size: 1rem;
+}
+#onBoardingLinkAccounts3 .messageColumn {
+  width: 6.5625rem;
+  font-size: 0.875rem;
+}
+#onBoardingLinkAccounts3 .messageColumn.failed .fa-circle {
+  color: #cc0033;
+}
+#onBoardingLinkAccounts3 .messageColumn .fa-circle {
+  font-size: 0.6875rem;
+  color: #3cb878;
+  margin-right: 0.2rem;
+}
+#onBoardingLinkAccounts3 #choosePackage {
+  background-color: #dbecf9;
+  margin: 0.9375rem 0 0.375rem;
+  display: none;
+}
+#onBoardingLinkAccounts3 #choosePackage .chooseColumn {
+  padding: 1.1875rem 0.875rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .chooseColumn .bootstrap-select > .dropdown-toggle {
+  line-height: 1.875rem;
+  padding: 2px 1.875rem 2px 0.75rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .chooseColumn .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  border-right: 1px #acacac solid;
+}
+#onBoardingLinkAccounts3 #choosePackage .sportsFilter .btn {
+  border-radius: 0;
+  border: 1px #0280e2 solid;
+  background-color: #ffffff;
+  color: #0280e2;
+  font-size: 1em;
+  width: 13rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .dropdown-menu {
+  border-radius: 0;
+  font-size: 1em;
+  width: 13rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .dropdown-menu > li > a:hover {
+  color: #white;
+  background-color: #0280e2;
+}
+#onBoardingLinkAccounts3 #choosePackage .usernameColumn label,
+#onBoardingLinkAccounts3 #choosePackage .passwordColumn label,
+#onBoardingLinkAccounts3 #choosePackage .signInText {
+  opacity: 0.38;
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 0.75;
+  display: block;
+}
+#onBoardingLinkAccounts3 #choosePackage .usernameColumn input[type="text"],
+#onBoardingLinkAccounts3 #choosePackage .passwordColumn input[type="text"] {
+  font-size: 1rem;
+  line-height: 1.5625;
+  width: 13rem;
+  opacity: 0.38;
+}
+#onBoardingLinkAccounts3 #choosePackage .usernameColumn {
+  padding: 0 1rem 0 0.875rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .usernameColumn input[type="text"] {
+  margin-bottom: 1.9rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .passwordColumn {
+  padding-right: 0.875rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .passwordColumn input[type="text"] {
+  margin-bottom: 0.525rem;
+}
+#onBoardingLinkAccounts3 #choosePackage .signInText {
+  float: right;
+  text-align: right;
+  margin: 0 0.625rem 0.6875rem 0;
+}
 /* Search Results */
 /* Teams */
 .teamContainer > .teamInfo:first-child {
@@ -2327,6 +2636,11 @@ img {
 .settings .main h3 {
   font-size: 1.125rem;
 }
+.settings .main .providers {
+  position: relative;
+  overflow: hidden;
+  max-width: 69.625rem;
+}
 .settings .main .providerTitle {
   margin: 2.5rem 0 0;
   text-align: center;
@@ -2353,12 +2667,14 @@ img {
 }
 .settings .main .subscriptionForm {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 53.75rem;
 }
 .settings .main .subscriptionForm .formInput {
   float: left;
   margin: 2.125rem 6.5rem 0 0;
+  position: relative;
+  overflow: visible;
 }
 .settings .main .subscriptionForm .formInput:last-child {
   margin-right: 0;
@@ -2404,7 +2720,6 @@ img {
   position: relative;
   overflow: hidden;
   font-size: 0.875rem;
-  margin-bottom: 8rem;
 }
 .settings .main .accountLogins #userPhoto {
   float: left;
@@ -2444,6 +2759,33 @@ img {
 .settings .main .accountLogins .logIn p {
   height: 6rem;
 }
+.settings .main .accountLogins .logInOnly {
+  border-left: none;
+  width: 40rem;
+  padding-left: 1.875rem;
+}
+.settings .main .accountLogins .logInOnly p {
+  width: 27rem;
+}
+.settings .main .accountLogins .logInOnly .facebookBlock {
+  float: left;
+}
+.settings .main .accountLogins .logInOnly .twitterBlock {
+  float: left;
+  margin-left: 1.75rem;
+}
+.settings .main .accountLogins .logInOnly .googleBlock {
+  float: left;
+  margin-left: 2.5rem;
+}
+.settings .main .accountLogins .logOutFirst {
+  margin: 0 1.625rem 0 1.625rem;
+}
+.settings .main .accountLogins .logOutOnly {
+  border-left: 1px #d3d3d3 solid;
+  margin: 0 1.625rem 0 0;
+  padding: 0 0 0 2.625rem;
+}
 .settings .main .accountLogins .userName {
   float: left;
   font-weight: 600;
@@ -2452,6 +2794,77 @@ img {
 .settings .main .accountLogins .connectLabel {
   margin-bottom: 1rem;
   font-weight: 600;
+}
+.settings .main .confirmationBox {
+  position: absolute;
+  left: 21.875rem;
+  top: 6.75rem;
+  width: 30.5rem;
+  height: 13.75rem;
+  padding: 2.25rem 2.625rem;
+  background-color: #fff;
+  -moz-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.17);
+  -webkit-box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.17);
+}
+.settings .main .confirmationBox h2 {
+  color: #1a1b1b;
+  font-size: 1.125rem;
+  margin: 0 0 1.125rem;
+}
+.settings .main .confirmationBox p {
+  color: #1a1b1b;
+  font-size: 0.875rem;
+  margin: 0 0 0.7rem 1.375rem;
+}
+.settings .main .confirmationBox .cancelButton {
+  background-color: #999999;
+  margin-left: 1.375rem;
+}
+.settings .main .confirmationBox .yesButton {
+  margin-left: 2.4375rem;
+}
+.settings .main .successModal {
+  position: absolute;
+  left: 24.75rem;
+  top: 10rem;
+  width: 25rem;
+  height: 4.2rem;
+  padding: 1.1rem 2rem;
+  color: #000;
+  font-size: 1rem;
+  background-color: #b7f897;
+  border-radius: 1rem;
+}
+.settings .main .successModal .fa-check {
+  font-size: 1.4rem;
+  margin-right: 0.4rem;
+}
+.settings .main .successModal .closeNotice {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+}
+.settings .main .validated {
+  position: absolute;
+  right: -2.2rem;
+  top: 1.5rem;
+  color: #25af73;
+  font-size: 1.6rem;
+}
+.settings .main .validateErrorMessage {
+  position: absolute;
+  width: 20rem;
+  right: -21rem;
+  top: 1.9rem;
+  color: #cc0000;
+  font-size: 0.8125rem;
+  font-weight: 200;
+}
+.settings .main input[type="text"].validateFailed {
+  border: 1px solid #cc0000;
+  padding: 3px;
 }
 .settings .main .notificationCheckboxes {
   position: relative;
@@ -2493,6 +2906,63 @@ img {
 .settings .main .leaguePackagesTitle {
   padding: 3rem 0 0.75rem 0.375rem;
   border-bottom: 1px #d9d9d9 solid;
+}
+.settings .main .leaguePackages .usernameColumn label,
+.settings .main .leaguePackages .passwordColumn label {
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 0.75;
+  display: block;
+}
+.settings .main .leaguePackages .usernameColumn input[type="text"],
+.settings .main .leaguePackages .passwordColumn input[type="text"] {
+  font-size: 1rem;
+  line-height: 1.5625;
+  width: 14.375rem;
+}
+.settings .main .leaguePackages .usernameColumn {
+  padding-right: 1.5rem;
+}
+.settings .main .leaguePackages .passwordColumn {
+  padding-right: 1.875rem;
+}
+.settings .main .leaguePackages .error {
+  border: 1px solid #ff3333;
+  padding: 3px;
+}
+.settings .main .leaguePackages .errorMessage {
+  color: #e40f0f;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+.settings .main .leaguePackages .signInColumn {
+  padding-right: 3rem;
+}
+.settings .main .leaguePackages .signInColumn .signInButton {
+  width: 10.375rem;
+  height: 2.625rem;
+  position: relative;
+  top: 0rem;
+  font-size: 1.125rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #0280e2;
+  cursor: pointer;
+  border: none;
+}
+.settings .main .leaguePackages .signInColumn .signInButtonSuccess {
+  width: 12.875rem;
+  height: 2.625rem;
+  position: relative;
+  top: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #25af73;
+  cursor: pointer;
+  border: none;
 }
 .settings .main .packageLogo {
   margin: 1.25rem 1.625rem 0.25rem 0;
@@ -2879,12 +3349,19 @@ button.google {
   left: 5.56rem;
   top: 2rem;
 }
-/* Modal Launch Buttons */
+/* Footer Styles */
+#footerButtons th {
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  color: #333;
+  border: 1px #999 solid;
+}
 .eventModalLiveBtn {
   float: left;
-  margin: 0 1.874rem 1.874rem 0;
+  margin: 0.8rem;
   padding: 0.35rem 0.937rem;
   border-radius: 0.3rem;
   font-size: 0.703rem;
   background-color: #0280e2;
+  min-width: 11rem;
 }
