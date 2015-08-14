@@ -2746,6 +2746,401 @@ img {
 		}
 	}
 }
+/* Favorites */
+.favorites {
+  .main {
+    position: relative;
+    overflow: hidden;
+    color: @black;
+    background-color: @white;
+    padding: 1.125rem 2.079rem 12rem;
+
+    .teamName {
+      cursor: pointer;
+    }
+    #eventContent {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      display: none;
+
+      .quickPicks {
+        margin-bottom: 1.847rem;
+        padding-bottom: 1.847rem;
+        z-index: 100;
+      }
+      .opaqueBackdrop {
+        z-index: 90;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 1.5rem 0 0 0;
+    }
+    h4 {
+      font-size: 1rem;
+      margin: 1.75rem 0 0 0;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+    .col {
+        display: table;
+        float: left;
+        width: 33%;
+        margin-top: 2rem;
+    }
+    .manageFavoritesHeader,
+    .myFavoritesHeader {
+      position: relative;
+      overflow: visible;
+      max-width: @pageMaxWidth;
+    }
+    .myFavorites {
+      font-size: 1.1rem;
+      padding-bottom: 0.75rem;
+      margin: 4rem 0 1.125rem;
+      border-bottom: 1px #c3c3c3 solid;
+    }
+    #favoritesTabs {
+      position: relative;
+      overflow: visible;
+      border-bottom: 1px #d9d9d9 solid;
+      max-width: @pageMaxWidth;
+      margin-top: 2.5rem;
+
+      .moreCategories {
+        display: inline-block;
+        position: relative;
+        overflow: visible;
+        top: -2rem;
+        width: 12rem;
+      }
+      #more {
+        position: absolute;
+        font-size: 2.5rem;
+        line-height: 0.8;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+      }
+      #moreTriangle {
+        display: none;
+        position: relative;
+        color: @white;
+        font-size: 2rem;
+        top: 2px;
+        left: 0rem;
+        z-index: 101;
+      }
+      #otherCategories {
+        display: none;
+        position: absolute;
+        top: 3rem;
+        left: -1rem;
+        z-index: 200;
+        list-style: none;
+        background-color: #fff;
+        border: 1px #dcdada solid;
+        padding: 0;
+        margin: 0;
+        width: 12rem;
+        z-index: 100;
+
+        li {
+          display: table;
+          padding: 0.4rem 0.75rem;
+          width: 100%;
+          font-size: 1rem;
+          border-bottom: 1px #e0e0e0 solid;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        a {
+          color: @black;
+
+          &:hover {
+            color: @sportleBlue;
+            cursor: pointer;
+          }
+        }
+      }
+
+      h2 {
+        display: inline-block;
+        margin: 0 2.5rem 0 0;
+        padding: 0 0 18px 0;
+        font-size: 1.125rem;
+        color: @black;
+
+        &.selected,
+        &:hover {
+          color: @sportleBlue;
+          padding: 0 0 14px 0;
+          cursor: pointer;
+        }
+        &.selected {
+          border-bottom: 4px @sportleBlue solid;
+        }
+      }
+    }
+    .quickAddSearch {
+      position: relative;
+      overflow: visible;
+      float: right;
+    }
+    .quickAdd {
+      display: inline-block;
+
+      .fa-star {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: #f3a41c;
+      }
+      .fa-plus {
+        position: absolute;
+        left: 0.35rem;
+        top: 1.45rem;
+        font-size: 0.5rem;
+        color: @white;
+      }
+      .addText {
+        display: inline-block;
+        margin: 0 0.2rem 0 0.2rem;
+        font-size: 0.875rem;
+      }
+    }
+    #searchContent {
+      display: inline-block;
+      width: 20.61rem;
+      height: 2.1rem;
+      margin: 0 0 0 0.4685rem;
+      position: relative;
+      overflow: visible;
+    }
+    #favoritesSearchContentField {
+      width: 100%;
+      border: 1px solid #7c7b7b;
+      #border.radius(1.124rem, 1.124rem, 1.124rem, 1.124rem);
+      font-size: 0.7613rem;
+      line-height: 1.78rem;
+      padding: 0 2.81rem 0 0.937rem;
+      .placeholder(#7c7b7b, italic);
+    }
+    #favoritesSearchContentField:focus {
+      border: 1px solid #61aae4;
+      outline: none;
+    }
+    .searchIcon {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: @black;
+        font-size: @headerFontSize;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.4rem;
+        #transform.scaleX(-1);
+
+        &:hover {
+        color: @sportleBlue;
+      }
+    }
+    .dropDownMenu {
+      display: none;
+      position: absolute;
+      list-style: none;
+      background-color: #fff;
+      border: 1px #c3c3c3 solid;
+      padding: 0.293rem 0;
+      margin: 0;
+
+      li {
+        font-size: 1rem;
+        border-bottom: 1px #b8b8b8 solid;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      li.emptyMenu {
+        border-bottom: none;
+
+        .spacer {
+          height: 1.124rem;
+          width: 2.343rem;
+        }
+      }
+    }
+    #favoritesSearchResults {
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      padding: 0;
+      width: 20.45rem;
+      z-index: 200;
+
+      .result:hover {
+        background-color: #ebebeb;
+        cursor: pointer;
+
+        a,
+        a .typed {
+          color: @sportleBlue;
+        }
+      }
+      .resultsHeader {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        font-size: 0.703rem;
+
+         h3 {
+          float: left;
+          font-size: 0.703rem;
+          color: #999999;
+         }
+         .viewAll {
+          float: right;
+          font-weight: 600;
+          color: @sportleBlue;
+          cursor: pointer;
+
+          a {
+            color: @sportleBlue;
+          }
+         }
+      }
+      .league {
+        border-bottom: none;
+        padding-bottom: 0;
+        padding-left: 1.406rem;
+        font-size: 0.703rem;
+        color: #999999;
+      }
+      li {
+        display: table;
+        margin: 0;
+        padding: 0.4rem 0.7613rem;
+        width: 100%;
+
+        span {
+          display: inline-block;
+        }
+        .image {
+          vertical-align: top;
+          width: 2.723rem;
+          display: table-cell;
+        }
+        .screenShot {
+          width: 2.723rem;
+          height: 0.8346rem;
+          margin-right: 1.406rem;
+        }
+        .logo {
+          width: 2.723rem;
+          height: 2.05rem;
+          margin-right: 1.406rem;
+          text-align: center;
+
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
+        .teams {
+          width:  10.835rem;
+          height: 2.05rem;
+          padding: 0 0.234rem 0 0;
+          display: table-cell;
+          vertical-align: middle;
+          color: #666666;
+        }
+        .typed {
+          color: #000;
+        }
+        .gameTime,
+        .favorite {
+          height: 100%;
+          vertical-align: top;
+          text-align: right;
+          float: right;
+        }
+        .gameTime {
+          color: #000;
+        }
+        .fa-star {
+          color: #999999;
+          font-size: 1.2rem;
+          margin-top: 0.5rem;
+        }
+        .favorited {
+          color: #f3a41c;
+        }
+        a {
+          color: #666666;
+          text-decoration: none;
+          font-weight: 600;
+
+          &:hover {
+            color: @sportleBlue;
+          }
+        }
+      }
+    }
+    label {
+      font-weight: 300;
+    }
+    label[for="favoriteFilter"] {
+      display: inline-block;
+      margin: 0.4rem 0.5rem 0 0;
+    }
+    .favoriteSelect {
+      position: relative;
+      overflow: visible;
+      float: right;
+      margin: -4rem 0 0 0;
+    }
+    .favoriteFilter .btn {
+      display: inline-block;
+      border-radius: 0;
+      border: 1px #b0b0b0 solid;
+      background-color: @white;
+      background: url("../images/select-favorite-bkgd.jpg") no-repeat 0 0 @charcoal;
+      background-size: 100% 100%;
+      color: @black;
+      font-size: 0.875rem;
+      padding: 0.25rem 0.543rem;
+    }
+    .dropdown-menu {
+      border-radius: 0;
+      font-size: 0.875rem;
+    }
+    .dropdown-menu > li > a:hover {
+      color: #white;
+      background-color: @sportleBlue;
+    }
+    .bootstrap-select.btn-group .dropdown-toggle .caret {
+      color: @white;
+    }
+    .noFavoritesMessage {
+      color: #999999;
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 3rem 0 4rem;
+      border-bottom: 1px #d4d4d4 solid;
+      max-width: @pageMaxWidth;
+    }
+  }
+}
 /* Settings Pages */
 .settings {
   .main {
@@ -2780,6 +3175,7 @@ img {
         display: inline-block;
         margin: 0 4.5rem 0 0;
         padding: 0 0 18px 0;
+        color: @black;
 
         &.selected,
         &:hover {
@@ -3536,9 +3932,9 @@ img {
 .eventModalLiveBtn {
 	float: left;
 	margin: 0.4rem 0.8rem;
-	padding: 0.35rem 0.937rem;
+	padding: 0.35rem 0.7rem;
 	border-radius: 0.3rem;
 	font-size: 0.703rem;
 	background-color: @sportleBlue;
-	min-width: 11rem;
+	min-width: 9.4rem;
 }

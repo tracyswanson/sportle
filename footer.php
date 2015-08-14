@@ -390,6 +390,7 @@
 		<tr>
 			<th colspan="3">&nbsp;</th>
 			<th colspan="3">Settings Page Tabs & Alternate States from Layer Comps</th>
+			<th>&nbsp;</th>
 		</tr>
 		<tr>
 			<th>Event Modals</th>
@@ -398,6 +399,7 @@
 			<th>Edit Profile</th>
 			<th>Notification Settings</th>
 			<th>Manage Subscriptions</th>
+			<th>Favorites Page</th>
 		</tr>
 		<tr>
 			<td class="firstRow">
@@ -444,6 +446,14 @@
 					</button>
 				</a>
 			</td>
+			<td class="firstRow">
+				<!-- Favorites -->
+				<a href="/favorites.php">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Favorites
+					</button>
+				</a>
+			</td>
 		</tr>
 		<tr>
 			<td>
@@ -483,6 +493,14 @@
 					</button>
 				</a>
 			</td>
+			<td>
+				<!-- Favorites Banners -->
+				<a href="/favorites.php?div=banners">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Banners
+					</button>
+				</a>
+			</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -510,6 +528,20 @@
 					</button>
 				</a>
 			</td>
+			<td>
+				<!-- Favorites Interactions
+				<a href="/favorites.php?div=interactions">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Interactions / Drop Downs
+					</button>
+				</a> -->
+				<!-- Favorites Zero -->
+				<a href="/favorites.php?div=zero">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Zero Favorites
+					</button>
+				</a>
+			</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -530,6 +562,14 @@
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
+			<td>
+				<!-- Favorites Multiple -->
+				<a href="/favorites.php?div=multiple">
+					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
+					  Multiple
+					</button>
+				</a>
+			</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -548,6 +588,7 @@
 					</button>
 				</a>
 			</td>
+			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
@@ -570,6 +611,7 @@
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="lastRow">&nbsp;</td>
@@ -582,6 +624,7 @@
 					  Validation Fail
 					</button>
 				</a>
+			<td class="lastRow">&nbsp;</td>
 			<td class="lastRow">&nbsp;</td>
 			<td class="lastRow">&nbsp;</td>
 		</tr>

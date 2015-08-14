@@ -93,6 +93,12 @@ jQuery(document).ready(function() {
 			// Animation complete.
 		});
 	});
+	// Favorites Page Search Drop Down Menu Show/Hide
+    $( "#favoritesSearchContentField" ).click( function() {
+		$( "#favoritesSearchResults" ).slideToggle( "slow", function() {
+			// Animation complete.
+		});
+	});
 	// Notifications Drop Down Menu Show/Hide
     $( ".userNotifications" ).click( function() {
     	hideDivs(1);
@@ -155,6 +161,22 @@ jQuery(document).ready(function() {
 	    $( this ).find( ".sportsFilter .btn" ).css("background-image", "url(../images/select-sports-bkgd-hover.jpg)");
 	},function(){
 	    $( this ).find( ".sportsFilter .btn" ).css("background-image", "url(../images/select-sports-bkgd.jpg)");
+	});
+	var savedTeamName;
+	// Favorites Team Name changes to UNFAVORITE on Hover
+	$( ".favorites .teamName" ).hover( function(){
+	    savedTeamName = $( this ).html();
+	    $( this ).html( "UNFAVORITE" );
+	},function(){
+	    $( this ).html( savedTeamName );
+	});
+	// Favorites More Categories revealed on hover
+	$( ".favorites #more" ).hover( function(){
+	    $( "#otherCategories" ).show();
+	    $( "#moreTriangle" ).show();
+	},function(){
+	    $( "#otherCategories" ).hide();
+	    $( "#moreTriangle" ).hide();
 	});
 	// Reminder rollover change color and show tool tip
 	$( ".reminder" ).hover( function(){
