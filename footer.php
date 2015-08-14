@@ -400,19 +400,19 @@
 			<th>Manage Subscriptions</th>
 		</tr>
 		<tr>
-			<td>
+			<td class="firstRow">
 				<!-- Button trigger event modal live -->
 				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#liveEvent">
 				  Modal Live
 				</button>
 			</td>
-			<td>
+			<td class="firstRow">
 				<!-- Button trigger OnBoarding Sign Up -->
 				<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg" data-toggle="modal" data-target="#onBoardingSignUp">
 				  Sign Up
 				</button>
 			</td>
-			<td>
+			<td class="firstRow">
 				<!-- Button Search Results City -->
 				<a href="/search.php?type=city">
 					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
@@ -420,7 +420,7 @@
 					</button>
 				</a>
 			</td>
-			<td>
+			<td class="firstRow">
 				<!-- Edit Profile -->
 				<a href="/settings.php?tab=profile">
 					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
@@ -428,7 +428,7 @@
 					</button>
 				</a>
 			</td>
-			<td>
+			<td class="firstRow">
 				<!-- Notification Settings -->
 				<a href="/settings.php?tab=notifications">
 					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
@@ -436,7 +436,7 @@
 					</button>
 				</a>
 			</td>
-			<td>
+			<td class="firstRow">
 				<!-- Manage Subscriptions -->
 				<a href="/settings.php?tab=subscriptions">
 					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
@@ -572,20 +572,19 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>
+			<td class="lastRow">&nbsp;</td>
+			<td class="lastRow">&nbsp;</td>
+			<td class="lastRow">&nbsp;</td>
+			<td class="lastRow">
 				<!-- Edit Profile - Validation Fail -->
 				<a href="/settings.php?tab=profile&div=fail">
 					<button type="button" class="eventModalLiveBtn btn btn-primary btn-lg">
 					  Validation Fail
 					</button>
 				</a>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td class="lastRow">&nbsp;</td>
+			<td class="lastRow">&nbsp;</td>
 		</tr>
-
 	</table>
 
 </div>
