@@ -2620,12 +2620,55 @@ img {
   margin-right: 0.375rem;
 }
 /* Favorites */
+.closeBanner {
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 1rem 0 1rem 1rem;
+  cursor: pointer;
+  float: right;
+}
 .favorites .main {
   position: relative;
   overflow: hidden;
   color: #000000;
   background-color: #ffffff;
   padding: 1.125rem 2.079rem 12rem;
+}
+.favorites .main .topBanners {
+  margin: -1.05rem -2.079rem 0rem;
+}
+.favorites .main .topBanner {
+  color: #000000;
+  font-size: 1rem;
+  background-color: #d4ebfc;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  padding: 0 2rem;
+  width: 100%;
+  border-top: 1px #ffffff solid;
+  border-bottom: 1px #ffffff solid;
+}
+.favorites .main .topBanner .bannerIcon {
+  width: 3rem;
+  display: inline-block;
+}
+.favorites .main .topBanner .textBox {
+  color: #ffffff;
+  background-color: #0a88e6;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+  line-height: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.favorites .main .topBanner .glyphicon {
+  color: #0a88e6;
+  font-size: 1.3rem;
+  margin-left: 0.6rem;
+}
+.favorites .main .topBanner a {
+  color: #0a88e6;
 }
 .favorites .main .teamName {
   cursor: pointer;

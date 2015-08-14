@@ -99,6 +99,10 @@ jQuery(document).ready(function() {
 			// Animation complete.
 		});
 	});
+	// Favorites Page Search Drop Down Menu Show/Hide
+    $( ".closeBanner" ).click( function() {
+		$( this ).parent().hide();
+	});
 	// Notifications Drop Down Menu Show/Hide
     $( ".userNotifications" ).click( function() {
     	hideDivs(1);

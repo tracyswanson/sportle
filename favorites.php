@@ -98,6 +98,11 @@
 			</div>
 
 			<?php if ( "banners" == $showDiv ) : ?>
+				<div class="topBanners">
+					<div class="topBanner"><span class="bannerIcon"><img src="/images/stars.png" /></span>Favorites bacon ipsum dolor color turkey gravy lorem bacon ipsum ipsum dolor color<div class="closeBanner">X</div></div>
+					<div class="topBanner"><span class="bannerIcon"><span class="textBox">New</span></span>We’ve updated our lorem ipsum bacon turkey gravy. <a>Check it out</a><div class="closeBanner">X</div></div>
+					<div class="topBanner"><span class="bannerIcon"><span class="glyphicon glyphicon-cog"></span></span>Misc lorem bacon ipsum dolor color turkey gravy bacon ipsum dolor color turkey gravy lorem bacon ipsum ipsum dolor color<div class="closeBanner">X</div></div>
+				</div>
 				<div class="manageFavoritesHeader">
 					<div class="quickAddSearch">
 						<div class="quickAdd"><i class="fa fa-star"></i><i class="fa fa-plus"></i><div class="addText">QUICK ADD</div></div>
@@ -115,15 +120,25 @@
 					<h3>Manage Favorites</h3>
 				</div>
 				<div id="favoritesTabs">
-					<a href="favorites.php?tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
-					<a href="favorites.php?tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
-					<a href="favorites.php?tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
-					<a href="favorites.php?tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
-					<a href="favorites.php?tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
-					<a href="favorites.php?tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
-					<a href="favorites.php?tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
-					<a href="favorites.php?tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
-					<a href="favorites.php?tab=Ellipses"><h2>...</h2></a>
+					<a href="favorites.php?div=banners&tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
+					<a href="favorites.php?div=banners&tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
+					<a href="favorites.php?div=banners&tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
+					<a href="favorites.php?div=banners&tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
+					<a href="favorites.php?div=banners&tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
+					<a href="favorites.php?div=banners&tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
+					<a href="favorites.php?div=banners&tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
+					<a href="favorites.php?div=banners&tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
+					<div class="moreCategories">
+						<h2 id="more">...
+						<div id="moreTriangle"><img src="/images/more-arrow.png" /></div>
+							<ul id="otherCategories">
+								<li><a>Euro Soccer</a></li>
+								<li><a>Women's Soccer</a></li>
+								<li><a>Australian Rugby</a></li>
+								<li><a>UFC</a></li>
+							</ul>
+						</h2>
+					</div>
 				</div>
 				<h4>Teams</h4>
 				<?php
@@ -164,15 +179,25 @@
 					<h3>Manage Favorites</h3>
 				</div>
 				<div id="favoritesTabs">
-					<a href="favorites.php?tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
-					<a href="favorites.php?tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
-					<a href="favorites.php?tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
-					<a href="favorites.php?tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
-					<a href="favorites.php?tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
-					<a href="favorites.php?tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
-					<a href="favorites.php?tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
-					<a href="favorites.php?tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
-					<a href="favorites.php?tab=Ellipses"><h2>...</h2></a>
+					<a href="favorites.php?div=interactions&tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
+					<a href="favorites.php?div=interactions&tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
+					<a href="favorites.php?div=interactions&tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
+					<a href="favorites.php?div=interactions&tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
+					<a href="favorites.php?div=interactions&tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
+					<a href="favorites.php?div=interactions&tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
+					<a href="favorites.php?div=interactions&tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
+					<a href="favorites.php?div=interactions&tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
+					<div class="moreCategories">
+						<h2 id="more">...
+						<div id="moreTriangle"><img src="/images/more-arrow.png" /></div>
+							<ul id="otherCategories">
+								<li><a>Euro Soccer</a></li>
+								<li><a>Women's Soccer</a></li>
+								<li><a>Australian Rugby</a></li>
+								<li><a>UFC</a></li>
+							</ul>
+						</h2>
+					</div>
 				</div>
 				<h4>Teams</h4>
 				<?php
@@ -215,15 +240,25 @@
 					<h3>Manage Favorites</h3>
 				</div>
 				<div id="favoritesTabs">
-					<a href="favorites.php?tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
-					<a href="favorites.php?tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
-					<a href="favorites.php?tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
-					<a href="favorites.php?tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
-					<a href="favorites.php?tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
-					<a href="favorites.php?tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
-					<a href="favorites.php?tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
-					<a href="favorites.php?tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
-					<a href="favorites.php?tab=Ellipses"><h2>...</h2></a>
+					<a href="favorites.php?div=zero&tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
+					<a href="favorites.php?div=zero&tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
+					<a href="favorites.php?div=zero&tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
+					<a href="favorites.php?div=zero&tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
+					<a href="favorites.php?div=zero&tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
+					<a href="favorites.php?div=zero&tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
+					<a href="favorites.php?div=zero&tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
+					<a href="favorites.php?div=zero&tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
+					<div class="moreCategories">
+						<h2 id="more">...
+						<div id="moreTriangle"><img src="/images/more-arrow.png" /></div>
+							<ul id="otherCategories">
+								<li><a>Euro Soccer</a></li>
+								<li><a>Women's Soccer</a></li>
+								<li><a>Australian Rugby</a></li>
+								<li><a>UFC</a></li>
+							</ul>
+						</h2>
+					</div>
 				</div>
 				<h4>Teams</h4>
 				<?php
@@ -264,15 +299,25 @@
 					<h3>Manage Favorites</h3>
 				</div>
 				<div id="favoritesTabs">
-					<a href="favorites.php?tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
-					<a href="favorites.php?tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
-					<a href="favorites.php?tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
-					<a href="favorites.php?tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
-					<a href="favorites.php?tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
-					<a href="favorites.php?tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
-					<a href="favorites.php?tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
-					<a href="favorites.php?tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
-					<a href="favorites.php?tab=Ellipses"><h2>...</h2></a>
+					<a href="favorites.php?div=multiple&tab=Suggested"><h2<?php echo $tabClass1; ?>>Suggested</h2></a>
+					<a href="favorites.php?div=multiple&tab=NFL"><h2<?php echo $tabClass2; ?>>NFL</h2></a>
+					<a href="favorites.php?div=multiple&tab=MLB"><h2<?php echo $tabClass3; ?>>MLB</h2></a>
+					<a href="favorites.php?div=multiple&tab=NHL"><h2<?php echo $tabClass4; ?>>NHL</h2></a>
+					<a href="favorites.php?div=multiple&tab=NBA"><h2<?php echo $tabClass5; ?>>NBA</h2></a>
+					<a href="favorites.php?div=multiple&tab=NCAA"><h2<?php echo $tabClass6; ?>>NCAA</h2></a>
+					<a href="favorites.php?div=multiple&tab=CFB"><h2<?php echo $tabClass7; ?>>CFB</h2></a>
+					<a href="favorites.phpdiv=multiple&tab=MLS"><h2<?php echo $tabClass8; ?>>MLS</h2></a>
+					<div class="moreCategories">
+						<h2 id="more">...
+						<div id="moreTriangle"><img src="/images/more-arrow.png" /></div>
+							<ul id="otherCategories">
+								<li><a>Euro Soccer</a></li>
+								<li><a>Women's Soccer</a></li>
+								<li><a>Australian Rugby</a></li>
+								<li><a>UFC</a></li>
+							</ul>
+						</h2>
+					</div>
 				</div>
 				<div class="col col1"><h5>AFC SOUTH</h5></div>
 				<div class="col col2"><h5>AFC NORTH</h5></div>
