@@ -146,6 +146,7 @@ img {
   background-clip: padding-box;
   font-size: 0.7613rem;
   line-height: 1.78rem;
+  height: 1.78rem;
   padding: 0 2.81rem 0 0.937rem;
 }
 .header #searchContentField::-webkit-input-placeholder {
@@ -432,6 +433,7 @@ img {
   right: 13.177rem;
   top: 3.72rem;
   padding: 0.293rem 0;
+  width: 26.375rem;
 }
 .header #notifications .unread {
   background-color: #ebebeb;
@@ -2630,7 +2632,7 @@ img {
 }
 .favorites .main {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   color: #000000;
   background-color: #ffffff;
   padding: 1.125rem 2.079rem 12rem;
